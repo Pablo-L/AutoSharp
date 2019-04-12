@@ -20,12 +20,26 @@ namespace AutoSharp
             c.insert(this);
         }
 
-        ~ENConsulta()
+        public void import(DateTime fecha)
+        {
+            CADConsulta c = new CADConsulta();
+            c.import(this);
+        }
+
+        public void importNext(DateTime fecha)
+        {
+            CADConsulta c = new CADConsulta();
+            c.importNext();
+        }
+
+        public void importPrev(DateTime fecha)
         {
 
         }
 
+        ~ENConsulta()
+        {
 
-
+        }
     }
 }

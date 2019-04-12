@@ -44,13 +44,33 @@ namespace AutoSharp
 
         ENEmpresa(ENEmpresa e)
         {
+            CADEmpresa c = new CADEmpresa();
+            c.insert();
+        }
 
+        public void import()
+        {
+            CADEmpresa c = new CADEmpresa();
+            c.import(this);
+        }
+
+        public void importNext()
+        {
+            CADEmpresa c = new CADEmpresa();
+            c.importNext(this);
+        }
+
+        public void importPrev()
+        {
+            CADEmpresa c = new CADEmpresa();
+            c.importPrev(this);
         }
 
         //delete
         ~ENConsulta()
         {
-
+            CADEmpresa c = new CADEmpresa();
+            c.delete(this);
         }
     }
 }
