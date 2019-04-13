@@ -56,22 +56,27 @@ namespace Library
 
         public void createParticular()
         {
+            CADParticular en = new CADParticular();
+            en.createParticular(this);
 
         }
 
         public void updateParticular()
         {
-
+            CADParticular en = new CADParticular();
+            en.updateParticular(this);
         }
 
         public void deleteParticular()
         {
-
+            CADParticular en = new CADParticular();
+            en.deleteParticular(this);
         }
 
         public bool readParticular()
         {
-            return true;
+            CADParticular en = new CADParticular();
+            return en.readParticular(this);
         }
     }
 }
