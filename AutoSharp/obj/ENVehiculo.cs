@@ -49,6 +49,14 @@ namespace library
         /// </summary>
         private int potencia;
         /// <summary>
+        /// Atributo privado comprador (cif)
+        /// </summary>
+        private string comprador;
+        /// <summary>
+        /// Atributo privador vendedor (nif)
+        /// </summary>
+        private string vendedor;
+        /// <summary>
         /// Propiedad pública de matricula
         /// </summary>
         public string matriculaVehiculo
@@ -119,6 +127,91 @@ namespace library
         {
             get { return potencia; }
             set { potencia = value; }
+        }
+        /// <summary>
+        /// Propiedad pública de vendedor
+        /// </summary>
+        public int vendedorVehiculo
+        {
+            get { return vendedor; }
+            set { vendedor = value; }
+        }
+        /// <summary>
+        /// Propiedad pública de comprador
+        /// </summary>
+        public int compradorVehiculo
+        {
+            get { return comprador; }
+            set { comprador = value; }
+        }
+        /// <summary>
+        /// Constructor por defecto
+        /// </summary>
+        public ENVehiculo()
+        {
+            matricula = null;
+            marca = null;
+            modelo = null;
+            color = null;
+            combustible = 0.0;
+            año = 0;
+            kilometros = 0.0;
+            precio = 0.0;
+            potencia = 0;
+            comprador = null;
+            vendedor = null;
+        }
+        /// <summary>
+        /// Constructor de copia
+        /// </summary>
+        public ENVehiculo(string matricula, string marca, string modelo, string color, float combustible, int año, float kilometros, float precio, int potencia, string comprador, string vendedor)
+        {
+            this.matricula = matricula;
+            this.marca = marca;
+            this.modelo = modelo;
+            this.color = color;
+            this.combustible = combustible;
+            this.año = año;
+            this.kilometros = kilometros;
+            this.precio = precio;
+            this.potencia = potencia;
+            this.comprador = comprador;
+            this.vendedor = vendedor;
+        }
+        /// <summary>
+        /// Crea el véhículo indicado en la base de datos (alta vehículo)
+        /// </summary>
+        /// <returns></returns>
+        public bool createVehiculo()
+        {
+            CADVehiculo cadv = new CADVehiculo();
+            return cadv.createVehiculo(this);
+        }
+        /// <summary>
+        /// Lee el vehículo indicado de la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public bool readVehiculo()
+        {
+            CADVehiculo cadv = new CADVehiculo();
+            return cadv.readVehiculo(this);
+        }
+        /// <summary>
+        /// Borra el vehículo indicado de la base de datos(baja vehículo)
+        /// </summary>
+        /// <returns></returns>
+        public bool deteleVehiculo()
+        {
+            CADVehiculo cadv = new CADVehiculo();
+            return cadv.readVehiculo(this);
+        }
+        /// <summary>
+        /// Actualiza el vehículo indicado de la base de datos
+        /// </summary>
+        public void updateVehiculo()
+        {
+            CADVehiculo cadv = new CADVehiculo();
+            return cadv.readVehiculo(this);
         }
 	}
 }
