@@ -13,22 +13,22 @@ namespace Library
 
         }
 
-        public void createParticular()
+        public void createParticular(ENParticular en)
         {
 
         }
 
-        public void updateParticular()
+        public void updateParticular(ENParticular en)
         {
 
         }
 
-        public void deleteParticular()
+        public void deleteParticular(ENParticular en)
         {
 
         }
 
-        public bool readParticular()
+        public bool readParticular(ENParticular en)
         {
             return true;
         }
