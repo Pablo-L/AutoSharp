@@ -8,9 +8,29 @@ namespace Library
 {
     public class CADParticular
     {
-       public CADParticular()
+        public CADParticular()
         {
 
+        }
+
+        public void createParticular()
+        {
+
+        }
+
+        public void updateParticular()
+        {
+
+        }
+
+        public void deleteParticular()
+        {
+
+        }
+
+        public bool readParticular()
+        {
+            return true;
         }
     }
 }
