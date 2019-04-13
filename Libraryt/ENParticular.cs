@@ -53,5 +53,25 @@ namespace Library
             emailUser    = email;
             passwordUser = password;
         }
+
+        public void createParticular()
+        {
+
+        }
+
+        public void updateParticular()
+        {
+
+        }
+
+        public void deleteParticular()
+        {
+
+        }
+
+        public bool readParticular()
+        {
+            return true;
+        }
     }
 }
