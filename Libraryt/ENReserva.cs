@@ -63,22 +63,26 @@ namespace Library
  
         public void createReserva()
         {
-
+            CADReserva en = new CADReserva();
+            en.createReserva(this);
         }
 
         public void updateReserva()
         {
-
+            CADReserva en = new CADReserva();
+            en.updateReserva(this);
         }
 
         public void deleteReserva()
         {
-
+            CADReserva en = new CADReserva();
+            en.deleteReserva(this);
         }
 
         public bool readReservation()
         {
-            return true;
+            CADReserva en = new CADReserva();
+            return en.readReservation(this);
         }
 
     }
