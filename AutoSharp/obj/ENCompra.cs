@@ -61,5 +61,65 @@ namespace library
             get { return fecha; }
             set { fecha = value; }
         }
+        /// <summary>
+        /// Constructor por defecto
+        /// </summary>
+        public ENCompra()
+        {
+            comprador = null;
+            vendedor = null;
+            vehiculo = null;
+            fecha = DateTime.Now;
+        }
+        /// <summary>
+        /// Constructor por valor
+        /// </summary>
+        /// <param name="comprador"></param>
+        /// <param name="vendedor"></param>
+        /// <param name=""></param>
+        public ENCompra(string comprador, string vendedor, string vehiculo, DateTime fecha)
+        {
+            this.comrpador = comprador;
+            this.vendedor = vendedor;
+            this.vehiculo = vehiculo;
+            this.fecha = fecha;
+        }
+        /// <summary>
+        /// Crea la compra indicada en la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public bool createCompra()
+        {
+            CADCompra cadc = new CADCompra();
+            return cadc.createCompra(this);
+        }
+        /// <summary>
+        /// Lee la compra indicada dela base de datos
+        /// </summary>
+        /// <returns></returns>
+        public bool readCompra()
+        {
+            CADCompra cadc = new CADCompra();
+            return cadc.readCompra(this);
+        }
+        /// <summary>
+        /// Borra la compra indicada de la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public bool deleteCompra()
+        {
+            CADCompra cadc = new CADCompra();
+            return cadc.deleteCompra(this);
+        }
+        /// <summary>
+        /// Actualiza la compra indicada de la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public bool updateCompra()
+        {
+            CADCompra cadc = new CADCompra();
+            return cadc.updateCompra(this);
+        }
+
     }
 }
