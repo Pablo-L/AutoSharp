@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ENConsulta;
 
 namespace AutoSharp
-{
+{ 
     //CRUD
     public class CADConsulta
     {

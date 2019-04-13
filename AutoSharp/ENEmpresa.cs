@@ -52,7 +52,7 @@ namespace AutoSharp
         {
             CADEmpresa c = new CADEmpresa();
             c.import(this);
-        }
+        } 
 
         public void importNext()
         {
