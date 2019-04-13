@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutoSharp
+namespace library
 {
     public class CADOferta
     {
