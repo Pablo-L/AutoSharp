@@ -12,22 +12,22 @@ namespace Library
         {
 
         }
-        public void createReserva()
+        public void createReserva(ENReserva en)
         {
 
         }
 
-        public void updateReserva()
+        public void updateReserva(ENReserva en)
         {
 
         }
 
-        public void deleteReserva()
+        public void deleteReserva(ENReserva en)
         {
 
         }
 
-        public bool readReservation()
+        public bool readReservation(ENReserva en)
         {
             return true;
         }
