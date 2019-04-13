@@ -60,6 +60,26 @@ namespace Library
             hourReserva     = hour;
             durationReserva = duration;
         }
+ 
+        public void createReserva()
+        {
+
+        }
+
+        public void updateReserva()
+        {
+
+        }
+
+        public void deleteReserva()
+        {
+
+        }
+
+        public bool readReservation()
+        {
+            return true;
+        }
 
     }
 }
