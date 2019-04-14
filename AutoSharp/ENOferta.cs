@@ -12,13 +12,38 @@ namespace library
 
         private int descuento;
 
+        public ENOferta() { }
 
-        public bool createENOferta() { }
+        public ENOferta(ENOferta enOferta)
+        {
+            id = enOferta.id;
+            inicioOferta = enOferta.inicioOferta;
+            finOferta = enOferta.finOferta;
+            descuento = enOferta.descuento;
+        }
 
-        public bool readENOferta() { }
+        public bool createENOferta()
+        {
+            CADOferta en = new CADOferta();
+            en.createCADOferta(this);
+        }
 
-        public bool updateENOferta() { }
+        public bool readENOferta()
+        {
+            CADOferta en = new CADOferta();
+            en.readCADOferta(this);
+        }
 
-        public bool deleteENOferta() { }
+        public bool updateENOferta()
+        {
+            CADOferta en = new CADOferta();
+            en.updateCADOferta(this);
+        }
+
+        public bool deleteENOferta()
+        {
+            CADOferta en = new CADOferta();
+            en.deleteCADOferta(this);
+        }
     }
 }

@@ -12,9 +12,9 @@ namespace library
         public CADOferta() { }
 
 
-        public bool importCADOferta(ENOferta enOferta) { }
+        public bool createCADOferta(ENOferta enOferta) { }
 
-        public bool insertCADOferta(ENOferta enOferta) { }
+        public bool readCADOferta(ENOferta enOferta) { }
 
         public bool updateCADOferta(ENOferta enOferta) { }
 
