@@ -30,20 +30,23 @@ public class CADListaFavoritos
     /// </summary>
     /// <param name="en"></param>
     /// <returns></returns>
-    public bool createListaFav(ENListaFavoritos en)
+    public bool createListaFavoritos(ENListaFavoritos en)
     {
 
     }
 
-    public bool readListaFav(ENListaFavoritos en)
+    public bool readListaFavoritos(ENListaFavoritos en)
     {
 
     }
 
-    public bool updateListaFav(ENListaFavoritos en)
+    public bool updateListaFavoritos(ENListaFavoritos en)
     {
 
     }
 
-    public bool
+    public bool deleteListaFavoritos(ENListaFavoritos en)
+    {
+
+    }
 }
