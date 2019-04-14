@@ -8,24 +8,25 @@ using System.Text;
 
 public class ENListaFavoritos
 {
-    private int ID;
+    private ENParticular usu;
 
-    private string desc;
+    private ENVehiculo vehi;
 
-    public int id_categoria { get => ID; set => ID = value; }
+    public ENParticular particular { get => usu; set => usu = value; }
 
-    public string descripcion { get => desc; set => desc = value; }
+    public ENVehiculo vehiculo { get => vehi; set => vehi = value; }
+
 
     public ENListaFavoritos()
     {
-        id_categoria = 0;
-        descripcion = null;
+        particular = new ENParticular();
+        vehiculo = new ENVehiculo();
     }
 
-    public ENListaFavoritos(int id_, string desc_)
+    public ENListaFavoritos(ENParticular p, ENVehiculo v)
     {
-        id_categoria = id_;
-        descripcion = desc_;
+        particular = p;
+        vehiculo = v;
     }
 
     public bool createListaFavoritos()
@@ -51,6 +52,4 @@ public class ENListaFavoritos
         CADListaFavoritos cadlf = new CADListaFavoritos();
         return cadlf.deleteListaFavoritos(this);
     }
-
-
 }

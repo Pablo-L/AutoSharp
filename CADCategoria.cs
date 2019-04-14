@@ -12,7 +12,31 @@ using System.Data.SqlTypes;
 /// </summary>
 public class CADCategoria
 {
+    private string constring;
+
 	public CADCategoria()
 	{
-	}
+        //constring = ConfigurationManager.ConnectionStrings["DataBaseConnection"].ToString();
+    }
+
+    public bool createCategoria(ENCategoria en)
+    {
+
+    }
+
+    public bool readCategoria(ENCategoria en)
+    {
+
+    }
+
+    public bool updateCategoria(ENCategoria en)
+    {
+
+    }
+
+    public bool deleteCategoria(ENCategoria en)
+    {
+
+    }
+
 }
