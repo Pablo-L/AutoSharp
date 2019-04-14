@@ -12,9 +12,9 @@ namespace library
         public CADCita() { }
 
 
-        public bool importCADCita(ENCita enCita) { }
+        public bool createCADCita(ENCita enCita) { }
 
-        public bool insertCADCita(ENCita enCita) { }
+        public bool readCADCita(ENCita enCita) { }
 
         public bool updateCADCita(ENCita enCita) { }
 
