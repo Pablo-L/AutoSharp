@@ -18,7 +18,7 @@ public class CADListaFavoritos
     private string constring;
 
     /// <summary>
-    /// Constructor por defecto
+    /// Constructor por defecto.
     /// </summary>
 	public CADListaFavoritos()
     {
@@ -26,7 +26,7 @@ public class CADListaFavoritos
     }
 
     /// <summary>
-    /// Crea una lista de favoritos
+    /// Crea una lista de favoritos.
     /// </summary>
     /// <param name="en"></param>
     /// <returns></returns>
@@ -35,16 +35,31 @@ public class CADListaFavoritos
 
     }
 
+    /// <summary>
+    /// Lee una lista de favoritos.
+    /// </summary>
+    /// <param name="en"></param>
+    /// <returns></returns>
     public bool readListaFavoritos(ENListaFavoritos en)
     {
 
     }
 
+    /// <summary>
+    /// Actualiza la lista de favoritos indicada de la base de datos.
+    /// </summary>
+    /// <param name="en"></param>
+    /// <returns></returns>
     public bool updateListaFavoritos(ENListaFavoritos en)
     {
 
     }
 
+    /// <summary>
+    /// Borra la lista de favoritos indicada de la base de datos.
+    /// </summary>
+    /// <param name="en"></param>
+    /// <returns></returns>
     public bool deleteListaFavoritos(ENListaFavoritos en)
     {
 
