@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="height: 17px; width: 1256px">
+    <form id="form1" runat="server">
+        <div>
+
+            <asp:ContentPlaceHolder ID="NavigationBar" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ImagenesScroll" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="PageBody" runat="server">
+
+                <asp:ContentPlaceHolder ID="login" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="dummy" runat="server" ></asp:ContentPlaceHolder>
+        </div>
+    </form>
+    
+</body>
+</html>
