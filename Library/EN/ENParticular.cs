@@ -13,6 +13,7 @@ namespace Library
         private string surnames;
         private string email;
         private string password;
+        private List<ENVehiculo> Listafav;
 
         public string nifUser
         {
@@ -38,6 +39,11 @@ namespace Library
         {
             get { return password;   }
             set { password = value;  }
+        }
+        public List<ENVehiculo> ListaFavoritos
+        {
+            get { return Listafav; }
+            set { Listafav = value; }
         }
 
         public ENParticular()
