@@ -1,5 +1,12 @@
 # AutoSharp
 Práctica grupal HADA
+Componentes:
+Pablo López Díaz (Coordinador) -> 48646241E
+Lamberto Ruiz Martínez -> 74532842P
+Daniel Regueira -> 49232451P
+Tudor Emanuel Sabau -> X8317572J
+Almilkar Cruz Orias -> Y2605935A
+Alejandro Vicente Rodriguez Segado-> 74011910A
 
 Descripción: 
 
