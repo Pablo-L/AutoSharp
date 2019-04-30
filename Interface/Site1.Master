@@ -20,12 +20,10 @@
 
             <asp:ContentPlaceHolder ID="PageBody" runat="server">
 
-                <asp:ContentPlaceHolder ID="login" runat="server">
-                </asp:ContentPlaceHolder>
-
             </asp:ContentPlaceHolder>
 
             <asp:ContentPlaceHolder ID="dummy" runat="server" ></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="dummy2" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>
     

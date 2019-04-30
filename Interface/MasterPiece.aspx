@@ -8,6 +8,16 @@
     {
 
     }
+
+    protected void Log_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
 </script>
 
 
@@ -36,8 +46,11 @@
                 <a href="#">Mis vehículos guardados (0)</a>
                 <a href="#">Mis búsquedas guardadas</a>
                 <a href="#">Mis Anuncios</a>
-                <div align="center"><asp:Button ID="Log" runat="server"  Text="Iniciar Sesión"/></div>
-                <p style="font-size:10px;"><br />¿Nuevo en AutoSharp? Registrate Aquí </p>
+                <div align="center">
+                    <asp:Button OnClick="Log_Click" ID="Log" runat="server"  Text="Iniciar Sesión"/>
+                </div>
+                <p style="font-size:10px;"><br />¿Nuevo en AutoSharp? Registrate </p>
+                <p style="font-size:10px;" onclick="RedirectToRegister">Aqui</p>
             </div>
         </div>
     </div>
@@ -78,162 +91,4 @@
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
-</asp:Content>
-
-
-<asp:Content ID="Content4" ContentPlaceHolderID="PageBody" runat="server">
-    <div style="align-content:center">
-        <asp:Label ID="selectButtonLabel" runat="server" Text="Se va a registrar como particular, si es una empresa pulse el boton cambiar. "></asp:Label>
-        <br />
-        <asp:Button  ID="selectButton" runat="server" Text="Cambiar" OnClick="selectButton_Click"/>
-    </div>
-    <asp:Table ID="tablaLogin" runat="server">
-
-        <asp:TableHeaderRow>
-            <asp:TableHeaderCell VerticalAlign="Bottom" HorizontalAlign="Center">Registro</asp:TableHeaderCell>
-        </asp:TableHeaderRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Nombre:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox0" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Email:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox1" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>CIF:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox2" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Telefono:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox3" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Tamaño:</asp:TableCell>
-            <asp:TableCell>
-            
-            <select name="size">
-                <option value="Grande">Grande</option>
-                <option value="Mediana">Mediana</option>
-                <option value="Pequeña">Pequeña</option>
-                
-            </select>
-               
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Contraseña:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox8" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Repetir Contraseña:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="nombre" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-    </asp:Table>
-
-</asp:Content>
-
-<asp:Content ID="Content5" ContentPlaceHolderID="dummy" runat="server">
-    <div style="align-content:center">
-        <asp:Label ID="Label1" runat="server" Text="Se va a registrar como particular, si es una empresa pulse el boton cambiar. "></asp:Label>
-        <br />
-        <asp:Button  ID="Button1" runat="server" Text="Cambiar" OnClick="selectButton_Click"/>
-    </div>
-    <asp:Table ID="Table1" runat="server">
-
-        <asp:TableHeaderRow>
-            <asp:TableHeaderCell VerticalAlign="Bottom" HorizontalAlign="Center">Registro</asp:TableHeaderCell>
-        </asp:TableHeaderRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Nombre:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox9" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Apellidos:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox10" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>NIF:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox11" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Email:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox12" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Telefono:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox13" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Direccion:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox14" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>IBAN:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox15" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Nombre:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox16" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Contraseña:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox17" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-        <asp:TableRow>
-            <asp:TableCell>Repetir Contraseña:</asp:TableCell>
-            <asp:TableCell>
-                <asp:TextBox ID="TextBox18" runat="server" Text=""></asp:TextBox>
-            </asp:TableCell>
-        </asp:TableRow>
-
-    </asp:Table>
 </asp:Content>
