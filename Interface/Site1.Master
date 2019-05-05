@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Interface.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" %>
 
 <!DOCTYPE html>
 
@@ -21,6 +21,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+<<<<<<< HEAD
         <div id="site-wrapper">
             <div id="site-canvas">
                 <div id="page-wrap_home">
@@ -58,6 +59,21 @@
                     </div>
                 </div>
             </div>
+=======
+        <div>
+
+            <asp:ContentPlaceHolder ID="NavigationBar" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="ImagenesScroll" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="PageBody" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="dummy" runat="server" ></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="dummy2" runat="server"></asp:ContentPlaceHolder>
+>>>>>>> X8317572J
         </div>
         <asp:ContentPlaceHolder ID="ImagenesScroll" runat="server">
         </asp:ContentPlaceHolder>
@@ -121,6 +137,10 @@
             </div>
         </footer>
     </form>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> X8317572J
 </body>
 </html>

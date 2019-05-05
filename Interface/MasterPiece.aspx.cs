@@ -12,13 +12,22 @@ namespace Interface
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+        protected void Log_Click(object sender, EventArgs e)
+        {
+            TextBox0.Text = "GHola";
+        }
+<<<<<<< HEAD
 
 
         private int slideIndex = 1;
         // Next/previous controls
 
 
+=======
+        
+>>>>>>> X8317572J
     }
 }
