@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//faltan los comentarios
+
 namespace Library
 {
     public class CADParticular
