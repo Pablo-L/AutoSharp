@@ -21,6 +21,16 @@ public class ENCategoria
     private string desc;
 
     /// <summary>
+    /// Atributo privado sym.
+    /// </summary>
+    private string sym;
+
+    /// <summary>
+    /// Atributo privado vehi (Vehiculo)
+    /// </summary>
+    private ENVehiculo vehi;
+
+    /// <summary>
     /// Propiedad pública id_categoria.
     /// </summary>
     public int id_categoria { get => ID; set => ID = value; }
@@ -30,6 +40,11 @@ public class ENCategoria
     /// </summary>
     public string descripcion { get => desc; set => desc = value; }
 
+    /// <summary>
+    /// Propiedad pública symbol.
+    /// </summary>
+    public string symbol { get => sym; set => sym = value; }
+    
     /// <summary>
     /// Constructor por defecto
     /// </summary>
