@@ -1,106 +1,115 @@
 ﻿* {
-    box-sizing: border-box
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-/* Slideshow container */
-.slideshow-container {
-    max-width: 1000px;
+ul, ol {
+    list-style: none;
+}
+
+body {
+    font-family: Open sans;
+}
+
+.slideshow {
+    width: 100%;
     position: relative;
-    margin: auto;
 }
 
-/* Hide the images by default */
-.mySlides {
-    display: none;
+.slider li, ul {
+    width: 100%;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
+.slider li {
+    overflow: hidden;
+}
+
+.slider li img {
+    width: 100%;
+}
+
+.slider .caption {
     position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
 }
 
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.slider .caption h1 {
+    font-size: 50px;
 }
 
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.8);
+.slider .caption p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.pagination {
+    position: absolute;
+    top: 102%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .pagination li {
+        font-size: 20px;
+        margin: 2px 5px;
+        color: #858585;
+        cursor: pointer;
     }
 
-/* Caption text */
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
+.left, .right {
     position: absolute;
     top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 35px;
     cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+    z-index: 2;
 }
 
-    .active, .dot:hover {
-        background-color: #717171;
-    }
-
-/* Fading animation */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+.left {
+    left: 10px;
 }
 
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
+.right {
+    right: 10px;
 }
 
-@keyframes fade {
-    from {
-        opacity: .4
+
+@media screen and (max-width: 600px) {
+    .slider .caption p {
+        display: none;
     }
 
-    to {
-        opacity: 1
+    .slider .caption h1 {
+        font-size: 35px;
+    }
+
+    .left, .right {
+        font-size: 30px;
+    }
+
+    .slider li img {
+        width: 600px;
+    }
+
+    .pagination {
+        display: none;
     }
 }

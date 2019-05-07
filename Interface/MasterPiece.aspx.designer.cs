@@ -29,6 +29,7 @@ public partial class  Master{
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox TextBox4;
     
+<<<<<<< HEAD
     /// <summary>
     /// Control TextBox5.
     /// </summary>
@@ -37,4 +38,8 @@ public partial class  Master{
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox TextBox5;
+=======
+    public partial class MasterPiece {
+    }
+>>>>>>> foo/develop
 }

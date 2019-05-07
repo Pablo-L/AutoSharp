@@ -22,6 +22,9 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<<<<<<< HEAD
+    
+=======
 
 </asp:Content>
 
@@ -54,41 +57,46 @@
             </div>
         </div>
     </div>
+>>>>>>> X8317572J
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ImagenesScroll" runat="server">
+
+    <div class="slideshow">
+        <ul class="slider">
+            <li>
+                <img src="Imagenes/Slider/1.jpg" alt="">
+                <section class="caption">
+                    <h1>Lorem ipsum 1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam unde.</p>
+                </section>
+            </li>
+            <li>
+                <img src="Imagenes/Slider/2.jpg" alt="">
+                <section class="caption">
+                    <h1>Lorem ipsum 2</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam unde.</p>
+                </section>
+            </li>
+            <li>
+                <img src="Imagenes/Slider/3.jpg" alt="">
+                <section class="caption">
+                    <h1>Lorem ipsum 3</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis ipsa, id quidem quisquam unde.</p>
+                </section>
+            </li>
+        </ul>
+        <ol class="pagination">
+        </ol>
+        <div class="left">
+            <span class="fa fa-chevron-left"></span>
+        </div>
+        <div class="right">
+            <span class="fa fa-chevron-right"></span>
+        </div>
+    </div>
+    <script src="jQuery/jquery-3.1.0.min.js"></script>
+    <script src="jQuery/main.js"></script>
     <link href="CSS/SlideShow.css" rel="stylesheet" />
-    <div class="slideshow-container">
 
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="img1.jpg" style="width: 100%">
-            <div class="text">Caption Text</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="img2.jpg" style="width: 100%">
-            <div class="text">Caption Two</div>
-        </div>
-
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="img3.jpg" style="width: 100%">
-            <div class="text">Caption Three</div>
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-
-<!-- The dots/circles -->
-    <div style="text-align: center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
 </asp:Content>

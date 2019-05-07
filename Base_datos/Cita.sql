@@ -1,0 +1,7 @@
+﻿CREATE TABLE cita
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [cif ] VARCHAR(9) NOT NULL PRIMARY KEY, 
+    [motivo] VARCHAR(35) NULL, 
+    [nif ] VARCHAR(9) NOT NULL FOREIGN KEY (Particular),
+)
