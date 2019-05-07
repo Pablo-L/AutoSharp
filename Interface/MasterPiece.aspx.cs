@@ -16,7 +16,7 @@ namespace Interface
 
         protected void Log_Click(object sender, EventArgs e)
         {
-            TextBox0.Text = "GHola";
+            //TextBox0.Text = "GHola";
         }
         
     }
