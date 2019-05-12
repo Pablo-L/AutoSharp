@@ -108,8 +108,8 @@ namespace library
                 if (bdVirtual.Tables[0].Rows.Count > 0)
                 {
                     //manera propia:
-                    string consulta = "update Cita set id ='" + en.id + "', cif = '" + en.cif + "', fecha = " + en.fecha + " where id = '" + en.id + "and cif ='"+ en.cif +"'";//damos por hecho que id y cif no se cambia
-
+                    //damos por hecho que id y cif no se cambia
+                    string consulta = "update Cita set id ='" + en.id + "', cif = '" + en.cif + "', fecha = " + en.fecha +", en.motivo = '"+en.motivo+ "' where id = '" + en.id + "and cif ='"+ en.cif +"'";
                     SqlCommand cmd = new SqlCommand(consulta, c);
                     cmd.ExecuteNonQuery();
                     check = true;
