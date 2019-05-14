@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Library
 {
+    /// <summary>
+    /// ENComentario
+    /// </summary>
     class ENComentario
     {   
         /// <summary>
@@ -89,7 +88,7 @@ namespace Library
         }
 
         /// <summary>
-        /// constructor de la entidad
+        /// constructor por defecto
         /// </summary>
         ENComentario()
         {
@@ -100,8 +99,12 @@ namespace Library
         }
 
         /// <summary>
-        /// constructor de copia de la entidad
+        /// Constructor por valor
         /// </summary>
+        /// <param name="i"> Parámetro string i</param>
+        /// <param name="dh"> Parámetro Datetime dh</param>
+        /// <param name="des">Parámetro string des</param>
+        /// <param name="val"> Parámetro entero val</param>
         ENComentario(string i,DateTime dh, string des, int val)
         {
             id = i;
@@ -113,7 +116,7 @@ namespace Library
         /// <summary>
         /// Crea un comentario
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool createComentario()
         {
             CADComentario cad = new CADComentario();
@@ -123,7 +126,7 @@ namespace Library
         /// <summary>
         /// Lee un usuario 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool readComentario()
         {
             CADComentario cad = new CADComentario();
@@ -133,7 +136,7 @@ namespace Library
         /// <summary>
         /// Modifica un comentario
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool updateComentario()
         {
             CADComentario cad = new CADComentario();
@@ -143,7 +146,7 @@ namespace Library
         /// <summary>
         /// Borra un comentario
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool deleteComentario()
         {
             CADComentario cad = new CADComentario();
