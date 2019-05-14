@@ -1,7 +1,10 @@
 ﻿using System;
 
-namespace library
+namespace Library
 {
+    /// <summary>
+    /// ENCita
+    /// </summary>
     public class ENCita
     {
         /// <summary>
@@ -23,13 +26,14 @@ namespace library
 
         //private int DNIParticular;
 
-        public ENCita() { }
-
-        public ENCita(ENCita enCita)
+        public ENCita()
         {
-            id = enCita.id;
-            fecha = enCita.fecha;
-            motivo = enCita.motivo;
+
+        }
+
+        public ENCita(int id_, DateTime fecha_, string motivo_)
+        {
+
         }
 
         public void createENCita()
