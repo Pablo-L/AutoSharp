@@ -7,9 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Interface {
-    
-    
-    public partial class MasterPiece {
-    }
+
+
+public partial class  {
 }

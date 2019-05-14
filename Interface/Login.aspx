@@ -1,20 +1,90 @@
-ï»¿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Interface.Login" %>
+<%
+    @ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MasterPiece.aspx.cs" 
+%>
+
+<script runat="server">
+
+    protected void selectButton_Click(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="login_page" runat="server">
-    <link rel="stylesheet" type="text/css" href="CSS/Login_Page.css" />
-    <div id="login_box">
-        <div class="left_side">
-            <h1>Iniciar SesiÃ³n</h1>
-            <input type="text" name="nombre de usuario" placeholder="nombre de usuario" id="input_username" />
-            <input type="password" name="contraseÃ±a" placeholder="contraseÃ±a" id="input_password" />
-            <asp:Button ID="log_in" Text="Iniciar Sesion" OnClick="log_in_button" runat="server" />
+
+<asp:Content ID="Content2" ContentPlaceHolderID="NavigationBar" runat="server">
+    <link href="CSS/NavBar.css" rel="stylesheet"/>
+    <link href="CSS/Buttons.css" rel="stylesheet"/>
+    <div class="NavBar">
+        <a class="logo"><img src="Imagenes/Logo/logo.jpg " style="height: 40px; width: 40px" /></a>
+        <div class="Drop">
+            <button class="dropbtn">Buscar</button>
+            <div class="drop-content">
+                <a href="#">Coches</a>
+                <a href="#">Motos</a>
+                <a href="#">Profesionales</a>
+            </div>
         </div>
-        <div class="right_side">
-            <h1>Registrate</h1>  
-            <asp:Button ID="sign_particular" Text="Como Particular" OnClick="log_in_button_part" runat="server" />
-            <asp:Button ID="sign_empresario" Text="Como Empresario" OnClick="log_in_button_empre" runat="server" />
+        <a href="#">Vender</a>
+        <a href="#">Contacto</a>
+        <div class="Drop" style="float:right ;">
+            <button class="dropbtn">Mi AutoScout</button>
+            <div class="drop-content">
+                <a href="#">Mis vehículos guardados (0)</a>
+                <a href="#">Mis búsquedas guardadas</a>
+                <a href="#">Mis Anuncios</a>
+                <div align="center"><asp:Button ID="Log" runat="server"  Text="Iniciar Sesión"/></div>
+                <p style="font-size:10px;"><br />¿Nuevo en AutoSharp? Registrate Aquí </p>
+            </div>
         </div>
-        <div class="or">OR</div>
+    </div>
+</asp:Content>
+
+
+<asp:Content ID="Content6" runat="server" ContentPlaceHolderID="dummy2">
+    
+<!--Login-->
+
+    <div >
+        
+        <div style="align-content:center; vertical-align: middle; text-align: center; word-spacing: normal; letter-spacing: normal; position: relative;">
+            <asp:Table runat="server" HorizontalAlign="Center">
+                
+                <asp:TableHeaderRow>
+                    <asp:TableHeaderCell><p></p></asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Log In</asp:TableHeaderCell>
+                </asp:TableHeaderRow>
+
+                <asp:TableRow>
+                    <asp:TableCell HorizontalAlign="right">
+                        Usuario:
+                    </asp:TableCell>
+                    <asp:TableCell>
+                         <asp:TextBox ID="TextBox4" runat="server" Text=""></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell HorizontalAlign="right">
+                        Contraseña:
+                    </asp:TableCell>
+                    <asp:TableCell>
+                         <asp:TextBox ID="TextBox5" runat="server" Text=""></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <p></p>
+                    </asp:TableCell>
+                    
+                    <asp:TableCell>
+                         <asp:Button runat="server" Text="Entrar"/>
+                    </asp:TableCell>
+                </asp:TableRow>
+
+            </asp:Table>
+        </div>
     </div>
 </asp:Content>
