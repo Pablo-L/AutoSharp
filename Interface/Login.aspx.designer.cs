@@ -10,42 +10,33 @@
 namespace Interface {
     
     
-    public partial class Site1 {
+    public partial class Login {
         
         /// <summary>
-        /// Control head.
+        /// Control log_in.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Button log_in;
         
         /// <summary>
-        /// Control form1.
+        /// Control sign_particular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button sign_particular;
         
         /// <summary>
-        /// Control ImagenesScroll.
+        /// Control sign_empresario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ImagenesScroll;
-        
-        /// <summary>
-        /// Control login_page.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder login_page;
+        protected global::System.Web.UI.WebControls.Button sign_empresario;
     }
 }

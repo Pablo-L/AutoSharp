@@ -1,0 +1,5 @@
+Etiqueta interfaz: ok.
+Creación de milestone: ok.
+Creación de tareas: hacen falta más tareas, repartirlas a los distintos miembros del grupo, marcarlas como terminadas y cerrarlas.
+Página maestra con menú y manejadores: el menú no es un control de ASP.NET, tal y como se exige en esta asignatura.
+Otras páginas: hay controles (de navegación como la barra de búsqueda) que deberían ser de ASP.NET y no HTML. Hay muy pocas páginas y con un diseño totalmente básico. Si compilara se podría ver mejor la web.
