@@ -1,9 +1,0 @@
-Se han presentado 11 EN y 11 CAD, pero deberían estar en carpetas separadas (carpetas EN y CAD respectivamente). 
-La mayoría de las EN incluyen atributos privados y las propiedades necesarios para hacerlas públicas, aunque hay que corregir algunas que no presentan propiedades públicas para acceder a estos atributos privados. 
-El esquema debería estar hecho con algún programa de ordenador y todo en la misma imagen, pero a parte de eso está bien. 
-La EN Lista Favoritos se podría guardar en otra entidad como un ArrayList por ejemplo, no es una entidad por si misma. 
-La EN Empresa no tiene los métodos CRUD.
-
-El coordinador ha creado tareas correctamente, las ha asignado a distintos miembros del grupo y están correctamente asociadas a la entrega.
-Sin embargo, al terminar una tarea hay que darle a "Close issue" en detalles de la tarea, así podremos ver el progreso de la entrega y cuando esté al 100%. 
-También es importante añadir labels a los issues para saber si la tarea es una funcionalidad nueva, corrección de errores, etc.
