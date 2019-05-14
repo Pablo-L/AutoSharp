@@ -4,10 +4,19 @@ namespace library
 {
     public class ENCita
     {
+        /// <summary>
+        /// Atributo privado id
+        /// </summary>
         private int id;
 
+        /// <summary>
+        /// Atributo privado fecha
+        /// </summary>
         private DateTime fecha;
 
+        /// <summary>
+        /// Atributo privado motivo
+        /// </summary>
         private string motivo;
 
         //private int CIFEmpresa;

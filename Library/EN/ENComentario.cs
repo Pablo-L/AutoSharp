@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 namespace Library
 {
     class ENComentario
-    {
+    {   
+        /// <summary>
+        /// Atributo privado _id
+        /// </summary>
         private string _id;
+
+        /// <summary>
+        /// Propiedad pública id.
+        /// </summary>
         public string id
         {
             get
@@ -21,8 +28,14 @@ namespace Library
             }
         }
         
+        /// <summary>
+        /// Atributo privado _fecha_hora
+        /// </summary>
         private DateTime _fecha_hora;
 
+        /// <summary>
+        /// Propiedad pública fecha_hora
+        /// </summary>
         public DateTime fecha_hora
         {
             get
@@ -34,7 +47,15 @@ namespace Library
                 _fecha_hora = value;
             }
         }
+
+        /// <summary>
+        /// Atributo privado _descripcion
+        /// </summary>
         private string _descripcion;
+
+        /// <summary>
+        /// Propiedad pública descripcion
+        /// </summary>
         public string descripcion
         {
             get
@@ -46,7 +67,15 @@ namespace Library
                 _descripcion = value;
             }
         }
+
+        /// <summary>
+        /// Atributo privado _valoracion
+        /// </summary>
         private int _valoracion;
+
+        /// <summary>
+        /// Propiedad pública valoracion
+        /// </summary>
         public int valoracion
         {
             get
@@ -58,6 +87,7 @@ namespace Library
                 _valoracion = value;
             }
         }
+
         /// <summary>
         /// constructor de la entidad
         /// </summary>
@@ -68,6 +98,7 @@ namespace Library
             descripcion = null;
             valoracion = 0;
         }
+
         /// <summary>
         /// constructor de copia de la entidad
         /// </summary>
@@ -78,6 +109,7 @@ namespace Library
             descripcion = des;
             valoracion = val;
         }
+
         /// <summary>
         /// Crea un comentario
         /// </summary>
@@ -87,6 +119,7 @@ namespace Library
             CADComentario cad = new CADComentario();
             return cad.createComentario(this);
         }
+
         /// <summary>
         /// Lee un usuario 
         /// </summary>
@@ -96,6 +129,7 @@ namespace Library
             CADComentario cad = new CADComentario();
             return cad.readComentario(this);
         }
+
         /// <summary>
         /// Modifica un comentario
         /// </summary>
@@ -105,6 +139,7 @@ namespace Library
             CADComentario cad = new CADComentario();
             return cad.updateComentario(this);
         }
+
         /// <summary>
         /// Borra un comentario
         /// </summary>
