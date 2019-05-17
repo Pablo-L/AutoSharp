@@ -9,8 +9,11 @@ using System.Text;
 /// ENCompra representa la compra de un vehículo. Esta clase, contendrá el cif de la empresa vendedora,
 /// el dni del comprador particular, la matricula del vehículo vendo y la fecha de la transacción.
 /// </summary>
-namespace library
+namespace Library
 {
+    /// <summary>
+    /// Clase ENCompra
+    /// </summary>
     public class ENCompra
     {
         /// <summary>
@@ -83,9 +86,10 @@ namespace library
         /// <summary>
         /// Constructor por valor
         /// </summary>
-        /// <param name="comprador"></param>
-        /// <param name="vendedor"></param>
-        /// <param name=""></param>
+        /// <param name="comprador">Parámetro string comprador</param>
+        /// <param name="vendedor">Parámetro string vendedor</param>
+        /// <param name="vehiculo">Parámetro string vehiculo</param>
+        /// <param name="fecha">Parámetro DateTime fecha</param>
         public ENCompra(string comprador, string vendedor, string vehiculo, DateTime fecha)
         {
             this.comrpador = comprador;
@@ -97,7 +101,7 @@ namespace library
         /// <summary>
         /// Crea la compra indicada en la base de datos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool createCompra()
         {
             CADCompra cadc = new CADCompra();
@@ -107,7 +111,7 @@ namespace library
         /// <summary>
         /// Lee la compra indicada dela base de datos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool readCompra()
         {
             CADCompra cadc = new CADCompra();
@@ -117,7 +121,7 @@ namespace library
         /// <summary>
         /// Borra la compra indicada de la base de datos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool deleteCompra()
         {
             CADCompra cadc = new CADCompra();
@@ -127,12 +131,11 @@ namespace library
         /// <summary>
         /// Actualiza la compra indicada de la base de datos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool updateCompra()
         {
             CADCompra cadc = new CADCompra();
             return cadc.updateCompra(this);
         }
-
     }
 }
