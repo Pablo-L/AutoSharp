@@ -4,21 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSharp
+namespace Library
 {
+    /// <summary>
+    /// Clase ENEmpresa
+    /// </summary>
     public class ENEmpresa
     {
-        //CreateReadUpdateDelete
-
+        /// <summary>
+        /// Atributo privado cif
+        /// </summary>
         private string cif;
-        private string nombre;
-        private string telefono;
-        private string mail;
-        private string direccion;
-        private string tamaño;
-        private string contraseña;
 
-        //read / update
+        /// <summary>
+        /// Atributo privado nombre
+        /// </summary>
+        private string nombre;
+
+        /// <summary>
+        /// Atributo privado telefono
+        /// </summary>
+        private string telefono;
+
+        /// <summary>
+        /// Atributo privado mail
+        /// </summary>
+        private string mail;
+
+        /// <summary>
+        /// Atributo privado direccion
+        /// </summary>
+        private string direccion;
+
+        /// <summary>
+        /// Atributo privado tamaño
+        /// </summary>
+        private string tamanyo;
+
+        /// <summary>
+        /// Atributo privado contraseña
+        /// </summary>
+        private string contrasenya;
+
+        
         public string Cif { get => cif; set => cif = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Telefono { get => telefono; set => telefono = value; }
@@ -27,50 +55,51 @@ namespace AutoSharp
         public string Tamaño { get => tamaño; set => tamaño = value; }
         public string Contraseña { get => contraseña; set => contraseña = value; }
 
-        //create
-        ENEmpresa(string cif, string nombre, string telefono, string mail, string direccion, string tamaño, string contraseña)
+        public ENEmpresa()
         {
-            Cif = cif;
-            Nombre = nombre;
-            Telefono = telefono;
-            Mail = mail;
-            Direccion = Direccion;
-            Tamaño = tamaño;
-            Contraseña = contraseña;
-
-            CADEmpresa c = new CADEmpresa();
-            c.insert(this);
+            this.Cif = null;
+            this.Nombre = null;
+            this.Telefono = null;
+            this.Mail = null;
+            this.Direccion = null;
+            this.Tamaño = null;
+            this.Contraseña = null;
+        }
+        
+        public ENEmpresa(string cif, string nombre, string telefono, string mail, string direccion, string tamaño, string contraseña)
+        {
+            this.Cif = cif;
+            this.Nombre = nombre;
+            this.Telefono = telefono;
+            this.Mail = mail;
+            this.Direccion = Direccion;
+            this.Tamaño = tamaño;
+            this.Contraseña = contraseña;
         }
 
-        ENEmpresa(ENEmpresa e)
+        public bool createEmpresa()
         {
-            CADEmpresa c = new CADEmpresa();
-            c.insert();
+            CADEmpresa cadc = new CADEmpresa();
+            //return cadc.createEmpresa(this);
         }
 
-        public void import()
+        public bool readEmpresa()
         {
-            CADEmpresa c = new CADEmpresa();
-            c.import(this);
-        } 
-
-        public void importNext()
-        {
-            CADEmpresa c = new CADEmpresa();
-            c.importNext(this);
+            CADEmpresa cadc = new CADEmpresa();
+            //return cadc.readEmpresa(this);
         }
 
-        public void importPrev()
+        public bool updateEmpresa()
         {
-            CADEmpresa c = new CADEmpresa();
-            c.importPrev(this);
+            CADEmpresa cadc = new CADEmpresa();
+            //return cadc.updateEmpresa(this);
         }
 
-        //delete
-        ~ENConsulta()
+        public bool deleteEmpresa()
         {
-            CADEmpresa c = new CADEmpresa();
-            c.delete(this);
+            CADEmpresa cadc = new CADEmpresa();
+            //return cadc.deleteEmpresa(this);
         }
+
     }
 }
