@@ -37,7 +37,7 @@ namespace Library
         private DateTime fecha;
 
         /// <summary>
-        /// Propiedad pública comprador
+        /// Propiedad pública compradorCompra
         /// </summary>
         public string compradorCompra
         {
@@ -46,7 +46,7 @@ namespace Library
         }
 
         /// <summary>
-        /// Propiedad pública vendedor
+        /// Propiedad pública vendedorCompra
         /// </summary>
         public string vendedorCompra
         {
@@ -55,7 +55,7 @@ namespace Library
         }
 
         /// <summary>
-        /// Propiedad pública vehiculo
+        /// Propiedad pública vehiculoCompra
         /// </summary>
         public string vehiculoCompra
         {
@@ -64,7 +64,7 @@ namespace Library
         }
 
         /// <summary>
-        /// Propiedad pública fecha
+        /// Propiedad pública fechaCompra
         /// </summary>
         public DateTime fechaCompra
         {
@@ -77,10 +77,10 @@ namespace Library
         /// </summary>
         public ENCompra()
         {
-            comprador = null;
-            vendedor = null;
-            vehiculo = null;
-            fecha = DateTime.Now;
+            this.compradorCompra = null;
+            this.vendedorCompra = null;
+            this.vehiculoCompra = null;
+            this.fechaCompra = DateTime.Now;
         }
 
         /// <summary>
@@ -92,10 +92,10 @@ namespace Library
         /// <param name="fecha">Parámetro DateTime fecha</param>
         public ENCompra(string comprador, string vendedor, string vehiculo, DateTime fecha)
         {
-            this.comrpador = comprador;
-            this.vendedor = vendedor;
-            this.vehiculo = vehiculo;
-            this.fecha = fecha;
+            this.compradorCompra = comprador;
+            this.vendedorCompra = vendedor;
+            this.vehiculoCompra = vehiculo;
+            this.fechaCompra = fecha;
         }
 
         /// <summary>
