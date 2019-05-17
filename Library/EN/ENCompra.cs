@@ -17,18 +17,22 @@ namespace library
         /// Atributo privado comprado (nif)
         /// </summary>
         private string comprador;
+
         /// <summary>
         /// Atributo privado vendedor (cif)
         /// </summary>
         private string vendedor;
+
         /// <summary>
         /// Atributo privado vehículo (matricula)
         /// </summary>
         private string vehiculo;
+
         /// <summary>
         /// Atributo privado fecha
         /// </summary>
         private DateTime fecha;
+
         /// <summary>
         /// Propiedad pública comprador
         /// </summary>
@@ -37,6 +41,7 @@ namespace library
             get { return comprador; }
             set { comprador = value; }
         }
+
         /// <summary>
         /// Propiedad pública vendedor
         /// </summary>
@@ -45,6 +50,7 @@ namespace library
             get { return vendedor; }
             set { vendedor = value; }
         }
+
         /// <summary>
         /// Propiedad pública vehiculo
         /// </summary>
@@ -53,6 +59,7 @@ namespace library
             get { return vehiculo; }
             set { vehiculo = value; }
         }
+
         /// <summary>
         /// Propiedad pública fecha
         /// </summary>
@@ -61,6 +68,7 @@ namespace library
             get { return fecha; }
             set { fecha = value; }
         }
+
         /// <summary>
         /// Constructor por defecto
         /// </summary>
@@ -71,6 +79,7 @@ namespace library
             vehiculo = null;
             fecha = DateTime.Now;
         }
+
         /// <summary>
         /// Constructor por valor
         /// </summary>
@@ -84,6 +93,7 @@ namespace library
             this.vehiculo = vehiculo;
             this.fecha = fecha;
         }
+
         /// <summary>
         /// Crea la compra indicada en la base de datos
         /// </summary>
@@ -93,6 +103,7 @@ namespace library
             CADCompra cadc = new CADCompra();
             return cadc.createCompra(this);
         }
+
         /// <summary>
         /// Lee la compra indicada dela base de datos
         /// </summary>
@@ -102,6 +113,7 @@ namespace library
             CADCompra cadc = new CADCompra();
             return cadc.readCompra(this);
         }
+
         /// <summary>
         /// Borra la compra indicada de la base de datos
         /// </summary>
@@ -111,6 +123,7 @@ namespace library
             CADCompra cadc = new CADCompra();
             return cadc.deleteCompra(this);
         }
+
         /// <summary>
         /// Actualiza la compra indicada de la base de datos
         /// </summary>

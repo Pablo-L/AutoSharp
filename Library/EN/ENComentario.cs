@@ -1,14 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Library
 {
+    /// <summary>
+    /// ENComentario
+    /// </summary>
     class ENComentario
-    {
+    {   
+        /// <summary>
+        /// Atributo privado _id
+        /// </summary>
         private string _id;
+
+        /// <summary>
+        /// Propiedad pública id.
+        /// </summary>
         public string id
         {
             get
@@ -21,8 +27,14 @@ namespace Library
             }
         }
         
+        /// <summary>
+        /// Atributo privado _fecha_hora
+        /// </summary>
         private DateTime _fecha_hora;
 
+        /// <summary>
+        /// Propiedad pública fecha_hora
+        /// </summary>
         public DateTime fecha_hora
         {
             get
@@ -34,7 +46,15 @@ namespace Library
                 _fecha_hora = value;
             }
         }
+
+        /// <summary>
+        /// Atributo privado _descripcion
+        /// </summary>
         private string _descripcion;
+
+        /// <summary>
+        /// Propiedad pública descripcion
+        /// </summary>
         public string descripcion
         {
             get
@@ -46,7 +66,15 @@ namespace Library
                 _descripcion = value;
             }
         }
+
+        /// <summary>
+        /// Atributo privado _valoracion
+        /// </summary>
         private int _valoracion;
+
+        /// <summary>
+        /// Propiedad pública valoracion
+        /// </summary>
         public int valoracion
         {
             get
@@ -58,8 +86,9 @@ namespace Library
                 _valoracion = value;
             }
         }
+
         /// <summary>
-        /// constructor de la entidad
+        /// constructor por defecto
         /// </summary>
         ENComentario()
         {
@@ -68,9 +97,14 @@ namespace Library
             descripcion = null;
             valoracion = 0;
         }
+
         /// <summary>
-        /// constructor de copia de la entidad
+        /// Constructor por valor
         /// </summary>
+        /// <param name="i"> Parámetro string i</param>
+        /// <param name="dh"> Parámetro Datetime dh</param>
+        /// <param name="des">Parámetro string des</param>
+        /// <param name="val"> Parámetro entero val</param>
         ENComentario(string i,DateTime dh, string des, int val)
         {
             id = i;
@@ -78,37 +112,41 @@ namespace Library
             descripcion = des;
             valoracion = val;
         }
+
         /// <summary>
         /// Crea un comentario
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool createComentario()
         {
             CADComentario cad = new CADComentario();
             return cad.createComentario(this);
         }
+
         /// <summary>
         /// Lee un usuario 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool readComentario()
         {
             CADComentario cad = new CADComentario();
             return cad.readComentario(this);
         }
+
         /// <summary>
         /// Modifica un comentario
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool updateComentario()
         {
             CADComentario cad = new CADComentario();
             return cad.updateComentario(this);
         }
+
         /// <summary>
         /// Borra un comentario
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool deleteComentario()
         {
             CADComentario cad = new CADComentario();
