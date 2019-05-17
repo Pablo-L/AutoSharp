@@ -1,45 +1,110 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AutoSharp
+using System;
+
+namespace library
 {
+
+    /// <summary>
+    /// ENConsulta
+    /// </summary>
     public class ENConsulta
     {
+        /// <summary>
+        /// atributo privado fecha
+        /// </summary>
+        private DateTime fecha;
 
-        private DateTime fecha_hora;
+        /// <summary>
+        /// atrivbuto privado id
+        /// </summary>
+        private int id;
 
-        public DateTime Fecha_hora { get => fecha_hora; set => fecha_hora = value; }
+        /// <summary>
+        /// atributo privado pregunta
+        /// </summary>
+        private string pregunta;
 
-        ENConsulta(DateTime fecha)
+        /// <summary>
+        /// atributo privado respuesta
+        /// </summary>
+        private string respuesta;
+
+
+        /// <summary>
+        /// propiedad publica cif
+        /// </summary>
+        private int CIFEmpresa { get => cif; set => cif = value; }
+
+        /// <summary>
+        /// propiedad publica dni
+        /// </summary>
+        private int DNIParticular { get => dni; set => dni = value; }
+
+
+        /// <summary>
+        /// constructor por defecto
+        /// </summary>
+        public Consulta()
         {
-            //validate date here
-            CADConsulta c = new CADConsulta();
-            c.insert(this);
+            fecha = DateTime.Now;
+            id = 0;
+            pregunta = null;
+            respuesta = null;
         }
 
-        public void import(DateTime fecha)
+        /// <summary>
+        /// constructor por valores
+        /// </summary>
+        /// <param name="fecha_"> parametro datetime fecha </param>
+        /// <param name="id_"> parametro int id </param>
+        /// <param name="pregunta_"> parametro string pregunta </param>
+        /// <param name="respuesta"> parametro string respuesta </param>
+        public Consulta(DateTime fecha_, int id_, string pregunta_, string respuesta)
         {
-            CADConsulta c = new CADConsulta();
-            c.import(this);
+            fecha = fecha_;
+            id = id_;
+            pregunta = pregunta_;
+            respuesta = respuesta_;
         }
 
-        public void importNext(DateTime fecha)
+        /// <summary>
+        /// crear una consulta en la bbdd
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool createConsulta()
         {
-            CADConsulta c = new CADConsulta();
-            c.importNext();
+            CADConsulta en = new CADConsulta();
+            return en.createConsulta(this);
         }
 
-        public void importPrev(DateTime fecha)
+        /// <summary>
+        /// lee una consulta en la bbdd
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool readConsulta()
         {
-
+            CADConsulta en = new CADConsulta();
+            return en.readConsulta(this);
         }
 
-        ~ENConsulta()
+        /// <summary>
+        /// actualiza una consulta en la bbdd
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool updateConsulta()
         {
+            CADConsulta en = new CADConsulta();
+            return en.updateConsulta(this);
+        }
 
+        /// <summary>
+        /// borra una consulta de la bbdd
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool deleteConsulta()
+        {
+            CADConsulta en = new CADConsulta();
+            return en.deleteConsulta(this);
         }
     }
 }
