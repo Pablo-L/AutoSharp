@@ -10,7 +10,7 @@ using System.Data.SqlTypes;
 /// <summary>
 /// Summary description for Class1
 /// </summary>
-namespace library
+namespace Library
 {
 	public class CADVehiculo
 	{

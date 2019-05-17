@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace library
+namespace Library
 {
     public class CADOferta
     {

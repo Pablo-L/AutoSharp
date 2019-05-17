@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ENConsulta;
 
-namespace AutoSharp
+namespace Library
 {
     //CRUD
     public class CADEmpresa

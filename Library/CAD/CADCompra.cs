@@ -10,7 +10,7 @@ using System.Data.SqlTypes;
 /// <summary>
 /// CADCompra
 /// </summary>
-namespace library
+namespace Library
 {
     public class CADCompra
     {
