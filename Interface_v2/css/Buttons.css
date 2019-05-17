@@ -1,0 +1,12 @@
+﻿.Contacto_Boton {
+    background-color: #333;
+    font-family: Arial;
+}
+
+.Contacto_Boton a {
+    font-size:22px;
+    color:white;
+    text-align:center;
+    padding: 14px 16px;
+    width: 144px;
+}
