@@ -24,7 +24,7 @@ namespace library
         /// <summary>
         /// Atributo privado vehículo (matricula)
         /// </summary>
-        private string vehiculo;
+        private string matricula;
         /// <summary>
         /// Atributo privado fecha
         /// </summary>
