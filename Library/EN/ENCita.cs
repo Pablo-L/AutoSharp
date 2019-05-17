@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace library
+namespace Library
 {
     /// <summary>
     /// ENCita
@@ -13,14 +13,29 @@ namespace library
         private int id;
 
         /// <summary>
+        /// propiedad publica id_
+        /// </summary>
+        public int id_ { get => id; set => id = value; }
+
+        /// <summary>
         /// Atributo privado fecha
         /// </summary>
         private DateTime fecha;
 
         /// <summary>
+        /// propiedad publica fecha_
+        /// </summary>
+        public DateTime fecha_ { get => fecha; set => fecha = value; }
+
+        /// <summary>
         /// Atributo privado motivo
         /// </summary>
         private string motivo;
+
+        /// <summary>
+        /// propiedad publica motivo_
+        /// </summary>
+        public string motivo { get => motivo; set => motivo = value; }
 
         /// <summary>
         /// propiedad publica cif
@@ -37,9 +52,9 @@ namespace library
         /// </summary>
         public Cita()
         {
-            id = 0;
-            fecha = DateTime.Now;
-            motivo = null;
+            this.id_ = 0;
+            this.fecha_ = DateTime.Now;
+            this.motivo_ = null;
         }
 
         /// <summary>
@@ -50,9 +65,9 @@ namespace library
         /// <param name="motivo_"> Parámetro string motivo </param>
         public Cita(int id_, DateTime fecha_, string motivo_)
         {
-            id = id_;
-            fecha = fecha_;
-            motivo = motivo_;
+            this.id_ = id_;
+            this.fecha_ = fecha_;
+            this.motivo_ = motivo_;
 
         }
 

@@ -1,7 +1,7 @@
 
 using System;
 
-namespace library
+namespace Library
 {
 
     /// <summary>
@@ -15,9 +15,19 @@ namespace library
         private DateTime fecha;
 
         /// <summary>
+        /// propiedad publica fecha_
+        /// </summary>
+        public DateTime fecha_ { get => fecha; set => fecha = value; }
+
+        /// <summary>
         /// atrivbuto privado id
         /// </summary>
         private int id;
+
+        /// <summary>
+        /// propiedad publica id_
+        /// </summary>
+        public int id_ { get => id; set => id = value; }
 
         /// <summary>
         /// atributo privado pregunta
@@ -25,10 +35,19 @@ namespace library
         private string pregunta;
 
         /// <summary>
+        /// propiedad publica pregunta_
+        /// </summary>
+        public string pregunta_ { get => pregunta; set => pregunta = value; }
+
+        /// <summary>
         /// atributo privado respuesta
         /// </summary>
         private string respuesta;
 
+        /// <summary>
+        /// propiedad publica respuesta_
+        /// </summary>
+        public string respuesta_ { get => respuesta; set => respuesta = value; }
 
         /// <summary>
         /// propiedad publica cif
@@ -46,10 +65,10 @@ namespace library
         /// </summary>
         public Consulta()
         {
-            fecha = DateTime.Now;
-            id = 0;
-            pregunta = null;
-            respuesta = null;
+            this.fecha_ = DateTime.Now;
+            this.id_ = 0;
+            this.pregunta_ = null;
+            this.respuesta_ = null;
         }
 
         /// <summary>
@@ -61,10 +80,10 @@ namespace library
         /// <param name="respuesta"> parametro string respuesta </param>
         public Consulta(DateTime fecha_, int id_, string pregunta_, string respuesta)
         {
-            fecha = fecha_;
-            id = id_;
-            pregunta = pregunta_;
-            respuesta = respuesta_;
+            this.fecha_ = fecha_;
+            this.id_ = id_;
+            this.pregunta_ = pregunta_;
+            this.respuesta_ = respuesta_;
         }
 
         /// <summary>
