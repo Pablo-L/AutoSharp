@@ -24,7 +24,7 @@ namespace Library
         /// <summary>
         /// Atributo privado telefono
         /// </summary>
-        private string telefono;
+        private int telefono;
 
         /// <summary>
         /// Atributo privado mail
@@ -49,7 +49,7 @@ namespace Library
         
         public string Cif { get => cif; set => cif = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Telefono { get => telefono; set => telefono = value; }
+        public int Telefono { get => telefono; set => telefono = value; }
         public string Mail { get => mail; set => mail = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Tamaño { get => tamaño; set => tamaño = value; }
@@ -66,7 +66,7 @@ namespace Library
             this.Contraseña = null;
         }
         
-        public ENEmpresa(string cif, string nombre, string telefono, string mail, string direccion, string tamaño, string contraseña)
+        public ENEmpresa(string cif, string nombre, int telefono, string mail, string direccion, string tamaño, string contraseña)
         {
             this.Cif = cif;
             this.Nombre = nombre;

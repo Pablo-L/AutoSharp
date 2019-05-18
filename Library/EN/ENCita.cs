@@ -8,9 +8,14 @@ namespace Library
     public class ENCita
     {
         /// <summary>
-        /// Atributo privado id
+        /// Atributo privado ID
         /// </summary>
         private int id;
+
+        /// <summary>
+        /// propiedad publica id_
+        /// </summary>
+        public int id_ { get => id; set => id = value; }
 
         /// <summary>
         /// Atributo privado fecha
@@ -18,46 +23,92 @@ namespace Library
         private DateTime fecha;
 
         /// <summary>
+        /// propiedad publica fecha_
+        /// </summary>
+        public DateTime fecha_ { get => fecha; set => fecha = value; }
+
+        /// <summary>
         /// Atributo privado motivo
         /// </summary>
         private string motivo;
 
-        //private int CIFEmpresa;
+        /// <summary>
+        /// propiedad publica motivo_
+        /// </summary>
+        public string motivo { get => motivo; set => motivo = value; }
 
-        //private int DNIParticular;
+        /// <summary>
+        /// propiedad publica cif
+        /// </summary>
+        private int CIFEmpresa { get => cif; set => cif = value; }
 
-        public ENCita()
+        /// <summary>
+        /// propiedad publica dni
+        /// </summary>
+        private int DNIParticular { get => dni; set => dni = value; }
+
+        /// <summary>
+        /// constructor por defecto
+        /// </summary>
+        public Cita()
         {
+            this.id_ = 0;
+            this.fecha_ = DateTime.Now;
+            this.motivo_ = null;
+        }
+
+        /// <summary>
+        /// Constructor por valor
+        /// </summary>
+        /// <param name="id_"> Parámetro entero id </param>
+        /// <param name="fecha_"> Parámetro datetime fecha </param>
+        /// <param name="motivo_"> Parámetro string motivo </param>
+        public Cita(int id_, DateTime fecha_, string motivo_)
+        {
+            this.id_ = id_;
+            this.fecha_ = fecha_;
+            this.motivo_ = motivo_;
 
         }
 
-        public ENCita(int id_, DateTime fecha_, string motivo_)
-        {
-
-        }
-
-        public void createENCita()
+        /// <summary>
+        /// crear una cita en la bbdd
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool createCita()
         {
             CADCita en = new CADCita();
-            en.createCADCita(this);
+            return en.createCita(this);
         }
 
-        public void readENCita()
+        /// <summary>
+        /// lee una cita en la bbdd
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool readCita()
         {
             CADCita en = new CADCita();
-            en.readCADCita(this);
+            return en.readCita(this);
         }
 
-        public void updateENCita()
+        /// <summary>
+        /// actualiza una cita en la bbdd
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool updateCita()
         {
             CADCita en = new CADCita();
-            en.updateCADCita(this);
+            return en.updateCita(this);
         }
 
-        public void deleteENCita()
+        /// <summary>
+        /// borra una cita en la bbdd
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool deleteCita()
         {
             CADCita en = new CADCita();
-            en.deleteCADCita(this);
+            return en.deleteCita(this);
         }
     }
 }
