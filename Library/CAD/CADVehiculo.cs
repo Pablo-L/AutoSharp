@@ -19,6 +19,7 @@ namespace Library
         /// </summary>
         /// <returns></returns>
         private string constring();
+
         /// <summary>
         /// Constructor por defecto
         /// </summary>

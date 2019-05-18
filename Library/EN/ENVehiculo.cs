@@ -8,7 +8,7 @@ using System.Text;
 /// <summary>
 /// Summary description for Class1
 /// </summary>
-namespace library
+namespace Library
 {
 	public class ENVehiculo
 	{
@@ -208,7 +208,7 @@ namespace library
         /// <summary>
         /// Actualiza el vehículo indicado de la base de datos
         /// </summary>
-        public void updateVehiculo()
+        public bool updateVehiculo()
         {
             CADVehiculo cadv = new CADVehiculo();
             return cadv.readVehiculo(this);
