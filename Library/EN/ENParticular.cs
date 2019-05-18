@@ -125,29 +125,41 @@ namespace Library
             this.passwordUser = password;
         }
 
+        /// <summary>
+        /// Crea a un nuevo particular en la base de datos
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool createParticular()
         {
             CADParticular en = new CADParticular();
-            en.createParticular(this);
+            return en.createParticular(this);
 
-        }
-
-        public bool updateParticular()
-        {
-            CADParticular en = new CADParticular();
-            en.updateParticular(this);
-        }
-
-        public bool deleteParticular()
-        {
-            CADParticular en = new CADParticular();
-            en.deleteParticular(this);
         }
 
         /// <summary>
-        /// 
+        /// Modifica un particular de la BBDD
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool updateParticular()
+        {
+            CADParticular en = new CADParticular();
+            return en.updateParticular(this);
+        }
+
+        /// <summary>
+        /// Borra a un particular de la BBDD
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
+        public bool deleteParticular()
+        {
+            CADParticular en = new CADParticular();
+            return en.deleteParticular(this);
+        }
+
+        /// <summary>
+        /// Lee a un particular de la base de datos
+        /// </summary>
+        /// <returns>Devuelve true si la operación se realiza correctamente</returns>
         public bool readParticular()
         {
             CADParticular en = new CADParticular();
