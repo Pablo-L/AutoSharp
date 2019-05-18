@@ -32,7 +32,7 @@ namespace Library
         /// </summary>
         /// <param name="en">parametro que recibe de EN</param>
         /// <returns>retorna un bool en función de si se crea o no </returns>
-        public bool createCADCita(ENCita en)
+        public bool createCita(ENCita en)
         {
             bool cambiado = false;
             DataSet bdVirutal = new DataSet();
@@ -67,7 +67,7 @@ namespace Library
         /// </summary>
         /// <param name="en">parametro que recibe de EN</param>
         /// <returns>devuelve un bool en funcion de si se borra con exito o no</returns>
-        public bool readCADCita(ENCita en) 
+        public bool readCita(ENCita en) 
         {
             bool read = false;
             DataSet bdVirtual = new DataSet();
@@ -95,7 +95,7 @@ namespace Library
         /// </summary>
         /// <param name="en">parametro que recibe de EN</param>
         /// <returns>devuelce un bool en funcion de si se actualiza con exito</returns>
-        public bool updateCADCita(ENCita en) 
+        public bool updateCita(ENCita en) 
         {
             bool check = false;
             DataSet bdVirtual = new DataSet();
@@ -128,7 +128,7 @@ namespace Library
         /// </summary>
         /// <param name="en">parametro que recibe de EN</param>
         /// <returns>devuelve un bool en funcion de si se borra con exito o no</returns>
-        public bool delete(ENCita en) 
+        public bool deleteCita(ENCita en) 
         {
             bool check = false;
             SqlConnection c = new SqlConnection(constring);

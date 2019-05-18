@@ -203,7 +203,7 @@ namespace Library
         public bool deteleVehiculo()
         {
             CADVehiculo cadv = new CADVehiculo();
-            return cadv.readVehiculo(this);
+            return cadv.deleteVehiculo(this);
         }
         /// <summary>
         /// Actualiza el vehículo indicado de la base de datos
@@ -211,7 +211,7 @@ namespace Library
         public bool updateVehiculo()
         {
             CADVehiculo cadv = new CADVehiculo();
-            return cadv.readVehiculo(this);
+            return cadv.updateVehiculo(this);
         }
 	}
 }

@@ -103,7 +103,7 @@ namespace Library
             this.nifReserva = null;
             this.cifReserva = cif;
             this.plateReserva = plate;
-            this.dateReserva = new DateTime();
+            this.dateReserva = DateTime.Now;
             this.hourReserva = 0;
             this.durationReserva = 0;
         }
@@ -160,10 +160,10 @@ namespace Library
         /// Lee cualquier reserva introducida en la base de datos
         /// </summary>
         /// <returns>Devuelve true si la operación se realiza correctamente</returns>
-        public bool readReservation()
+        public bool readReserva()
         {
             CADReserva en = new CADReserva();
-            return en.readReservation(this);
+            return en.readReserva(this);
         }
 
     }

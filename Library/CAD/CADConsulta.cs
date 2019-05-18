@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ENConsulta;
 
-namespace AutoSharp
+namespace Library
 { 
     //CRUD
     public class CADConsulta
@@ -22,6 +22,16 @@ namespace AutoSharp
         public CADConsulta()
         {
             //constring = ConfigurationManager.ConnectionStrings["DataBaseConnection"].ToString();    
+        }
+
+        /// <summary>
+        /// Crea una consulta en la BBDD.
+        /// </summary>
+        /// <param name="en"></param>
+        /// <returns></returns>
+        public bool createConsulta(ENConsulta en)
+        {
+            return false;
         }
 
         /// <summary>

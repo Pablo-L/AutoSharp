@@ -24,7 +24,7 @@ namespace Library
         /// </summary>
         /// <param name="en"></param>
         /// <returns></returns>
-        public bool createUsuario(ENComentario en)
+        public bool createComentario(ENComentario en)
         {
             bool cambiado = false;
             DataSet bdVirutal = new DataSet();
