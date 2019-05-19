@@ -10,12 +10,14 @@
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link rel="stylesheet" href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href='https://use.fontawesome.com/releases/v5.7.0/
+        /all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/Footer.css" rel="stylesheet" />
+    <link rel="Stylesheet" type="text/css" href="~/css/hoja.css" />
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -38,7 +40,7 @@
         }
 
         .auto-style5 {
-            color: black;
+            color: white;
  
         }
 
@@ -46,38 +48,38 @@
             font-size: 35px;
             font-family: Magneto;
             position: relative;
-            left: 210px;
+            left: 135px;
+        }
 
-        }
-        .auto-style6 {
-            height: 800px;
-            
-        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style3">
-                        <asp:Label ID="Label1" runat="server" CssClass="auto-style5" Font-Bold="True" Font-Names="Magneto" Font-Size="170px" Text="AutoSharp"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">
-                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="navigation" ForeColor="Black" OnMenuItemClick="Menu1_MenuItemClick">
-                            <Items>
-                                <asp:MenuItem Text="Inicio" Value="Inicio" NavigateUrl="~/view/Inicio.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Vehículos" Value="Vehiculos" NavigateUrl="~/view/Vehiculos.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Contáctanos" Value="Contactanos" NavigateUrl="~/view/Contacto.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Iniciar Sesión" Value="Iniciar Sesion" NavigateUrl="~/view/Sesion.aspx"></asp:MenuItem>
-                                <asp:MenuItem></asp:MenuItem>
-                            </Items>
-                        </asp:Menu>
-                    </td>
-                </tr>
-            </table>
+            <header>
+                <div id="logo">
+                    <img src="imagenes/logo/logo.png" style="height: 75px; width: 360px; margin-left: 0px" /></div>
+                <div id="login">
+                    <asp:Menu ID="HeaderMenu" Orientation="Horizontal" runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick">
+                        <Items>
+                            <asp:MenuItem ImageUrl="~/imagenes/logo/user.png" NavigateUrl="~/LogIn.aspx" ToolTip="Sesion" />
+                        </Items>
+                    </asp:Menu>
+                </div>
+            </header>
+            <nav>
+                <div id="menu">
+                    <asp:Menu CssClass="NavigationMenu" ID="NavigationMenu" Orientation="Horizontal" runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick">
+                        <StaticHoverStyle BackColor="#ccffef" />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Inicio.aspx" Text="Inicio" ToolTip="Inicio" />
+                            <asp:MenuItem NavigateUrl="~/Vehiculos.aspx" Text="Buscar" ToolTip="Buscar" />
+                            <asp:MenuItem NavigateUrl="~/Contacto.aspx" Text="Contáctanos" ToolTip="Contacto" />
+                            <asp:MenuItem NavigateUrl="~/Empresas.aspx" Text="Empresas" ToolTip="Empresas" />
+                        </Items>
+                    </asp:Menu>
+                </div>
+            </nav>
             <table class="auto-style2">
                 <tr>
                     <td class="auto-style6">
