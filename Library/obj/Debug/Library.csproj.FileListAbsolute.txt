@@ -1,0 +1,10 @@
+C:\Users\Al\Desktop\Interface\Library\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\Al\Desktop\Interface\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\Al\Desktop\Interface\Library\bin\Debug\Library.dll
+C:\Users\Al\Desktop\Interface\Library\bin\Debug\Library.pdb
+C:\Users\Al\Desktop\Interface\Library\bin\Debug\Interface_v2.dll
+C:\Users\Al\Desktop\Interface\Library\bin\Debug\Interface_v2.pdb
+C:\Users\Al\Desktop\Interface\Library\bin\Debug\Interface_v2.dll.config
+C:\Users\Al\Desktop\Interface\Library\obj\Debug\Library.csproj.CopyComplete
+C:\Users\Al\Desktop\Interface\Library\obj\Debug\Library.dll
+C:\Users\Al\Desktop\Interface\Library\obj\Debug\Library.pdb
