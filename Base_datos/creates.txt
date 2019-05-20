@@ -1,0 +1,129 @@
+CREATE TABLE Empresa
+(
+	[cif] VARCHAR(9) NOT NULL PRIMARY KEY, 
+    [nombre] VARCHAR(15) NULL, 
+    [email] VARCHAR(35) NULL, 
+    [telefono] INT NULL, 
+    [direccion] VARCHAR(15) NULL, 
+    [tamanyo] NCHAR(10) NULL, 
+    [contrasenya] VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Particular
+(
+	[nif] VARCHAR(9) NOT NULL PRIMARY KEY, 
+    [nombre] VARCHAR(15) NULL, 
+    [apellidos] VARCHAR(30) NULL, 
+    [email] VARCHAR(35) NULL, 
+    [telefono] INT NULL, 
+    [direccion] VARCHAR(20) NULL, 
+    [iban] VARCHAR(24) NULL, 
+    [contraseña] VARCHAR(10) NOT NULL
+);
+
+
+CREATE TABLE Categoria
+(
+	[id] INT NOT NULL PRIMARY KEY, 
+	[descripcion] VARCHAR(15) NULL, 
+	[simbolo] VARCHAR(20)
+);
+
+CREATE TABLE Vehiculo
+(
+	[matricula] VARCHAR(7) NOT NULL PRIMARY KEY, 
+    [modelo] VARCHAR(10) NULL, 
+    [marca] VARCHAR(10) NULL, 
+    [color] VARCHAR(15) NULL, 
+    [anyo] INT NULL, 
+    [combustible] NCHAR(10) NULL, 
+    [potencia] INT NULL, 
+    [km] INT NULL, 
+    [precio] INT NULL, 
+	[imagen] VARCHAR(20),
+    [cif] VARCHAR(9) NOT NULL ,
+    [nif] VARCHAR(9) NULL ,
+	[categoria] INT,
+	FOREIGN KEY (cif) REFERENCES Empresa (cif),
+	FOREIGN KEY (nif) REFERENCES Particular (nif),
+	FOREIGN KEY (categoria) REFERENCES Categoria (id)
+);
+
+CREATE TABLE Cita
+(
+	[id] INT NOT NULL,
+    [cif ] VARCHAR(9) NOT NULL, 
+	[fecha] varchar(22),
+    [motivo] VARCHAR(35) NULL, 
+    [nif ] VARCHAR(9) NOT NULL ,
+	PRIMARY KEY (id, cif),
+	FOREIGN KEY (cif) REFERENCES Empresa (cif),
+	FOREIGN KEY (nif) REFERENCES Particular (nif)
+);
+
+CREATE TABLE Comentario
+(
+	[id] INT NOT NULL,
+    [cif] VARCHAR(9) NOT NULL, 
+	[fecha] varchar(22),
+    [descripcion] VARCHAR(35) NULL, 
+    [valoracion] INT NULL, 
+    [nif] VARCHAR(9) NOT NULL, 
+	PRIMARY KEY (id, cif),
+	FOREIGN KEY (cif) REFERENCES Empresa (cif),
+	FOREIGN KEY (nif) REFERENCES Particular (nif)
+);
+
+CREATE TABLE ConsultaOline
+(
+	[id] INT NOT NULL,
+    [cif] VARCHAR(9) NOT NULL,
+	[fecha] varchar(22),
+    [pregunta] VARCHAR(35) NULL, 
+    [respuesta] VARCHAR(40) NULL, 
+    [nif] VARCHAR(9) NOT NULL ,
+	PRIMARY KEY (id, cif),
+	FOREIGN KEY (cif) REFERENCES Empresa (cif),
+	FOREIGN KEY (nif) REFERENCES Particular (nif)
+);
+
+
+
+CREATE TABLE Oferta
+(
+	[id] INT NOT NULL PRIMARY KEY, 
+    [fecha_inicio] VARCHAR(22) NULL, 
+    [fecha_fin] VARCHAR(22) NULL, 
+    [descuento] INT NULL,
+	[matricula] VARCHAR(7) NOT NULL,
+	FOREIGN KEY (matricula) REFERENCES Vehiculo (matricula)
+);
+
+CREATE TABLE Ofrece
+(
+	[oferta] INT NOT NULL,
+	[matricula] VARCHAR(7) NOT NULL,
+	PRIMARY KEY (oferta , matricula),
+	FOREIGN KEY (oferta) REFERENCES Oferta (id),
+	FOREIGN KEY (matricula) REFERENCES Vehiculo (matricula),
+);
+
+CREATE TABLE ListaFavoritos
+(
+	[matricula] VARCHAR(7) NOT NULL,
+	[nif] VARCHAR(9) NOT NULL ,
+	PRIMARY KEY (nif , matricula),
+	FOREIGN KEY (nif) REFERENCES Particular (nif),
+	FOREIGN KEY (matricula) REFERENCES Vehiculo (matricula),
+);
+
+CREATE TABLE Reserva
+(
+	[nif] VARCHAR(9) NOT NULL ,
+	[cif] VARCHAR(9) NOT NULL ,
+	[matricula] varchar(7),
+	PRIMARY KEY (nif , cif),
+	FOREIGN KEY (cif) REFERENCES Empresa (cif),
+	FOREIGN KEY (nif) REFERENCES Particular (nif),
+	FOREIGN KEY (matricula) REFERENCES Vehiculo (matricula)
+);
