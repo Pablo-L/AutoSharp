@@ -4,56 +4,48 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 using Library;
 
 namespace Interface_v2
 {
     public partial class LogIn : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        ENParticular en = new ENParticular();
-        ENEmpresa en_two = new ENEmpresa();
-
-        protected void LoginParticular(object sender, EventArgs e)
-        {
-            //Pensado como si estubiese hecho con textBox
-            en.nifUser = IDParticular.Text;
-            if (en.readParticular())
-            {
-                //quiere decir que existe una empresa con ese cif
-                if (en.passwordUser == PassParticular.Text)//No se si esta bien la comparacion o falta algun cast
-                {
-                    //ahora se puede redireccionar donde sea pertinente
-                }
-            }
-            else
-            {
-                //el cif no es correcto mostrar label o lo que sea de error
-            }
-        }
-
-
         protected void LoginEmpresa(object sender, EventArgs e)
         {
-            //Pensado como si estubiese hecho con textBox
-            en_two.Cif = IDEmpresa.Text;
-            if (en_two.readEmpresa())
-            {
-                //quiere decir que existe una empresa con ese cif
-                if (en_two.Contrasenya == PassEmpresa.Text)//No se si esta bien la comparacion o falta algun cast
-                {
-                    //ahora se puede redireccionar donde sea pertinente
-                }
-            }
-            else
-            {
-                //el cif no es correcto mostrar label o lo que sea de error
-            }
+
         }
 
+        protected void Btnloginp_Click1(object sender, EventArgs e)
+        {
+            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBaseConnection"].ToString());
+            try
+            {
+                string uid = IDParticular.Text;
+                string pass = PassParticular.Text;
+                c.Open();
+                string query = "select * from Particular where nif='" + uid + "'and clave='" + pass + "'";
+                SqlCommand cmd = new SqlCommand(query, c);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                if(sdr.Read())
+                {
+                    Session["nif"] = IDParticular.Text.Trim();
+                    Response.Redirect("~/Inicio.aspx");
+                }
+                c.Close();
+            } catch(Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+
+        }
     }
 }

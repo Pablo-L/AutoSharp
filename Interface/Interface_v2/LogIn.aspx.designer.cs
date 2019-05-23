@@ -67,13 +67,13 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.TextBox PassParticular;
         
         /// <summary>
-        /// Control LogInParticular.
+        /// Control Btnloginp.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LogInParticular;
+        protected global::System.Web.UI.WebControls.Button Btnloginp;
         
         /// <summary>
         /// Control SignUpParticular.

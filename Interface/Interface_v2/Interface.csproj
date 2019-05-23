@@ -68,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="Contacto.aspx" />
     <Content Include="css\DataList.css" />
     <Content Include="css\Footer.css" />
@@ -101,7 +103,9 @@
     <Content Include="Vehiculos.aspx" />
     <Content Include="ViewEmpresa.aspx" />
     <Content Include="ViewUsuario.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contacto.aspx.cs">

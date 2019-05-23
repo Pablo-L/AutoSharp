@@ -58,13 +58,17 @@
         <div>
             <header>
                 <div id="logo">
-                    <img src="imagenes/logo/logo.png" style="height: 75px; width: 360px; margin-left: 0px" /></div>
+                    <img src="imagenes/logo/logo.png" style="height: 75px; width: 360px; margin-left: 0px" />
+                </div>
                 <div id="login">
                     <asp:Menu ID="HeaderMenu" Orientation="Horizontal" runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick">
                         <Items>
                             <asp:MenuItem ImageUrl="~/imagenes/logo/user.png" NavigateUrl="~/LogIn.aspx" ToolTip="Sesion" />
                         </Items>
                     </asp:Menu>
+                </div>
+                <div style="width: 20%; margin-top: 25px; float: right; text-align: center;">
+                    <asp:Label ID="txtuser" runat="server" Text="Invitado" />
                 </div>
             </header>
             <nav>

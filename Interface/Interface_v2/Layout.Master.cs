@@ -11,7 +11,10 @@ namespace Interface_v2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["nif"] != null)
+            {
+                txtuser.Text = "Bienvenido " + Session["nif"].ToString();
+            }
         }
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
