@@ -16,7 +16,10 @@ namespace Interface_v2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["nif"] != null)
+            {
+                Response.Redirect("~/Inicio.aspx");
+            }
         }
 
         protected void LoginEmpresa(object sender, EventArgs e)

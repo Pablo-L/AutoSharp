@@ -63,7 +63,10 @@
                 <div id="login">
                     <asp:Menu ID="HeaderMenu" Orientation="Horizontal" runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick">
                         <Items>
-                            <asp:MenuItem ImageUrl="~/imagenes/logo/user.png" NavigateUrl="~/LogIn.aspx" ToolTip="Sesion" />
+                            <asp:MenuItem ImageUrl="~/imagenes/logo/user.png" NavigateUrl="~/LogIn.aspx" ToolTip="Sesion">
+                                <asp:MenuItem Text="Perfil" NavigateUrl="~/LogIn.aspx" ToolTip="Perfil" Value="Perfil"/>
+                                <asp:MenuItem Text="Salir" NavigateUrl="~/Inicio.aspx" ToolTip="Salir" Value="Salir"/>
+                            </asp:MenuItem>
                         </Items>
                     </asp:Menu>
                 </div>
