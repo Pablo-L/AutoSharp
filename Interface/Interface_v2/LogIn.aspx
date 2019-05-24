@@ -139,6 +139,11 @@
                     <br />
                     <asp:Button PostBackUrl="~/SignUpParticular.aspx" CssClass="btnSubmit" ID="SignUpParticular" runat="server" Text="Regístrate" />
                 </div>
+
+                <div style="text-align: center; color: red">
+                    <br />
+                    <asp:Label ID="txterrlogin" runat="server" Text=""/>
+                </div>
             </div>
         </div>
     </div>

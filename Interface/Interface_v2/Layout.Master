@@ -61,7 +61,14 @@
                     <img src="imagenes/logo/logo.png" style="height: 75px; width: 360px; margin-left: 0px" />
                 </div>
                 <div id="login">
-                    <asp:Menu ID="HeaderMenu" Orientation="Horizontal" runat="server" OnMenuItemClick="HeaderMenu_MenuItemClick">
+                    <asp:Menu CssClass="HeaderMenu" ID="HeaderMenu" Orientation="Horizontal" runat="server" OnMenuItemClick="HeaderMenu_MenuItemClick">
+                        <DynamicMenuItemStyle backcolor="#e5e5e5" 
+                            forecolor="#003322"
+                            Width="70px"
+                            BorderStyle="solid"
+                            BorderWidth="1px"
+                            BorderColor="#003322"
+                            />
                         <Items>
                             <asp:MenuItem ImageUrl="~/imagenes/logo/user.png" NavigateUrl="~/LogIn.aspx" ToolTip="Sesion">
                                 <asp:MenuItem Text="Perfil" NavigateUrl="~/ViewUsuario.aspx" ToolTip="Perfil" Value="Perfil"/>

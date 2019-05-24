@@ -43,6 +43,10 @@ namespace Interface_v2
                     Session["nif"] = IDParticular.Text.Trim();
                     Response.Redirect("~/Inicio.aspx");
                 }
+                else
+                {
+                    txterrlogin.Text = "Error de inicio de sesión: usuario o contraseña incorrectos.";
+                }
                 c.Close();
             } catch(Exception ex)
             {
