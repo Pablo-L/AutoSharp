@@ -12,12 +12,12 @@ namespace Library
         /// <summary>
         /// atributo privado fecha
         /// </summary>
-        private DateTime fecha;
+        private string fecha;
 
         /// <summary>
         /// propiedad publica fecha_
         /// </summary>
-        public DateTime fecha_ { get => fecha; set => fecha = value; }
+        public string fecha_ { get => fecha; set => fecha = value; }
 
         /// <summary>
         /// atrivbuto privado id
@@ -54,7 +54,7 @@ namespace Library
         /// </summary>
         public ENConsulta()
         {
-            this.fecha_ = DateTime.Now;
+            this.fecha_ = null;
             this.id_ = 0;
             this.pregunta_ = null;
             this.respuesta_ = null;
@@ -63,11 +63,11 @@ namespace Library
         /// <summary>
         /// constructor por valores
         /// </summary>
-        /// <param name="fecha_"> parametro datetime fecha </param>
+        /// <param name="fecha_"> parametro string fecha </param>
         /// <param name="id_"> parametro int id </param>
         /// <param name="pregunta_"> parametro string pregunta </param>
         /// <param name="respuesta"> parametro string respuesta </param>
-        public ENConsulta(DateTime fecha_, int id_, string pregunta_, string respuesta)
+        public ENConsulta(string fecha_, int id_, string pregunta_, string respuesta)
         {
             this.fecha_ = fecha_;
             this.id_ = id_;

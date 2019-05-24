@@ -20,22 +20,22 @@ namespace Library
         /// <summary>
         /// atributo privado inicioOFerta
         /// </summary>
-        private DateTime inicioOferta;
+        private string inicioOferta;
 
         /// <summary>
         /// propiedad publica inicioOFerta_
         /// </summary>
-        public DateTime inicioOferta_ { get => inicioOferta; set => inicioOferta = value; }
+        public string inicioOferta_ { get => inicioOferta; set => inicioOferta = value; }
 
         /// <summary>
         /// atributo privado finOferta
         /// </summary>
-        private DateTime finOferta;
+        private string finOferta;
 
         /// <summary>
         /// propiedad publica finOferta_
         /// </summary>
-        public DateTime finOferta_ { get => finOferta; set => finOferta = value; }
+        public string finOferta_ { get => finOferta; set => finOferta = value; }
 
         /// <summary>
         /// atributo privado descuento
@@ -58,9 +58,9 @@ namespace Library
         public ENOferta() {
 
             this.id_ = null;
-            this.inicioOferta_ = DateTime.Now;
-            this.finOferta_ = DateTime.Now;
-            this.descuento = 0;
+            this.inicioOferta_ = null;
+            this.finOferta_ = null;
+            this.descuento_ = 0;
 
         }
 
@@ -68,10 +68,10 @@ namespace Library
         /// constructor por valores
         /// </summary>
         /// <param name="id_"> parametro int id </param>
-        /// <param name="inicioOferta_"> parametro fecha iniciooferta </param>
-        /// <param name="finOFerta_"> parametro fecha finoferta </param>
+        /// <param name="inicioOferta_"> parametro string iniciooferta </param>
+        /// <param name="finOFerta_"> parametro string finoferta </param>
         /// <param name="descuento_"> parametro int descuento </param>
-        public ENOferta(string id_, DateTime inicioOferta_, DateTime finOFerta_, int descuento_)
+        public ENOferta(string id_, string inicioOferta_, string finOFerta_, int descuento_)
         {
             this.id_ = id_;
             this.inicioOferta_ = inicioOferta_;

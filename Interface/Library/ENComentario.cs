@@ -30,12 +30,12 @@ namespace Library
         /// <summary>
         /// Atributo privado _fecha_hora
         /// </summary>
-        private DateTime _fecha_hora;
+        private string _fecha_hora;
 
         /// <summary>
         /// Propiedad pública fecha_hora
         /// </summary>
-        public DateTime fecha_hora
+        public string fecha_hora
         {
             get
             {
@@ -93,7 +93,7 @@ namespace Library
         ENComentario()
         {
             id = null;
-            fecha_hora = new DateTime();
+            fecha_hora = null;
             descripcion = null;
             valoracion = 0;
         }
@@ -102,10 +102,10 @@ namespace Library
         /// Constructor por valor
         /// </summary>
         /// <param name="i"> Parámetro string i</param>
-        /// <param name="dh"> Parámetro Datetime dh</param>
+        /// <param name="dh"> Parámetro string dh</param>
         /// <param name="des">Parámetro string des</param>
         /// <param name="val"> Parámetro entero val</param>
-        ENComentario(string i,DateTime dh, string des, int val)
+        ENComentario(string i,string dh, string des, int val)
         {
             id = i;
             fecha_hora = dh;

@@ -20,7 +20,7 @@ namespace Library
         /// <summary>
         /// Atributo privado fecha
         /// </summary>
-        private DateTime fecha;
+        private string fecha;
 
         /// <summary>
         /// propiedad publica fecha_
@@ -54,7 +54,7 @@ namespace Library
         public ENCita()
         {
             this.id_ = 0;
-            this.fecha_ = DateTime.Now;
+            this.fecha_ = null;
             this.motivo_ = null;
         }
 
@@ -62,9 +62,9 @@ namespace Library
         /// Constructor por valor
         /// </summary>
         /// <param name="id_"> Parámetro entero id </param>
-        /// <param name="fecha_"> Parámetro datetime fecha </param>
+        /// <param name="fecha_"> Parámetro string fecha </param>
         /// <param name="motivo_"> Parámetro string motivo </param>
-        public ENCita(int id_, DateTime fecha_, string motivo_)
+        public ENCita(int id_, string fecha_, string motivo_)
         {
             this.id_ = id_;
             this.fecha_ = fecha_;

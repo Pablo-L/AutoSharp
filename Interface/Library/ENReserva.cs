@@ -29,7 +29,7 @@ namespace Library
         /// <summary>
         /// Atributo privado date
         /// </summary>
-        private DateTime date;
+        private string date;
 
         /// <summary>
         /// Atributo privado hour
@@ -71,7 +71,7 @@ namespace Library
         /// <summary>
         /// Propiedad pública dateReserva
         /// </summary>
-        public DateTime dateReserva
+        public string dateReserva
         {
             get { return date;  }
             set { date = value; }
@@ -103,7 +103,7 @@ namespace Library
             this.nifReserva = null;
             this.cifReserva = cif;
             this.plateReserva = plate;
-            this.dateReserva = DateTime.Now;
+            this.dateReserva = null;
             this.hourReserva = 0;
             this.durationReserva = 0;
         }
@@ -113,10 +113,10 @@ namespace Library
         /// <param name="nif">Parámetro string nif</param>
         /// <param name="cif">Parámetro string cif</param>
         /// <param name="plate">Parámetro string plate</param>
-        /// <param name="date">Parámetro dateTime date</param>
+        /// <param name="date">Parámetro string date</param>
         /// <param name="hour">Parámetro entero hour</param>
         /// <param name="duration">Parámetro entero duration</param>
-        public ENReserva(string nif, string cif, string plate, DateTime date, int hour, int duration)
+        public ENReserva(string nif, string cif, string plate, string date, int hour, int duration)
         {
             this.nifReserva      = nif;
             this.cifReserva      = cif;

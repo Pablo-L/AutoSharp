@@ -34,7 +34,7 @@ namespace Library
         /// <summary>
         /// Atributo privado fecha
         /// </summary>
-        private DateTime fecha;
+        private string fecha;
 
         /// <summary>
         /// Propiedad pública compradorCompra
@@ -66,7 +66,7 @@ namespace Library
         /// <summary>
         /// Propiedad pública fechaCompra
         /// </summary>
-        public DateTime fechaCompra
+        public string fechaCompra
         {
             get { return fecha; }
             set { fecha = value; }
@@ -89,8 +89,8 @@ namespace Library
         /// <param name="comprador">Parámetro string comprador</param>
         /// <param name="vendedor">Parámetro string vendedor</param>
         /// <param name="vehiculo">Parámetro string vehiculo</param>
-        /// <param name="fecha">Parámetro DateTime fecha</param>
-        public ENCompra(string comprador, string vendedor, string vehiculo, DateTime fecha)
+        /// <param name="fecha">Parámetro string fecha</param>
+        public ENCompra(string comprador, string vendedor, string vehiculo, string fecha)
         {
             this.compradorCompra = comprador;
             this.vendedorCompra = vendedor;

@@ -123,15 +123,14 @@ namespace Library
         /// </summary>
         public ENParticular()
         {
-            nif       = null;
-            name      = null;
-            surnames  = null;
-            email     = null;
-            password  = null;
-            direction = null;
-            telf      = 0;
-            IBAN      = null;
-            
+            nifUser       = null;
+            nameUser      = null;
+            surNamesUser  = null;
+            emailUser     = null;
+            passwordUser  = null;
+            dirUser       = null;
+            telfUser      = 0;
+            ibanUser      = null;    
         }
         
         /// <summary>
