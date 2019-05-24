@@ -1,0 +1,146 @@
+﻿body {
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #00cc88;
+    height: 75px;
+}
+
+#logo {
+    width: 40%;
+    float: left;
+    clear: left;
+}
+
+#login {
+    width: 96px;
+    float: right;
+    height: 75px;
+}
+
+#HeaderMenu {
+    padding-top: 0.3em;
+    padding-left: 1em;
+}
+
+nav {
+    border-bottom: 5px solid #003323;
+}
+
+#menu {
+    clear: both;
+    text-align: center;
+    display: table;
+    margin: 0 auto 0 auto;
+}
+
+
+#Contenido {
+    margin: 0 auto;
+
+}
+
+#Pie {
+    margin: 0 auto;
+    background-color: #f99806;
+}
+
+.LoginMenu a {
+    text-align: center;
+    font-family: "Lucida Console", Times, serif;
+    color: #00cc88;
+}
+
+.NavigationMenu a {
+    font-family: "Lucida Console", Times, serif;
+    color: #003322;
+    padding: 15px 35px 15px 35px !important;
+}
+
+.selected {
+    background-color: #e6fff7;
+}
+
+#FormSesion {
+    font-family: "Lucida Console", Times, serif;
+    color: #003322;
+    margin: 100px auto 100px auto;
+    width: 35%;
+    background-color: #ffffff;
+    border: 2px solid #d9d9d9;
+    border-radius: 5px;
+    text-align: center;
+    top: 60px;
+    left: -16px;
+}
+
+#FormRegistro {
+    font-family: "Lucida Console", Times, serif;
+    color: #003322;
+    margin: 100px auto 100px auto;
+    width: 35%;
+    background-color: #ffffff;
+    border: 2px solid #d9d9d9;
+    border-radius: 5px;
+    text-align: center;
+    top: 160px;
+    left: 489px;
+}
+
+input[type=text] {
+    border-radius: 5px;
+    text-align: center;
+    padding: 0.2em;
+}
+
+.button {
+    padding: 0.4em;
+    border: 2px solid #00cc88;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.HomeImages {
+    border-radius: 5px;
+}
+
+#Image1 {
+    float: left;
+    margin-top: 100px;
+    margin-left: 230px;
+}
+
+#Image2 {
+    margin-top: 100px;
+    margin-right: 230px;
+    margin-left: 10px;
+    float: left;
+}
+
+#Text1 {
+    border: 2px solid white;
+    padding: 0.4em;
+    font-family: "Lucida Console", Times, serif;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 120%;
+    margin: 0 auto;
+}
+
+#Text2 {
+    border: 2px solid white;
+    padding: 0.4em;
+    font-family: "Lucida Console", Times, serif;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 120%;
+    margin: 0 auto 0 auto;
+}
+
+#ContentPlaceHolder1 {
+    width: auto;
+    height: auto;
+}
