@@ -103,7 +103,7 @@
 
 
                 <div class="col-sm-12 text-center">
-                    <asp:Button PostBackUrl="~/ViewEmpresa.aspx" CssClass="btnSubmit" ID="LogInEmpresa" runat="server" Text="Iniciar Sesión" />
+                    <asp:Button  CssClass="btnSubmit" ID="LogInEmpresa" runat="server" Text="Iniciar Sesión" OnClick ="LoginEmpresa" />
                     <br />
                 </div>
 

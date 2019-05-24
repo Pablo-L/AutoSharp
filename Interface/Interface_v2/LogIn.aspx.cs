@@ -24,8 +24,31 @@ namespace Interface_v2
 
         protected void LoginEmpresa(object sender, EventArgs e)
         {
+            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBaseConnection"].ToString());
+            try
+            {
+                string uid = IDEmpresa.Text;
+                string pass = PassEmpresa.Text;
+                c.Open();
+                string query = "select * from Empresa where cif='" + uid + "'and contrasenya='" + pass + "'";
+                SqlCommand cmd = new SqlCommand(query, c);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                if (sdr.Read())
+                {
+                    Session["nif"] = IDEmpresa.Text.Trim();
+                    Response.Redirect("~/Inicio.aspx");
+                }
+                c.Close();
+                sdr.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("~/Inicio.aspx");
+                Response.Write(ex.Message);
+            }
 
         }
+
 
         protected void Btnloginp_Click1(object sender, EventArgs e)
         {
@@ -44,6 +67,7 @@ namespace Interface_v2
                     Response.Redirect("~/Inicio.aspx");
                 }
                 c.Close();
+                sdr.Close();
             } catch(Exception ex)
             {
                 Response.Write(ex.Message);

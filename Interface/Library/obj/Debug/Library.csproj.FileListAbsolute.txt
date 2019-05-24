@@ -16,3 +16,8 @@ C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\obj\Debu
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\obj\Debug\Library.dll
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\obj\Debug\Library.pdb
+C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\bin\Debug\Library.dll
+C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\bin\Debug\Library.pdb
+C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\obj\Debug\Library.dll
+C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\obj\Debug\Library.pdb

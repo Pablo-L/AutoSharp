@@ -114,3 +114,5 @@ C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Interface_v2\obj
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Interface_v2\obj\Debug\Interface.csproj.CopyComplete
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Interface_v2\obj\Debug\Interface_v2.dll
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Interface_v2\obj\Debug\Interface_v2.pdb
+C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Interface_v2\obj\Debug\Interface_v2.dll
+C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Interface_v2\obj\Debug\Interface_v2.pdb
