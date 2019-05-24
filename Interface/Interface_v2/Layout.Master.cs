@@ -11,21 +11,21 @@ namespace Interface_v2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if(Session["nif"] != null)
             {
                 txtuser.Text = "Bienvenido " + Session["nif"].ToString();
-                HeaderMenu.Items[0].ChildItems.Add(HeaderMenu.FindItem("/Perfil"));
-                HeaderMenu.Items[0].ChildItems.Add(HeaderMenu.FindItem("/Salir"));
             }
             else
             {
-                /*MenuItem parent = HeaderMenu.FindItem("Sesion");
-                MenuItem s = HeaderMenu.FindItem("Sesion/Salir");
-                MenuItem t = HeaderMenu.FindItem("Sesion/Perfil");
-                parent.ChildItems.Remove(s);
-                parent.ChildItems.Remove(t);*/
-                HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Perfil"));
-                HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Salir"));
+                if (HeaderMenu.FindItem("/Perfil") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Perfil"));
+                }
+                if (HeaderMenu.FindItem("/Salir") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Salir"));
+                }
             }
         }
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
@@ -33,5 +33,14 @@ namespace Interface_v2
 
         }
 
+        protected void HeaderMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            MenuItem selectedItem = HeaderMenu.SelectedItem;
+            if (selectedItem.Text.ToString() == "Salir")
+            {
+                Session.Clear();
+                Response.Redirect("~/Inicio.aspx");
+            }
+        }
     }
 }

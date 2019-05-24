@@ -138,7 +138,6 @@
                 <div class="col-sm-12 text-center">
                     <br />
                     <asp:Button PostBackUrl="~/SignUpParticular.aspx" CssClass="btnSubmit" ID="SignUpParticular" runat="server" Text="Regístrate" />
-
                 </div>
             </div>
         </div>
