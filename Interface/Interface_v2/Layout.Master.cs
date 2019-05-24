@@ -14,11 +14,13 @@ namespace Interface_v2
 
             if(Session["nif"] != null)
             {
-                txtuser.Text = "Bienvenido " + Session["nif"].ToString();
+                txtuser.Text = "Usuario: " + Session["nif"].ToString();
+                txtrol.Text = "PARTICULAR";
             }
             else if(Session["cif"] != null)
             {
-                txtuser.Text = "Bienvenido " + Session["cif"].ToString();
+                txtuser.Text = "Usuario: " + Session["cif"].ToString();
+                txtrol.Text = "EMPRESA";
             }
             else
             {
