@@ -16,15 +16,10 @@ namespace Interface_v2
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["nif"] != null)
+            if (Session["nif"] != null || Session["cif"] != null)
             {
                 Response.Redirect("~/Inicio.aspx");
             }
-        }
-
-        protected void LoginEmpresa(object sender, EventArgs e)
-        {
-
         }
 
         protected void Btnloginp_Click1(object sender, EventArgs e)
@@ -45,14 +40,41 @@ namespace Interface_v2
                 }
                 else
                 {
-                    txterrlogin.Text = "Error de inicio de sesión: usuario o contraseña incorrectos.";
+                    txterrlogin2.Text = "Error de inicio de sesión: usuario o contraseña incorrectos.";
                 }
                 c.Close();
             } catch(Exception ex)
             {
                 Response.Write(ex.Message);
             }
+        }
 
+        protected void Btnlogine_Click(object sender, EventArgs e)
+        {
+            SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBaseConnection"].ToString());
+            try
+            {
+                string uid = IDEmpresa.Text;
+                string pass = PassEmpresa.Text;
+                c.Open();
+                string query = "select * from Empresa where cif='" + uid + "'and contrasenya='" + pass + "'";
+                SqlCommand cmd = new SqlCommand(query, c);
+                SqlDataReader sdr = cmd.ExecuteReader();
+                if (sdr.Read())
+                {
+                    Session["cif"] = IDEmpresa.Text.Trim();
+                    Response.Redirect("~/Inicio.aspx");
+                }
+                else
+                {
+                    texterrlogin1.Text = "Error de inicio de sesión: usuario o contraseña incorrectos.";
+                }
+                c.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
         }
     }
 }

@@ -16,6 +16,10 @@ namespace Interface_v2
             {
                 txtuser.Text = "Bienvenido " + Session["nif"].ToString();
             }
+            else if(Session["cif"] != null)
+            {
+                txtuser.Text = "Bienvenido " + Session["cif"].ToString();
+            }
             else
             {
                 if (HeaderMenu.FindItem("/Perfil") != null)
@@ -40,6 +44,17 @@ namespace Interface_v2
             {
                 Session.Clear();
                 Response.Redirect("~/Inicio.aspx");
+            }
+            if(selectedItem.Text.ToString() == "Perfil")
+            {
+                if(Session["nif"] != null)
+                {
+                    Response.Redirect("~/ViewUsuario.aspx");
+                }
+                if (Session["cif"] != null)
+                {
+                    Response.Redirect("~/ViewEmpresa.aspx");
+                }
             }
         }
     }
