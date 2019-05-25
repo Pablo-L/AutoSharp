@@ -84,7 +84,7 @@ namespace Library
             while (dr2.Read())
             {
                 ene = new ENEmpresa();
-                ene.Cif = dr2["cif"].ToString(); ;
+                ene.Cif = dr2["cif"].ToString();
                 ene.readEmpresa();
                 enc = new ENConsulta();
                 enc.Pregunta = dr2["pregunta"].ToString();

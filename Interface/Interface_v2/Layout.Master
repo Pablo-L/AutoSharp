@@ -73,6 +73,7 @@
                             <asp:MenuItem ImageUrl="~/imagenes/logo/user.png" NavigateUrl="~/LogIn.aspx" ToolTip="Sesion">
                                 <asp:MenuItem Text="Perfil" ToolTip="Perfil" Value="Perfil"/>
                                 <asp:MenuItem Text="Consultas" ToolTip="Consultas" Value="Consultas" />
+                                <asp:MenuItem Text="Citas" ToolTip="Citas" Value="Citas" />
                                 <asp:MenuItem Text="Salir" ToolTip="Salir" Value="Salir"/>
                             </asp:MenuItem>
                         </Items>

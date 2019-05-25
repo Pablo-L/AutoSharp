@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:TextBox ID="PassEmpresa" runat="server" CssClass="form-control" placeholder="Contraseña"></asp:TextBox>
+                    <asp:TextBox ID="PassEmpresa" runat="server" CssClass="form-control" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
 
                 </div>
 
@@ -129,7 +129,7 @@
 
                 </div>
                 <div class="form-group">
-                    <asp:TextBox ID="PassParticular" runat="server" CssClass="form-control" placeholder="Contraseña"></asp:TextBox>
+                    <asp:TextBox ID="PassParticular" runat="server" TextMode="Password" CssClass="form-control" placeholder="Contraseña"></asp:TextBox>
 
                 </div>
 

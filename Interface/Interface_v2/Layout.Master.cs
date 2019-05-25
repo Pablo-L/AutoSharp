@@ -24,6 +24,10 @@ namespace Interface_v2
             }
             else
             {
+                if (HeaderMenu.FindItem("/Citas") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Citas"));
+                }
                 if (HeaderMenu.FindItem("/Perfil") != null)
                 {
                     HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Perfil"));
@@ -71,6 +75,17 @@ namespace Interface_v2
                 if (Session["cif"] != null)
                 {
                     Response.Redirect("~/OnlineQueryE.aspx");
+                }
+            }
+            if (selectedItem.Text.ToString() == "Citas")
+            {
+                if (Session["nif"] != null)
+                {
+                    Response.Redirect("~/CitaCliente.aspx");
+                }
+                if (Session["cif"] != null)
+                {
+                    Response.Redirect("~/CitaEmpresa.aspx");
                 }
             }
         }

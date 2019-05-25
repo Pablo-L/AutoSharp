@@ -82,6 +82,13 @@
     <Content Include="DetallesCoches.aspx" />
     <Content Include="Empresa.aspx" />
     <Content Include="AnswerQuery.aspx" />
+    <Content Include="CitaCliente.aspx" />
+    <Content Include="CitaEmpresa.aspx" />
+    <Content Include="VerCitaEmpresa.aspx" />
+    <Content Include="VerCitaCliente.aspx" />
+    <Content Include="NuevaCita.aspx" />
+    <Content Include="imagenes\cita\nuevaCita.png" />
+    <Content Include="imagenes\cita\verCita.png" />
     <Content Include="OnlineQueryE.aspx" />
     <Content Include="imagenes\query\left.png" />
     <Content Include="imagenes\query\right.png" />
@@ -205,6 +212,41 @@
     </Compile>
     <Compile Include="AnswerQuery.aspx.designer.cs">
       <DependentUpon>AnswerQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CitaCliente.aspx.cs">
+      <DependentUpon>CitaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CitaCliente.aspx.designer.cs">
+      <DependentUpon>CitaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CitaEmpresa.aspx.cs">
+      <DependentUpon>CitaEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CitaEmpresa.aspx.designer.cs">
+      <DependentUpon>CitaEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCitaEmpresa.aspx.cs">
+      <DependentUpon>VerCitaEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCitaEmpresa.aspx.designer.cs">
+      <DependentUpon>VerCitaEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCitaCliente.aspx.cs">
+      <DependentUpon>VerCitaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCitaCliente.aspx.designer.cs">
+      <DependentUpon>VerCitaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaCita.aspx.cs">
+      <DependentUpon>NuevaCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevaCita.aspx.designer.cs">
+      <DependentUpon>NuevaCita.aspx</DependentUpon>
     </Compile>
     <Compile Include="OnlineQueryE.aspx.cs">
       <DependentUpon>OnlineQueryE.aspx</DependentUpon>

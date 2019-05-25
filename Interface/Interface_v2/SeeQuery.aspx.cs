@@ -26,12 +26,12 @@ namespace Interface_v2
                 lista = en.listarEmpresas();
                 ListItem item;
                 item = new ListItem("%", "0");
-                listOfDates.Items.Add(item);
+                listOfCompanies.Items.Add(item);
                 int i = 1;
                 foreach (string s in lista)
                 {
                     item = new ListItem(s, i.ToString());
-                    listOfDates.Items.Add(item);
+                    listOfCompanies.Items.Add(item);
                     i++;
                 }
                 //  ******************************

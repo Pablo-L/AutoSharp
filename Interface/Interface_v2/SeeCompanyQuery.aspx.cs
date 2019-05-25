@@ -55,7 +55,7 @@ namespace Interface_v2
                 }
                 else
                 {
-                    p.HeaderContainer.Controls.Add(new LiteralControl("Fecha:&nbsp" + enc.Fecha + " Empresa:&nbsp" + enc.Nif + " <span style='color: blue;'>Abierta</span>"));
+                    p.HeaderContainer.Controls.Add(new LiteralControl("Fecha:&nbsp" + enc.Fecha + " Cliente:&nbsp" + enc.Nif + " <span style='color: blue;'>Abierta</span>"));
                 }
                 p.ContentContainer.Controls.Add(new LiteralControl("Pregunta: <br><br>" + enc.Pregunta + "<br><br>Respuesta:<br><br>" + enc.Respuesta));
                 acc1.Panes.Add(p);
