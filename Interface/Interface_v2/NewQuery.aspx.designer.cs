@@ -13,6 +13,15 @@ namespace Interface_v2 {
     public partial class Formulario_web11 {
         
         /// <summary>
+        /// Control txtsubmitquery.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtsubmitquery;
+        
+        /// <summary>
         /// Control listOfCompanies.
         /// </summary>
         /// <remarks>
@@ -40,21 +49,12 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.TextBox Pregunta;
         
         /// <summary>
-        /// Control EnviarConsulta.
+        /// Control SendQuery.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EnviarConsulta;
-        
-        /// <summary>
-        /// Control txtsubmitquery.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtsubmitquery;
+        protected global::System.Web.UI.WebControls.Button SendQuery;
     }
 }

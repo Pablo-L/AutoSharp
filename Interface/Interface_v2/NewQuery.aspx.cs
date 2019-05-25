@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,22 +14,36 @@ namespace Interface_v2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["nif"] == null)
+            if (Session["nif"] == null)
             {
                 Response.Redirect("~/Inicio.aspx");
             }
-            ArrayList lista = new ArrayList();
-            ENEmpresa en = new ENEmpresa();
-            lista = en.listarEmpresas();
-            ListItem item;
-            int i = 0;
-            foreach (string s in lista)
+            else
             {
-                item = new ListItem(s,i.ToString());
-                listOfCompanies.Items.Add(item);
-                i++;
+                if (Request.QueryString["queryok"] != null)
+                {
+                    txtsubmitquery.Text = "Consulta enviada con éxito.";
+                }
+                if (Request.QueryString["queryerr"] != null)
+                {
+                    txtsubmitquery.Text = "Error interno del servidor: La consulta no ha podido enviarse.";
+                }
+                if (!IsPostBack)
+                {
+                    ArrayList lista = new ArrayList();
+                    ENEmpresa en = new ENEmpresa();
+                    lista = en.listarEmpresas();
+                    ListItem item;
+                    int i = 0;
+                    foreach (string s in lista)
+                    {
+                        item = new ListItem(s, i.ToString());
+                        listOfCompanies.Items.Add(item);
+                        i++;
+                    }
+                    Fecha.Text = DateTime.Now.ToString("d");
+                }
             }
-            Fecha.Text = DateTime.Now.ToString("d");
         }
 
         protected void EnviarConsulta_Click(object sender, EventArgs e)
@@ -40,29 +55,19 @@ namespace Interface_v2
                 en.Nif = Session["nif"].ToString();
                 en.Fecha = Fecha.Text;
                 en.Pregunta = Pregunta.Text;
-                if(en.createConsulta())
+                if (en.createConsulta())
                 {
-                    txtsubmitquery.Text = "Consulta enviada con éxito";
+                    Response.Redirect("NewQuery.aspx?queryok=true");
                 }
                 else
                 {
-                    txtsubmitquery.Text = "Error: La consulta no ha podido ser enviada.";
+                    Response.Redirect("NewQuery.aspx?queryerr=true");
                 }
             }
             catch (Exception ex)
             {
-                txtsubmitquery.Text = "Error interno del servidor: La consulta no ha podido ser enviada.";
+                Response.Redirect("NewQuery.aspx?queryerr=true");
             }
         }
-
-        /*protected void EnviarConsulta_Click(object sender, EventArgs e)
-        {
-            ENConsulta en = new ENConsulta();
-            en.Cif = listOfCompanies.Text;
-            en.Nif = Session["nif"].ToString();
-            en.Fecha = Fecha.Text;
-            en.Pregunta = Pregunta.Text;
-            en.createConsulta();
-        }*/
     }
 }

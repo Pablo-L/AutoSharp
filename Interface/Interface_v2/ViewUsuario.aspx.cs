@@ -62,7 +62,7 @@ namespace Interface_v2
                 }
                 else
                 {
-                    Response.Redirect("ViewUsuario.aspx?message = true");
+                    Response.Redirect("ViewUsuario.aspx?message=true");
                 }
             } catch (Exception ex)
             {
