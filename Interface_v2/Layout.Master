@@ -9,49 +9,15 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link rel="stylesheet" href='https://use.fontawesome.com/releases/v5.7.0/
-        /all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+    <link rel="stylesheet" href='https://use.fontawesome.com/releases/v5.7.0/>' />
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/Footer.css" rel="stylesheet" />
     <link rel="Stylesheet" type="text/css" href="~/css/hoja.css" />
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-            background-image: url(imagenes/background/bg.jpg)
-        }
-
-        .auto-style2 {
-            width: 100%;
-        }
-
-        .auto-style3 {
-            height: 180px;
-            text-align: center;
-     
-        }
-
-        .auto-style4 {
-            height: 90px;
-
-        }
-
-        .auto-style5 {
-            color: white;
- 
-        }
-
-        .navigation {
-            font-size: 35px;
-            font-family: Magneto;
-            position: relative;
-            left: 135px;
-        }
-
-    </style>
+    <link rel="Stylesheet" type="text/css" href="~/css/Ofertas.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -75,7 +41,7 @@
                             <asp:MenuItem NavigateUrl="~/Inicio.aspx" Text="Inicio" ToolTip="Inicio" />
                             <asp:MenuItem NavigateUrl="~/Vehiculos.aspx" Text="Buscar" ToolTip="Buscar" />
                             <asp:MenuItem NavigateUrl="~/Contacto.aspx" Text="Contáctanos" ToolTip="Contacto" />
-                            <asp:MenuItem NavigateUrl="~/Empresas.aspx" Text="Empresas" ToolTip="Empresas" />
+                            <asp:MenuItem NavigateUrl="~/Empresa.aspx" Text="Empresas" ToolTip="Empresas" />
                         </Items>
                     </asp:Menu>
                 </div>
@@ -85,6 +51,62 @@
                     <td class="auto-style6">
                         <asp:ContentPlaceHolder ID="Inicio" runat="server">
                         </asp:ContentPlaceHolder>
+                        
+                        <asp:DataList ID="InitialDataList" runat="server" CssClass="row" DataSourceID="SqlDataSource3" HorizontalAlign="Center">
+                            <ItemTemplate>
+                                <br><h4>&nbsp;&nbsp;&nbsp;Vehículos En Oferta</h4><br>          
+                                <div class="row" id="ads">
+                                    <div class="col-md-4">
+                                        <div class="card rounded">
+                                            <div class="card-image">
+                                                <span class="card-notify-badge"><%#Eval("marca")%> <%#Eval("modelo")%></span>
+                                                <span class="card-notify-year"><%#Eval("anyo")%></span>
+                                                <asp:HyperLink runat="server" NavigateUrl="~/DetallesCoches.aspx">
+                                                <img class="img-fluid" width="440" height="262" src='<%#Eval("imagen")%>'/>
+                                                </asp:HyperLink>
+                                            </div>
+                                            <div class="card-image-overlay m-auto">
+                                                <span class="card-detail-badge"><%#Eval("precio")%> €</span>
+                                                <span class="card-detail-badge"><%#Eval("km")%> Km</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                               
+                                    <div class="col-md-4">
+                                        <div class="card rounded">
+                                            <div class="card-image">
+                                                <span class="card-notify-badge"><%#Eval("marca")%> <%#Eval("modelo")%></span>
+                                                <span class="card-notify-year"><%#Eval("anyo")%></span>
+                                                <asp:HyperLink runat="server" NavigateUrl="~/DetallesCoches.aspx">
+                                                <img class="img-fluid" width="440" height="260" src='<%#Eval("imagen")%>' alt="Alternate Text" />
+                                                </asp:HyperLink>
+                                            </div>
+                                            <div class="card-image-overlay m-auto">
+                                                <span class="card-detail-badge"><%#Eval("precio")%> €</span>
+                                                <span class="card-detail-badge"><%#Eval("km")%> Km</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card rounded">
+                                            <div class="card-image">
+                                                <span class="card-notify-badge"><%#Eval("marca")%> <%#Eval("modelo")%></span>
+                                                <span class="card-notify-year"><%#Eval("anyo")%></span>
+                                                <asp:HyperLink runat="server" NavigateUrl="~/DetallesCoches.aspx">
+                                                <img class="img-fluid" width="440" height="262" src='<%#Eval("imagen")%>' alt="Alternate Text" />
+                                                </asp:HyperLink>
+                                            </div>
+                                            <div class="card-image-overlay m-auto">
+
+                                                <span class="card-detail-badge"><%#Eval("precio")%> €</span>
+                                                <span class="card-detail-badge"><%#Eval("km")%> Km</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:DataList>
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DataBaseConnection %>" SelectCommand="SELECT Oferta.descuento, Vehiculo.precio, Vehiculo.km, Vehiculo.marca, Vehiculo.modelo, Vehiculo.imagen, Vehiculo.anyo FROM Vehiculo INNER JOIN Oferta ON Vehiculo.matricula = Oferta.matricula"></asp:SqlDataSource>
                     </td>
                 </tr>
                 <tr>
