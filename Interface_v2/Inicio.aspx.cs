@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Interface_v2.view
+namespace Interface_v2
 {
     public partial class Inicio : System.Web.UI.Page
     {
