@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Interface_v2
 {
-    public partial class Formulario_web11 : System.Web.UI.Page
+    public partial class NewQuery : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,16 +20,16 @@ namespace Interface_v2
             }
             else
             {
-                if (Request.QueryString["queryok"] != null)
-                {
-                    txtsubmitquery.Text = "Consulta enviada con éxito.";
-                }
-                if (Request.QueryString["queryerr"] != null)
-                {
-                    txtsubmitquery.Text = "Error interno del servidor: La consulta no ha podido enviarse.";
-                }
                 if (!IsPostBack)
                 {
+                    if (Request.QueryString["queryok"] != null)
+                    {
+                        txtsubmitquery.Text = "Consulta enviada con éxito.";
+                    }
+                    else if (Request.QueryString["queryerr"] != null)
+                    {
+                        txtsubmitquery.Text = "Error interno del servidor: La consulta no ha podido enviarse.";
+                    }
                     ArrayList lista = new ArrayList();
                     ENEmpresa en = new ENEmpresa();
                     lista = en.listarEmpresas();
@@ -57,16 +57,16 @@ namespace Interface_v2
                 en.Pregunta = Pregunta.Text;
                 if (en.createConsulta())
                 {
-                    Response.Redirect("NewQuery.aspx?queryok=true");
+                    Response.Redirect("NewQuery.aspx?queryok=true", false);
                 }
                 else
                 {
-                    Response.Redirect("NewQuery.aspx?queryerr=true");
+                    Response.Redirect("NewQuery.aspx?queryerr=true", false);
                 }
             }
             catch (Exception ex)
             {
-                Response.Redirect("NewQuery.aspx?queryerr=true");
+                Response.Redirect("NewQuery.aspx?queryerr=true", false);
             }
         }
     }

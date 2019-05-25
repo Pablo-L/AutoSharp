@@ -1,5 +1,7 @@
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Library
 {
@@ -79,6 +81,23 @@ namespace Library
             return en.createConsulta(this);
         }
 
+        public List<ENConsulta> listarConsultas()
+        {
+            List<ENConsulta> a = new List<ENConsulta>();
+            CADConsulta c = new CADConsulta();
+            a = c.ListarConsultas(this);
+
+            return a;
+        }
+
+        public ArrayList listarFechas()
+        {
+            ArrayList a = new ArrayList();
+            CADConsulta c = new CADConsulta();
+            a = c.ListarFechas(this);
+
+            return a;
+        }
         /// <summary>
         /// lee una consulta en la bbdd
         /// </summary>

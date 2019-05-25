@@ -10,7 +10,7 @@
 namespace Interface_v2 {
     
     
-    public partial class Formulario_web11 {
+    public partial class NewQuery {
         
         /// <summary>
         /// Control txtsubmitquery.

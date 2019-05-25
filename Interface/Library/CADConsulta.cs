@@ -8,6 +8,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Configuration;
+using System.Collections;
 
 namespace Library
 { 
@@ -17,8 +18,8 @@ namespace Library
         /// <summary>
         /// cadena para la conexion de la BBDD
         /// </summary>
-        ENParticular aux_particular = new ENParticular();
-        ENEmpresa aux_empresa = new ENEmpresa();
+        List<ENConsulta> lista = new List<ENConsulta>();
+        ArrayList listaFechas = new ArrayList();
         private string constring;
 
         //public string Constring { get => constring; private set => constring = value; }
@@ -63,6 +64,56 @@ namespace Library
                 if (c != null) c.Close();
             }
             return transaction;
+        }
+        public List<ENConsulta> ListarConsultas(ENConsulta en)
+        {
+            ENConsulta enc;
+            ENEmpresa ene;
+            string corporationCif = en.Cif;
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            if (corporationCif != "%")
+            {
+                SqlCommand com = new SqlCommand("Select * from Empresa where nombre='" + corporationCif + "'", c);
+                SqlDataReader dr = com.ExecuteReader();
+                dr.Read();
+                corporationCif = dr["cif"].ToString();
+                dr.Close();
+            }
+            SqlCommand com2 = new SqlCommand("Select * from ConsultaOnline where nif='" + en.Nif + "' and fecha like '" + en.Fecha + "' and cif like '" + corporationCif + "'", c);
+            SqlDataReader dr2 = com2.ExecuteReader();
+            while (dr2.Read())
+            {
+                ene = new ENEmpresa();
+                ene.Cif = dr2["cif"].ToString(); ;
+                ene.readEmpresa();
+                enc = new ENConsulta();
+                enc.Pregunta = dr2["pregunta"].ToString();
+                enc.Respuesta = dr2["respuesta"].ToString();
+                enc.Cif = ene.Nombre;
+                enc.Fecha = dr2["fecha"].ToString();
+                lista.Add(enc);
+            }
+            dr2.Close();
+            c.Close();
+            return lista;
+        }
+
+        public ArrayList ListarFechas(ENConsulta en)
+        {
+            string fecha = "";
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com = new SqlCommand("Select distinct(fecha) from ConsultaOnline where nif='" + en.Nif + "'", c);
+            SqlDataReader dr = com.ExecuteReader();
+            while (dr.Read())
+            {
+                fecha = dr["fecha"].ToString();
+                listaFechas.Add(fecha);
+            }
+            dr.Close();
+            c.Close();
+            return listaFechas;
         }
 
         /// <summary>

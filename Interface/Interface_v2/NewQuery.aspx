@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="NewQuery.aspx.cs" Inherits="Interface_v2.Formulario_web11" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="NewQuery.aspx.cs" Inherits="Interface_v2.NewQuery" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         p {
