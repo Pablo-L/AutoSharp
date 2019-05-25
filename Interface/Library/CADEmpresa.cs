@@ -8,6 +8,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Configuration;
+using System.Collections;
 
 namespace Library
 {
@@ -15,6 +16,7 @@ namespace Library
     public class CADEmpresa
     {
         private string constring;
+        ArrayList lista = new ArrayList();
 
         public CADEmpresa()
         {
@@ -132,6 +134,21 @@ namespace Library
                 if (c != null) c.Close();
             }
             return transaction;
+        }
+
+        public ArrayList ListarEmpresas(ENEmpresa en)
+        {
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com = new SqlCommand("Select * from Empresa", c);
+            SqlDataReader dr = com.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(dr["nombre"].ToString());
+            }
+            dr.Close();
+            c.Close();
+            return lista;
         }
 
     }

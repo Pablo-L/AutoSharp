@@ -72,13 +72,14 @@
                         <Items>
                             <asp:MenuItem ImageUrl="~/imagenes/logo/user.png" NavigateUrl="~/LogIn.aspx" ToolTip="Sesion">
                                 <asp:MenuItem Text="Perfil" ToolTip="Perfil" Value="Perfil"/>
+                                <asp:MenuItem Text="Consultas" ToolTip="Consultas" Value="Consultas" NavigateUrl="~/OnlineQueryP.aspx"/>
                                 <asp:MenuItem Text="Salir" ToolTip="Salir" Value="Salir"/>
                             </asp:MenuItem>
                         </Items>
                     </asp:Menu>
                 </div>
                 <div style="width: 20%; margin-top: 15px; float: right; text-align: center;">
-                    <asp:Label ID="txtuser" runat="server" Text="Invitado" />
+                    <asp:Label ID="txtuser" runat="server" Text="" />
                     <br />
                     <asp:Label ID="txtrol" runat="server" Text="" />
                 </div>

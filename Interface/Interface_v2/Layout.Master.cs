@@ -32,6 +32,10 @@ namespace Interface_v2
                 {
                     HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Salir"));
                 }
+                if (HeaderMenu.FindItem("/Consultas") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Consultas"));
+                }
             }
         }
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)

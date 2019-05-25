@@ -77,6 +77,8 @@
     <Content Include="css\hoja.css" />
     <Content Include="DetallesCoches.aspx" />
     <Content Include="Empresa.aspx" />
+    <Content Include="NewQuery.aspx" />
+    <Content Include="OnlineQueryP.aspx" />
     <Content Include="imagenes\carrousel\login_page_background.jpg" />
     <Content Include="imagenes\carrousel\thumb_dealer.jpg" />
     <Content Include="imagenes\carrousel\thumb_turntable.jpg" />
@@ -95,6 +97,8 @@
     <Content Include="imagenes\logo\tools.png" />
     <Content Include="imagenes\logo\user.png" />
     <Content Include="imagenes\logo\user32.png" />
+    <Content Include="imagenes\query\query1.png" />
+    <Content Include="imagenes\query\query2.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -184,6 +188,20 @@
     </Compile>
     <Compile Include="Empresa.aspx.designer.cs">
       <DependentUpon>Empresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewQuery.aspx.cs">
+      <DependentUpon>NewQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewQuery.aspx.designer.cs">
+      <DependentUpon>NewQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineQueryP.aspx.cs">
+      <DependentUpon>OnlineQueryP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineQueryP.aspx.designer.cs">
+      <DependentUpon>OnlineQueryP.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

@@ -37,7 +37,32 @@ namespace Library
         /// <returns></returns>
         public bool createConsulta(ENConsulta en)
         {
-            return false;
+            int i = 0;
+            bool transaction = false;
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("select * from Empresa where nombre='" + en.Cif + "'", c);
+                SqlDataReader dr = com.ExecuteReader();
+                dr.Read();
+                en.Cif = dr["cif"].ToString();
+                dr.Close();
+
+                com = new SqlCommand("Insert Into ConsultaOnline (cif,fecha,pregunta,nif) VALUES ('"
+                    + en.Cif + "','" + en.Fecha + "','" + en.Pregunta + "','" + en.Nif + "')", c);
+                com.ExecuteNonQuery();
+                transaction = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Empresa operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                if (c != null) c.Close();
+            }
+            return transaction;
         }
 
         /// <summary>
@@ -45,7 +70,7 @@ namespace Library
         /// </summary>
         /// <param name="en"></param>
         /// <returns></returns>
-        public bool readConsulta(ENConsulta en)
+        /*public bool readConsulta(ENConsulta en)
         {
             bool read = false;
             DataSet bdVirtual = new DataSet();
@@ -97,10 +122,7 @@ namespace Library
                     check = true;
                 }
             }
-            catch (Exception ex)
-            {
-                /*tratar label*/
-            }
+
             finally { c.Close(); }
             return check;
         }
@@ -123,14 +145,11 @@ namespace Library
                 check = true;
 
             }
-            catch (Exception ex)
-            {
-                /*tratar label*/
-            }
+
             finally { c.Close(); }
             return check;
         
-        }
+        }*/
 
     }
 }
