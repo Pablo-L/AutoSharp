@@ -10,7 +10,7 @@
 namespace Interface_v2 {
     
     
-    public partial class SignUpEmpresa {
+    public partial class SigUpEmpresa {
         
         /// <summary>
         /// Control CIF.

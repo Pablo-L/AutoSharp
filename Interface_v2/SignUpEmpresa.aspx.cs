@@ -6,15 +6,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Library;
 
-
 namespace Interface_v2
 {
-    public partial class SignUpEmpresa : System.Web.UI.Page
+    public partial class SigUpEmpresa : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
         ENEmpresa en = new ENEmpresa();
         protected void SingUpEmpresa()
         {
