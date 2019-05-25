@@ -36,7 +36,7 @@ namespace Interface_v2
             }
         }
 
-        
+
         protected void LoginEmpresa(object sender, EventArgs e)
         {
             //Pensado como si estubiese hecho con textBox
