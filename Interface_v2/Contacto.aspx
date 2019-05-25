@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Contacto.aspx.cs" Inherits="Interface_v2.view.Contacto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Contacto.aspx.cs" Inherits="Interface_v2.Contacto" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="view/css/Buttons.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" id="bootstrap-css">

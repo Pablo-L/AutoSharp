@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Interface_v2.view
+namespace Interface_v2
 {
     public partial class Contacto : System.Web.UI.Page
     {
@@ -13,7 +13,6 @@ namespace Interface_v2.view
         {
 
         }
-
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
 

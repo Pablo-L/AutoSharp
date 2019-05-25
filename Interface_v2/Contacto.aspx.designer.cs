@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Interface_v2.view {
+namespace Interface_v2 {
     
     
     public partial class Contacto {
