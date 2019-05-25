@@ -11,7 +11,14 @@ namespace Interface_v2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["cif"] == null)
+            {
+                Response.Redirect("~/Inicio.aspx");
+            }
+            else
+            {
 
+            }
         }
     }
 }

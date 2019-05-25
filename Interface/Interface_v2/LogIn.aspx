@@ -103,7 +103,11 @@
 
 
                 <div class="col-sm-12 text-center">
+<<<<<<< HEAD
                     <asp:Button  CssClass="btnSubmit" ID="LogInEmpresa" runat="server" Text="Iniciar Sesión" OnClick ="LoginEmpresa" />
+=======
+                    <asp:Button CssClass="btnSubmit" ID="Btnlogine" runat="server" Text="Iniciar Sesión" OnClick="Btnlogine_Click" />
+>>>>>>> 74011910A
                     <br />
                 </div>
 
@@ -112,7 +116,10 @@
                     <asp:Button PostBackUrl="~/SignUpEmpresa.aspx" CssClass="btnSubmit" ID="SignUpEmpresa" runat="server" Text="Regístrate" />
 
                 </div>
-
+                <div style="text-align: center; color: red">
+                    <br />
+                    <asp:Label ID="texterrlogin1" runat="server" Text=""/>
+                </div>
 
 
             </div>
@@ -138,7 +145,11 @@
                 <div class="col-sm-12 text-center">
                     <br />
                     <asp:Button PostBackUrl="~/SignUpParticular.aspx" CssClass="btnSubmit" ID="SignUpParticular" runat="server" Text="Regístrate" />
+                </div>
 
+                <div style="text-align: center; color: red">
+                    <br />
+                    <asp:Label ID="txterrlogin2" runat="server" Text=""/>
                 </div>
             </div>
         </div>

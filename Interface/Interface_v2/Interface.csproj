@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -77,6 +81,8 @@
     <Content Include="css\hoja.css" />
     <Content Include="DetallesCoches.aspx" />
     <Content Include="Empresa.aspx" />
+    <Content Include="NewQuery.aspx" />
+    <Content Include="OnlineQueryP.aspx" />
     <Content Include="imagenes\carrousel\login_page_background.jpg" />
     <Content Include="imagenes\carrousel\thumb_dealer.jpg" />
     <Content Include="imagenes\carrousel\thumb_turntable.jpg" />
@@ -95,6 +101,8 @@
     <Content Include="imagenes\logo\tools.png" />
     <Content Include="imagenes\logo\user.png" />
     <Content Include="imagenes\logo\user32.png" />
+    <Content Include="imagenes\query\query1.png" />
+    <Content Include="imagenes\query\query2.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="LogIn.aspx" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -153,6 +161,10 @@
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\tools\RoslynLatest\System.Xml.XPath.XDocument.dll" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\tools\RoslynLatest\vbc.exe" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\tools\RoslynLatest\VBCSCompiler.exe" />
+<<<<<<< HEAD
+=======
+    <Content Include="SeeQuery.aspx" />
+>>>>>>> 74011910A
     <Content Include="SignUpCar.aspx" />
     <Content Include="SignUpEmpresa.aspx" />
     <Content Include="SignUpParticular.aspx" />
@@ -185,6 +197,20 @@
     <Compile Include="Empresa.aspx.designer.cs">
       <DependentUpon>Empresa.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NewQuery.aspx.cs">
+      <DependentUpon>NewQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewQuery.aspx.designer.cs">
+      <DependentUpon>NewQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineQueryP.aspx.cs">
+      <DependentUpon>OnlineQueryP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineQueryP.aspx.designer.cs">
+      <DependentUpon>OnlineQueryP.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,6 +233,13 @@
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeeQuery.aspx.cs">
+      <DependentUpon>SeeQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeeQuery.aspx.designer.cs">
+      <DependentUpon>SeeQuery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SignUpCar.aspx.cs">
       <DependentUpon>SignUpCar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

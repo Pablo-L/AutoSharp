@@ -50,7 +50,7 @@ namespace Library
         /// <summary>
         /// Propiedad pública nifUser
         /// </summary>
-        public  string nifUser
+        public string nifUser
         {
             get { return nif;   }
             set { nif = value;  }

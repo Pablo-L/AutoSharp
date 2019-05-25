@@ -12,12 +12,15 @@ C:\Users\Alejandro\source\repos\Interface_v4\Interface_v2\Library\obj\Debug\Libr
 C:\Users\Alejandro\source\repos\Interface_v4\Interface_v2\Library\obj\Debug\Library.pdb
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\bin\Debug\Library.dll
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\bin\Debug\Library.pdb
-C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\obj\Debug\Library.csprojAssemblyReference.cache
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\obj\Debug\Library.dll
 C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\obj\Debug\Library.pdb
+<<<<<<< HEAD
 C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\bin\Debug\Library.dll
 C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\bin\Debug\Library.pdb
 C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
 C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\obj\Debug\Library.dll
 C:\VisualStudioProjects\AutoSharp_m11\AutoSharp_m11\Interface\Library\obj\Debug\Library.pdb
+=======
+C:\Users\Alejandro\source\repos\Pablo-L\AutoSharp_m11\Interface\Library\obj\Debug\Library.csprojAssemblyReference.cache
+>>>>>>> 74011910A
