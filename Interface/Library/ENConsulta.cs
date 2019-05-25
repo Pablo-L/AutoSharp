@@ -11,12 +11,14 @@ namespace Library
     /// </summary>
     public class ENConsulta
     {
-
+        private int id;
         private string fecha;
         private string cif;
         private string nif;
         private string pregunta;
         private string respuesta;
+
+        public int Id { get => id; set => id = value; }
         /// <summary>
         /// propiedad publica fecha_
         /// </summary>
@@ -48,6 +50,7 @@ namespace Library
         /// </summary>
         public ENConsulta()
         {
+            this.Id = 0;
             this.Fecha = null;
             this.Nif = null;
             this.Cif = null;
@@ -62,8 +65,9 @@ namespace Library
         /// <param name="id_"> parametro int id </param>
         /// <param name="pregunta_"> parametro string pregunta </param>
         /// <param name="respuesta"> parametro string respuesta </param>
-        public ENConsulta(string fecha, string nif, string cif, string pregunta, string respuesta)
+        public ENConsulta(int id, string fecha, string nif, string cif, string pregunta, string respuesta)
         {
+            this.Id = id;
             this.Fecha = fecha;
             this.Nif = nif;
             this.Cif = cif;
@@ -81,6 +85,28 @@ namespace Library
             return en.createConsulta(this);
         }
 
+        public bool leerPrimera()
+        {
+            CADConsulta en = new CADConsulta();
+            return en.LeerPrimera(this);
+        }
+
+        public bool leerSiguiente()
+        {
+            CADConsulta en = new CADConsulta();
+            return en.LeerSiguiente(this);
+        }
+        public bool actualizarRespuesta()
+        {
+            CADConsulta en = new CADConsulta();
+            return en.ActualizarRespuesta(this);
+        }
+        public bool leerAnterior()
+        {
+            CADConsulta en = new CADConsulta();
+            return en.LeerAnterior(this);
+        }
+
         public List<ENConsulta> listarConsultas()
         {
             List<ENConsulta> a = new List<ENConsulta>();
@@ -90,11 +116,29 @@ namespace Library
             return a;
         }
 
+        public List<ENConsulta> listarConsultasClientes()
+        {
+            List<ENConsulta> a = new List<ENConsulta>();
+            CADConsulta c = new CADConsulta();
+            a = c.ListarConsultasClientes(this);
+
+            return a;
+        }
+
         public ArrayList listarFechas()
         {
             ArrayList a = new ArrayList();
             CADConsulta c = new CADConsulta();
             a = c.ListarFechas(this);
+
+            return a;
+        }
+
+        public ArrayList listarFechasPorCif()
+        {
+            ArrayList a = new ArrayList();
+            CADConsulta c = new CADConsulta();
+            a = c.ListarFechasPorCif(this);
 
             return a;
         }

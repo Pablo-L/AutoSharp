@@ -62,6 +62,17 @@ namespace Interface_v2
                     Response.Redirect("~/ViewEmpresa.aspx");
                 }
             }
+            if (selectedItem.Text.ToString() == "Consultas")
+            {
+                if (Session["nif"] != null)
+                {
+                    Response.Redirect("~/OnlineQueryP.aspx");
+                }
+                if (Session["cif"] != null)
+                {
+                    Response.Redirect("~/OnlineQueryE.aspx");
+                }
+            }
         }
     }
 }

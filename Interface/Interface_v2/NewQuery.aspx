@@ -40,7 +40,6 @@
         .ProgressTemplate {
             text-align: center;
         }
-
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Inicio" runat="server">

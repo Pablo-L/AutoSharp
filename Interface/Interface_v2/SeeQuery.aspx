@@ -51,7 +51,7 @@
                     <asp:Button CssClass="SendQuery" Text="Filtrar" id="Filter" runat="server" OnClick="FilterQuery_Click" />
                 </div>
                 <div style="float: right; margin-bottom: 50px; font-family: Lucida Console, Times, serif;">
-                    <ajaxToolkit:Accordion ID="acc1" runat="server" HeaderCssClass="accheader" ContentCssClass="acccontent"  Width="400px" FramesPerSecond="30" FadeTransitions="true" TransitionDuration="350" AutoSize="None">
+                    <ajaxToolkit:Accordion ID="acc1" runat="server" HeaderCssClass="accheader" ContentCssClass="acccontent"  Width="450px" FramesPerSecond="30" FadeTransitions="true" TransitionDuration="350" AutoSize="None">
                     </ajaxToolkit:Accordion>
                 </div>
             </div>

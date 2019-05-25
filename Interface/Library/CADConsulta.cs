@@ -38,7 +38,6 @@ namespace Library
         /// <returns></returns>
         public bool createConsulta(ENConsulta en)
         {
-            int i = 0;
             bool transaction = false;
             SqlConnection c = new SqlConnection(constring);
             try
@@ -99,6 +98,30 @@ namespace Library
             return lista;
         }
 
+        public List<ENConsulta> ListarConsultasClientes(ENConsulta en)
+        {
+            ENParticular enP;
+
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com2 = new SqlCommand("Select * from ConsultaOnline where fecha like '" + en.Fecha + "' and cif like '" + en.Cif + "'", c);
+            SqlDataReader dr2 = com2.ExecuteReader();
+            while (dr2.Read())
+            {
+                enP = new ENParticular();
+                enP.nifUser = dr2["nif"].ToString();
+                enP.readParticular();
+                en.Nif = enP.nameUser;
+                en.Pregunta = dr2["pregunta"].ToString();
+                en.Respuesta = dr2["respuesta"].ToString();
+                en.Fecha = dr2["fecha"].ToString();
+                lista.Add(en);
+            }
+            dr2.Close();
+            c.Close();
+            return lista;
+        }
+
         public ArrayList ListarFechas(ENConsulta en)
         {
             string fecha = "";
@@ -115,6 +138,116 @@ namespace Library
             c.Close();
             return listaFechas;
         }
+
+        public ArrayList ListarFechasPorCif(ENConsulta en)
+        {
+            string fecha = "";
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com = new SqlCommand("Select distinct(fecha) from ConsultaOnline where cif='" + en.Cif + "'", c);
+            SqlDataReader dr = com.ExecuteReader();
+            while (dr.Read())
+            {
+                fecha = dr["fecha"].ToString();
+                listaFechas.Add(fecha);
+            }
+            dr.Close();
+            c.Close();
+            return listaFechas;
+        }
+
+        public bool LeerPrimera(ENConsulta en)
+        {
+            bool read = false;
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com = new SqlCommand("select * from ConsultaOnline where id = (select min(id) from ConsultaOnline where respuesta is null and cif='" + en.Cif + "')", c);
+            SqlDataReader dr = com.ExecuteReader();
+            if (dr.Read())
+            {
+                en.Id = Int32.Parse(dr["id"].ToString());
+                en.Pregunta = dr["pregunta"].ToString();
+                en.Respuesta = dr["respuesta"].ToString();
+                en.Fecha = dr["fecha"].ToString();
+                ENParticular enP = new ENParticular();
+                enP.nifUser = dr["nif"].ToString();
+                enP.readParticular();
+                en.Nif = enP.nameUser;
+                read = true;
+            }
+            dr.Close();
+            return read;
+        }
+        public bool LeerSiguiente(ENConsulta en)
+        {
+            bool read = false;
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com = new SqlCommand("select * from ConsultaOnline where id > '" + en.Id + "' and respuesta is null and cif='" + en.Cif + "'", c);
+            SqlDataReader dr = com.ExecuteReader();
+            if (dr.Read())
+            {
+                en.Id = Int32.Parse(dr["id"].ToString());
+                en.Pregunta = dr["pregunta"].ToString();
+                en.Respuesta = dr["respuesta"].ToString();
+                en.Fecha = dr["fecha"].ToString();
+                ENParticular enP = new ENParticular();
+                enP.nifUser = dr["nif"].ToString();
+                enP.readParticular();
+                en.Nif = enP.nameUser;
+                read = true;
+            }
+            dr.Close();
+            c.Close();
+            return read;
+        }
+
+        public bool LeerAnterior(ENConsulta en)
+        {
+            bool read = false;
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com = new SqlCommand("select * from ConsultaOnline where id < '" + en.Id + "' and respuesta is null and cif='" + en.Cif + "'", c);
+            SqlDataReader dr = com.ExecuteReader();
+            if (dr.Read())
+            {
+                en.Id = Int32.Parse(dr["id"].ToString());
+                en.Pregunta = dr["pregunta"].ToString();
+                en.Respuesta = dr["respuesta"].ToString();
+                en.Fecha = dr["fecha"].ToString();
+                ENParticular enP = new ENParticular();
+                enP.nifUser = dr["nif"].ToString();
+                enP.readParticular();
+                en.Nif = enP.nameUser;
+                read = true;
+            }
+            dr.Close();
+            c.Close();
+            return read;
+        }
+        public bool ActualizarRespuesta(ENConsulta en)
+        {
+  
+            bool transaction = false;
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("UPDATE ConsultaOnline SET respuesta='" + en.Respuesta + "' WHERE cif='" + en.Cif + "' and id='" + en.Id + "'",c);
+                com.ExecuteNonQuery();
+                transaction = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Empresa operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                if (c != null) c.Close();
+            }
+            return transaction;
+        }
+
 
         /// <summary>
         /// Lee una categoria seleccionada de la base de datos.

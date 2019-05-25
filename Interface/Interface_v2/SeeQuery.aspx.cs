@@ -26,12 +26,12 @@ namespace Interface_v2
                 lista = en.listarEmpresas();
                 ListItem item;
                 item = new ListItem("%", "0");
-                listOfCompanies.Items.Add(item);
+                listOfDates.Items.Add(item);
                 int i = 1;
                 foreach (string s in lista)
                 {
                     item = new ListItem(s, i.ToString());
-                    listOfCompanies.Items.Add(item);
+                    listOfDates.Items.Add(item);
                     i++;
                 }
                 //  ******************************
@@ -65,7 +65,14 @@ namespace Interface_v2
             foreach (ENConsulta enc in lista3)
             {
                 p = new AccordionPane();
-                p.HeaderContainer.Controls.Add(new LiteralControl("Fecha:&nbsp" + enc.Fecha + "&nbsp&nbspEmpresa:&nbsp" + enc.Cif));
+                if (enc.Respuesta != "")
+                {
+                    p.HeaderContainer.Controls.Add(new LiteralControl("Fecha:&nbsp" + enc.Fecha + " Empresa:&nbsp" + enc.Cif + " <span style='color: red;'>Cerrada</span>"));
+                }
+                else
+                {
+                    p.HeaderContainer.Controls.Add(new LiteralControl("Fecha:&nbsp" + enc.Fecha + " Empresa:&nbsp" + enc.Cif + " <span style='color: blue;'>Abierta</span>"));
+                }
                 p.ContentContainer.Controls.Add(new LiteralControl("Pregunta: <br><br>" + enc.Pregunta + "<br><br>Respuesta:<br><br>" + enc.Respuesta));
                 acc1.Panes.Add(p);
             }

@@ -81,6 +81,10 @@
     <Content Include="css\hoja.css" />
     <Content Include="DetallesCoches.aspx" />
     <Content Include="Empresa.aspx" />
+    <Content Include="AnswerQuery.aspx" />
+    <Content Include="OnlineQueryE.aspx" />
+    <Content Include="imagenes\query\left.png" />
+    <Content Include="imagenes\query\right.png" />
     <Content Include="NewQuery.aspx" />
     <Content Include="OnlineQueryP.aspx" />
     <Content Include="imagenes\carrousel\login_page_background.jpg" />
@@ -161,6 +165,7 @@
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\tools\RoslynLatest\System.Xml.XPath.XDocument.dll" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\tools\RoslynLatest\vbc.exe" />
     <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\tools\RoslynLatest\VBCSCompiler.exe" />
+    <Content Include="SeeCompanyQuery.aspx" />
     <Content Include="SeeQuery.aspx" />
     <Content Include="SignUpCar.aspx" />
     <Content Include="SignUpEmpresa.aspx" />
@@ -193,6 +198,20 @@
     </Compile>
     <Compile Include="Empresa.aspx.designer.cs">
       <DependentUpon>Empresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnswerQuery.aspx.cs">
+      <DependentUpon>AnswerQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnswerQuery.aspx.designer.cs">
+      <DependentUpon>AnswerQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineQueryE.aspx.cs">
+      <DependentUpon>OnlineQueryE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineQueryE.aspx.designer.cs">
+      <DependentUpon>OnlineQueryE.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewQuery.aspx.cs">
       <DependentUpon>NewQuery.aspx</DependentUpon>
@@ -230,6 +249,13 @@
       <DependentUpon>LogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeeCompanyQuery.aspx.cs">
+      <DependentUpon>SeeCompanyQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeeCompanyQuery.aspx.designer.cs">
+      <DependentUpon>SeeCompanyQuery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SeeQuery.aspx.cs">
       <DependentUpon>SeeQuery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
