@@ -8,17 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-
+using System.Collections;
 
 namespace Library
 {
 	public class CADCita
 	{
-        /// <summary>
-        /// Cadena de conexión a la BBDD
-        /// </summary>
-        ENParticular aux_particular = new ENParticular();
-        ENEmpresa aux_empresa = new ENEmpresa();
+
+        List<ENCita> lista = new List<ENCita>();
+        ArrayList listaFechas = new ArrayList();
         private string constring;
 
         /// <summary>
@@ -36,41 +34,126 @@ namespace Library
         /// <returns>retorna un bool en función de si se crea o no </returns>
         public bool createCita(ENCita en)
         {
-            bool cambiado = false;
-            DataSet bdVirutal = new DataSet();
+            bool transaction = false;
             SqlConnection c = new SqlConnection(constring);
             try
             {
+                c.Open();
+                SqlCommand com = new SqlCommand("select * from Empresa where nombre='" + en.Cif + "'", c);
+                SqlDataReader dr = com.ExecuteReader();
+                dr.Read();
+                en.Cif = dr["cif"].ToString();
+                dr.Close();
 
-                SqlDataAdapter da = new SqlDataAdapter("select * from Cita", c);
-                da.Fill(bdVirutal, "Cita");
-                DataTable t = new DataTable();
-                t = bdVirutal.Tables["Cita"];
-                DataRow nuevaFila = t.NewRow();
-                nuevaFila["id"] = en.id_;
-                nuevaFila["cif"] = aux_empresa.Cif;
-                nuevaFila["fecha"] = en.fecha_;
-                nuevaFila["motivo"] = en.motivo_;
-                nuevaFila["nif"] = aux_particular.nifUser;
-                t.Rows.Add(nuevaFila);
-                SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
-                da.Update(bdVirutal, "Cita");
-                cambiado = true;
+                com = new SqlCommand("Insert Into Cita (cif,fecha,motivo,nif) VALUES ('"
+                    + en.Cif + "','" + en.Fecha + "','" + en.Motivo + "','" + en.Nif + "')", c);
+                com.ExecuteNonQuery();
+                transaction = true;
             }
-            catch (Exception ex) 
-            { 
-                /*tratamiento de un label?*/
+            catch (Exception ex)
+            {
+                Console.WriteLine("Empresa operation has failed. Error: {0}", ex.Message);
             }
-            finally { c.Close(); }
-            return cambiado;
+            finally
+            {
+                if (c != null) c.Close();
+            }
+            return transaction;
+        }
+        public ArrayList ListarFechas(ENCita en)
+        {
+            string fecha = "";
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com = new SqlCommand("Select distinct(fecha) from Cita where nif='" + en.Nif + "'", c);
+            SqlDataReader dr = com.ExecuteReader();
+            while (dr.Read())
+            {
+                fecha = dr["fecha"].ToString();
+                listaFechas.Add(fecha);
+            }
+            dr.Close();
+            c.Close();
+            return listaFechas;
         }
 
+        public ArrayList ListarFechasPorCif(ENCita en)
+        {
+            string fecha = "";
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com = new SqlCommand("Select distinct(fecha) from Cita where cif='" + en.Cif + "'", c);
+            SqlDataReader dr = com.ExecuteReader();
+            while (dr.Read())
+            {
+                fecha = dr["fecha"].ToString();
+                listaFechas.Add(fecha);
+            }
+            dr.Close();
+            c.Close();
+            return listaFechas;
+        }
+        public List<ENCita> ListarCitas(ENCita en)
+        {
+            ENCita enc;
+            ENEmpresa ene;
+            string corporationCif = en.Cif;
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            if (corporationCif != "%")
+            {
+                SqlCommand com = new SqlCommand("Select * from Empresa where nombre='" + corporationCif + "'", c);
+                SqlDataReader dr = com.ExecuteReader();
+                dr.Read();
+                corporationCif = dr["cif"].ToString();
+                dr.Close();
+            }
+            SqlCommand com2 = new SqlCommand("Select * from Cita where nif='" + en.Nif + "' and fecha like '" + en.Fecha + "' and cif like '" + corporationCif + "'", c);
+            SqlDataReader dr2 = com2.ExecuteReader();
+            while (dr2.Read())
+            {
+                ene = new ENEmpresa();
+                ene.Cif = dr2["cif"].ToString();
+                ene.readEmpresa();
+                enc = new ENCita();
+                enc.Motivo = dr2["motivo"].ToString();
+                enc.Cif = ene.Nombre;
+                enc.Fecha = dr2["fecha"].ToString();
+                lista.Add(enc);
+            }
+            dr2.Close();
+            c.Close();
+            return lista;
+        }
+
+        public List<ENCita> ListarCitasClientes(ENCita en)
+        {
+            ENParticular enP;
+
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com2 = new SqlCommand("Select * from Cita where fecha like '" + en.Fecha + "' and cif like '" + en.Cif + "'", c);
+            SqlDataReader dr2 = com2.ExecuteReader();
+            while (dr2.Read())
+            {
+                enP = new ENParticular();
+                enP.nifUser = dr2["nif"].ToString();
+                enP.readParticular();
+                en.Nif = enP.nameUser;
+                en.Motivo = dr2["motivo"].ToString();
+                en.Fecha = dr2["fecha"].ToString();
+                lista.Add(en);
+            }
+            dr2.Close();
+            c.Close();
+            return lista;
+        }
         /// <summary>
         /// Lee una cita de la base de datos
         /// </summary>
         /// <param name="en">parametro que recibe de EN</param>
         /// <returns>devuelve un bool en funcion de si se borra con exito o no</returns>
-        public bool readCita(ENCita en) 
+        /*public bool readCita(ENCita en) 
         {
             bool read = false;
             DataSet bdVirtual = new DataSet();
@@ -118,10 +201,6 @@ namespace Library
                     check = true;
                 }
             }
-            catch (Exception ex)
-            { 
-                /*tratar label*/
-            }
             finally { c.Close(); }
             return check;
         }
@@ -144,14 +223,11 @@ namespace Library
                 check = true;
                 
             }
-            catch (Exception ex) 
-            { 
-                /*tratar label*/
-            }
+
             finally { c.Close(); }
             return check;
-        }        
-        
+        }      */
+
 
         //public void importNextCADCita(ENCita enCita) { }
 

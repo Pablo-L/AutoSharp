@@ -31,35 +31,25 @@ namespace Library
         /// <returns>devuelve un bool en funcion de si se crea el particular o no</returns>
         public bool createParticular(ENParticular en)
         {
-            bool cambiado = false;
-            DataSet bdVirutal = new DataSet();
+            bool transaction = false;
             SqlConnection c = new SqlConnection(constring);
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("select * from Particular", c);
-                da.Fill(bdVirutal, "Partircular");
-                DataTable t = new DataTable();
-                t = bdVirutal.Tables["Particular"];
-                DataRow nuevaFila = t.NewRow();
-                nuevaFila["nif"] = en.nifUser;
-                nuevaFila["nombre"] = en.nameUser;
-                nuevaFila["apellidos"] = en.surNamesUser;
-                nuevaFila["email"] = en.emailUser;
-                nuevaFila["telefono"] = en.telfUser;
-                nuevaFila["direccion"] = en.dirUser;
-                nuevaFila["iban"] = en.ibanUser;
-                nuevaFila["contraseña"] = en.passwordUser;
-                t.Rows.Add(nuevaFila);
-                SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
-                da.Update(bdVirutal, "Particular");
-                cambiado = true;
+                c.Open();
+                SqlCommand com = new SqlCommand("Insert Into Particular (nif,nombre,apellidos,email,telefono,direccion,iban,clave) VALUES ('"
+                    + en.nifUser + "','" + en.nameUser + "','" + en.surNamesUser + "','" + en.emailUser + "','" + en.telfUser + "','" + en.dirUser + "','" + en.ibanUser + "','" + en.passwordUser + "')", c);
+                com.ExecuteNonQuery();
+                transaction = true;
             }
             catch (Exception ex)
             {
-                /*tratamiento de un label?*/
+                throw ex;
             }
-            finally { c.Close(); }
-            return cambiado;
+            finally
+            {
+                if (c != null) c.Close();
+            }
+            return transaction;
         }
 
         /// <summary>
@@ -86,7 +76,7 @@ namespace Library
                     en.telfUser = (int) dr["telefono"];//cast a int
                     en.dirUser = dr["direccion"].ToString();
                     en.ibanUser = dr["iban"].ToString();
-                    en.passwordUser = dr["contraseña"].ToString();
+                    en.passwordUser = dr["clave"].ToString();
                     break;
                 }
             }
@@ -100,39 +90,28 @@ namespace Library
         /// <returns>devuelve un bool en funcion de si se a modificado o no</returns>
         public bool updateParticular(ENParticular en)
         {
-            bool check = false;
-            DataSet bdVirtual = new DataSet();
+            bool transaction = false;
             SqlConnection c = new SqlConnection(constring);
             try
             {
                 c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select * from Particular where nif = '" + en.nifUser + "'", c);
-                da.Fill(bdVirtual, "Particular");
-                if (bdVirtual.Tables[0].Rows.Count > 0)
-                {
-                    //manera propia:(no es la de los apuntes)
-                    string consulta = "update Particulr set nif ='" + en.nifUser
-                        + "', nombre = '" + en.nameUser
-                        + "', apellidos = '" + en.surNamesUser
-                        + "', email = '" + en.emailUser
-                        + "', telefono = '" + en.telfUser
-                        + "', direccion = '" + en.dirUser
-                        + "', iban = '" + en.ibanUser
-                        + "', contraseña = '" + en.passwordUser
-                        + " where id = '" + en.nifUser + "'";//damos por hecho que el nif no cambia
+                SqlCommand com = new SqlCommand("UPDATE Particular SET nombre='" + en.nameUser + "', apellidos='" + en.surNamesUser + "', email='" + en.emailUser + "', telefono='"
+                    + en.telfUser + "', direccion='" + en.dirUser + "', iban='" + en.ibanUser + "', clave='" + en.passwordUser + "' where nif='" + en.nifUser + "'", c);
 
-                    SqlCommand cmd = new SqlCommand(consulta, c);
-                    cmd.ExecuteNonQuery();
-                    check = true;
-                }
+                com.ExecuteNonQuery();
+                transaction = true;
             }
             catch (Exception ex)
             {
-                /*tratar label*/
+                throw ex;
             }
-            finally { c.Close(); }
-            return check;
+            finally
+            {
+                if (c != null) c.Close();
+            }
+            return transaction;
         }
+    
 
         /// <summary>
         /// borra un particular de la base de datos

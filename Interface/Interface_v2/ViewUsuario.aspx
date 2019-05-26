@@ -18,6 +18,9 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div style="width: 80%; margin: 0 auto; color: red; text-align: center">
+                                <asp:Label ID="txtmessage" runat="server" Text="" />
+                            </div>
                             <div class="col-md-12">
                                 <!--
                                   NIF
@@ -25,7 +28,7 @@
                                 <div class="form-group row">
                                     <label for="NIF" class="col-4 col-form-label">NIF</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="NIF" name="NIF" placeholder="NIF" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="NIF" name="NIF" placeholder="NIF" CssClass="form-control here" readonly="true" required="required"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -45,7 +48,7 @@
                                 <div class="form-group row">
                                     <label for="lastname" class="col-4 col-form-label">Last Name</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="lastname" name="lastname" placeholder="Last Name" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="lastname" name="lastname" CssClass="form-control here" required="required"></asp:TextBox>
                                     </div>
                                 </div>
                                 <!--
@@ -75,7 +78,7 @@
                                 <div class="form-group row">
                                     <label for="email" class="col-4 col-form-label">Email</label>
                                     <div class="col-8">
-                                        <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
+                                        <asp:TextBox runat="server" ID="email" name="email" placeholder="EMAIl" CssClass="form-control here" required="required"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -85,7 +88,7 @@
                                 <div class="form-group row">
                                     <label for="website" class="col-4 col-form-label">IBAN</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="iban" name="email" placeholder="IBAN" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="iban" name="iban" placeholder="IBAN" CssClass="form-control here" required="required"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -99,27 +102,11 @@
 
                                     </div>
                                 </div>
-
-                                <!--
-                                Repetir contraseña
-                                
-                              <div class="form-group row">
-                                <label for="publicinfo" class="col-4 col-form-label">Repetir Contraseña</label> 
-                                <div class="col-8">
-                                  <asp:TextBox runat="server" ID="pswd2" name="pswd2" placeholder="Repetir Contraseña" CssClass="form-control here" required="required"></asp:TextBox>
-                                  
+                                <div class="form-group row">
+                                    <div class="offset-3 col-8" style="margin-left: 5px">
+                                        <asp:Button runat="server" name="submit" class="btn btn-primary" ID="Btnupdateprofile" Text="Actualizar perfil" OnClick="Btnupdateprofile_Click" />
+                                    </div>
                                 </div>
-                              </div>
-                                -->
-                                <!--
-                                Submit button
-                                
-                              <div class="form-group row">
-                                <div class="offset-4 col-8">
-                                  <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
-                                </div>
-                              </div>
-                            -->
                             </div>
                         </div>
 

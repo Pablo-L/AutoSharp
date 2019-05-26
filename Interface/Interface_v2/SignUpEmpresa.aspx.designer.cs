@@ -13,6 +13,15 @@ namespace Interface_v2 {
     public partial class SigUpEmpresa {
         
         /// <summary>
+        /// Control txtmessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtmessage;
+        
+        /// <summary>
         /// Control CIF.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.TextBox direction;
         
         /// <summary>
+        /// Control email.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox email;
+        
+        /// <summary>
         /// Control telefono.
         /// </summary>
         /// <remarks>
@@ -56,15 +74,6 @@ namespace Interface_v2 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox telefono;
-        
-        /// <summary>
-        /// Control iban.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox iban;
         
         /// <summary>
         /// Control pswd.

@@ -6,7 +6,7 @@
     <!------ Include the above in your HEAD tag ---------->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Inicio" runat="server">
- <div class="container" style="">
+    <div class="container" style="">
      <div class="row">
          <div class="col-md-9">
              <div class="card">
@@ -18,6 +18,9 @@
                          </div>
                      </div>
                      <div class="row">
+                         <div style="width: 80%; margin: 0 auto; color: red; text-align: center">
+                             <asp:Label ID="txtmessage" runat="server" Text="" />
+                         </div>
                          <div class="col-md-12">
                              <!--
                                   CIF
@@ -41,7 +44,6 @@
                              <!--
                                   Tamaño
                                 -->
-
                              <div class="form-group row">
                                  <label for="lastname" class="col-4 col-form-label">Tamaño</label>
                                  <div class="col-8">
@@ -63,44 +65,32 @@
 
                                  </div>
                              </div>
+                            <!--
+                                Email
+                            -->
+                            <div class="form-group row">
+                                <label for="email" class="col-4 col-form-label">Email</label>
+                                <div class="col-8">
+                                    <asp:TextBox TextMode="Email" style="text-align: center" runat="server" ID="email" name="email" placeholder="Email" CssClass="form-control here" required="required"></asp:TextBox>
+                                </div>
+                            </div>
                              <!--
                                   Telefono
                                 -->
                              <div class="form-group row">
                                  <label for="text" class="col-4 col-form-label">Telefono</label>
                                  <div class="col-8">
-                                     <asp:TextBox TextMode="Number" runat="server" ID="telefono" name="telefono" placeholder="Teléfono" CssClass="form-control here" required="required"></asp:TextBox>
-
+                                     <asp:TextBox style="text-align: center" TextMode="Number" runat="server" ID="telefono" name="telefono" placeholder="Teléfono" CssClass="form-control here" required="required"></asp:TextBox>
                                  </div>
                              </div>
 
-                             <!--
-                                  Email
-                                
-                              <div class="form-group row">
-                                <label for="email" class="col-4 col-form-label">Email</label> 
-                                <div class="col-8">
-                                  <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
-                                </div>
-                              </div>
-                            -->
-                             <!--
-                                  IBAN
-                              
-                              <div class="form-group row">
-                                <label for="website" class="col-4 col-form-label">IBAN</label> 
-                                <div class="col-8">
-                                  <asp:TextBox runat="server" ID="iban" name="email" placeholder="IBAN" CssClass="form-control here" required="required"></asp:TextBox>
-                                </div>
-                              </div>
-                            -->
-                             <!--
-                                  Contraseña
+                              <!--
+                                Contraseña
                                 -->
                              <div class="form-group row">
                                  <label for="publicinfo" class="col-4 col-form-label">Contraseña</label>
                                  <div class="col-8">
-                                     <asp:TextBox TextMode="Password" runat="server" ID="pswd" name="pswd" placeholder="Contraseña" CssClass="form-control here" required="required"></asp:TextBox>
+                                     <asp:TextBox style="text-align: center" TextMode="Password" runat="server" ID="pswd" name="pswd" placeholder="Contraseña" CssClass="form-control here" required="required"></asp:TextBox>
 
                                  </div>
                              </div>
@@ -111,20 +101,17 @@
                              <div class="form-group row">
                                  <label for="publicinfo" class="col-4 col-form-label">Repetir Contraseña</label>
                                  <div class="col-8">
-                                     <asp:TextBox TextMode="Password" runat="server" ID="pswd2" name="pswd2" placeholder="Repetir Contraseña" CssClass="form-control here" required="required"></asp:TextBox>
+                                     <asp:TextBox style="text-align: center" TextMode="Password" runat="server" ID="pswd2" name="pswd2" placeholder="Repetir Contraseña" CssClass="form-control here" required="required"></asp:TextBox>
 
                                  </div>
                              </div>
 
                              <div class="form-group row">
                                  <div class="offset-3 col-8">
-
-                                     <asp:Button PostBackUrl="~/Vehiculos.aspx" runat="server" name="submit" class="btn btn-primary" ID="submit" Text="Registrarse" />
+                                     <asp:Button runat="server" name="submit" class="btn btn-primary" ID="submit" Text="Registrarse" OnClick="submit_Click" />
                                  </div>
 
                              </div>
-                             <!--
-                                  -->
 
                          </div>
                      </div>

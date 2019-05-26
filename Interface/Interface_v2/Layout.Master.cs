@@ -11,21 +11,39 @@ namespace Interface_v2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if(Session["nif"] != null)
             {
-                txtuser.Text = "Bienvenido " + Session["nif"].ToString();
-                HeaderMenu.Items[0].ChildItems.Add(HeaderMenu.FindItem("/Perfil"));
-                HeaderMenu.Items[0].ChildItems.Add(HeaderMenu.FindItem("/Salir"));
+                txtuser.Text = "Usuario: " + Session["nif"].ToString();
+                txtrol.Text = "PARTICULAR";
+            }
+            else if(Session["cif"] != null)
+            {
+                txtuser.Text = "Usuario: " + Session["cif"].ToString();
+                txtrol.Text = "EMPRESA";
             }
             else
             {
-                /*MenuItem parent = HeaderMenu.FindItem("Sesion");
-                MenuItem s = HeaderMenu.FindItem("Sesion/Salir");
-                MenuItem t = HeaderMenu.FindItem("Sesion/Perfil");
-                parent.ChildItems.Remove(s);
-                parent.ChildItems.Remove(t);*/
-                HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Perfil"));
-                HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Salir"));
+                if (HeaderMenu.FindItem("/Citas") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Citas"));
+                }
+                if (HeaderMenu.FindItem("/Perfil") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Perfil"));
+                }
+                if (HeaderMenu.FindItem("/Salir") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Salir"));
+                }
+                if (HeaderMenu.FindItem("/Consultas") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Consultas"));
+                }
+                if (HeaderMenu.FindItem("/Vehiculos") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Vehiculos"));
+                }
             }
         }
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
@@ -33,5 +51,58 @@ namespace Interface_v2
 
         }
 
+        protected void HeaderMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            MenuItem selectedItem = HeaderMenu.SelectedItem;
+            if (selectedItem.Text.ToString() == "Salir")
+            {
+                Session.Clear();
+                Response.Redirect("~/Inicio.aspx");
+            }
+            if(selectedItem.Text.ToString() == "Perfil")
+            {
+                if(Session["nif"] != null)
+                {
+                    Response.Redirect("~/ViewUsuario.aspx");
+                }
+                if (Session["cif"] != null)
+                {
+                    Response.Redirect("~/ViewEmpresa.aspx");
+                }
+            }
+            if (selectedItem.Text.ToString() == "Consultas")
+            {
+                if (Session["nif"] != null)
+                {
+                    Response.Redirect("~/OnlineQueryP.aspx");
+                }
+                if (Session["cif"] != null)
+                {
+                    Response.Redirect("~/OnlineQueryE.aspx");
+                }
+            }
+            if (selectedItem.Text.ToString() == "Citas")
+            {
+                if (Session["nif"] != null)
+                {
+                    Response.Redirect("~/CitaCliente.aspx");
+                }
+                if (Session["cif"] != null)
+                {
+                    Response.Redirect("~/CitaEmpresa.aspx");
+                }
+            }
+            if (selectedItem.Text.ToString() == "Vehiculos")
+            {
+                if (Session["nif"] != null)
+                {
+                    Response.Redirect("~/VehiculosParticular.aspx");
+                }
+                if (Session["cif"] != null)
+                {
+                    Response.Redirect("~/VehiculosEmpresa.aspx");
+                }
+            }
+        }
     }
 }

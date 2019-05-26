@@ -12,6 +12,7 @@ namespace Library
 {
 	public class ENVehiculo
 	{
+        private string imagen;
         /// <summary>
         /// Atributo privado matricula
         /// </summary>
@@ -56,6 +57,17 @@ namespace Library
         /// Atributo privador vendedor (nif)
         /// </summary>
         private string vendedor;
+        private string descripcion;
+        public string descripcionVehiculo
+        {
+            get { return descripcion; }
+            set { descripcion = value; }
+        }
+        public string imagenVehiculo
+        {
+            get { return imagen; }
+            set { imagen = value; }
+        }
         /// <summary>
         /// Propiedad pública de matricula
         /// </summary>
@@ -160,11 +172,13 @@ namespace Library
             potencia = 0;
             comprador = null;
             vendedor = null;
+            imagen = null;
+            descripcion = null;
         }
         /// <summary>
         /// Constructor de copia
         /// </summary>
-        public ENVehiculo(string matricula, string marca, string modelo, string color, string combustible, int año, float kilometros, float precio, int potencia, string comprador, string vendedor)
+        public ENVehiculo(string matricula, string marca, string modelo, string color, string combustible, int año, float kilometros, float precio, int potencia, string comprador, string vendedor, string imagen, string descripcion)
         {
             this.matricula = matricula;
             this.marca = marca;
@@ -177,6 +191,8 @@ namespace Library
             this.potencia = potencia;
             this.comprador = comprador;
             this.vendedor = vendedor;
+            this.imagen = imagen;
+            this.descripcion = descripcion;
         }
         /// <summary>
         /// Crea el véhículo indicado en la base de datos (alta vehículo)
@@ -213,5 +229,13 @@ namespace Library
             CADVehiculo cadv = new CADVehiculo();
             return cadv.updateVehiculo(this);
         }
-	}
+        public List<ENVehiculo> listarVehiculos()
+        {
+            List<ENVehiculo> a = new List<ENVehiculo>();
+            CADVehiculo c = new CADVehiculo();
+            a = c.ListarVehiculos(this);
+
+            return a;
+        }
+    }
 }

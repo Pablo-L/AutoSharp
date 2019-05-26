@@ -13,6 +13,15 @@ namespace Interface_v2 {
     public partial class SignUpParticular {
         
         /// <summary>
+        /// Control txtmessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtmessage;
+        
+        /// <summary>
         /// Control NIF.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,13 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.TextBox telefono;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
         /// Control iban.

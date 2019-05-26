@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Library
 {
@@ -7,6 +9,13 @@ namespace Library
     /// </summary>
     public class ENCita
     {
+        private string nif;
+
+        public string Nif { get => nif; set => nif = value; }
+
+        private string cif;
+
+        public string Cif { get => cif; set => cif = value; }
         /// <summary>
         /// Atributo privado ID
         /// </summary>
@@ -15,28 +24,27 @@ namespace Library
         /// <summary>
         /// propiedad publica id_
         /// </summary>
-        public int id_ { get => id; set => id = value; }
+        public int Id { get => id; set => id = value; }
 
         /// <summary>
         /// Atributo privado fecha
         /// </summary>
-        private DateTime fecha;
+        private string fecha;
 
         /// <summary>
         /// propiedad publica fecha_
         /// </summary>
-        public DateTime fecha_ { get => fecha; set => fecha = value; }
+        public string Fecha { get => fecha; set => fecha = value; }
 
         /// <summary>
         /// Atributo privado motivo
         /// </summary>
         private string motivo;
-        internal object aux;
 
         /// <summary>
         /// propiedad publica motivo_
         /// </summary>
-        public string motivo_ { get => motivo; set => motivo = value; }
+        public string Motivo { get => motivo; set => motivo = value; }
 
         /// <summary>
         /// propiedad publica cif
@@ -53,9 +61,11 @@ namespace Library
         /// </summary>
         public ENCita()
         {
-            this.id_ = 0;
-            this.fecha_ = DateTime.Now;
-            this.motivo_ = null;
+            this.Id = 0;
+            this.Fecha = null;
+            this.Motivo = null;
+            this.Nif = null;
+            this.Cif = null;
         }
 
         /// <summary>
@@ -64,12 +74,13 @@ namespace Library
         /// <param name="id_"> Parámetro entero id </param>
         /// <param name="fecha_"> Parámetro datetime fecha </param>
         /// <param name="motivo_"> Parámetro string motivo </param>
-        public ENCita(int id_, DateTime fecha_, string motivo_)
+        public ENCita(int id, string fecha, string motivo, string cif, string nif)
         {
-            this.id_ = id_;
-            this.fecha_ = fecha_;
-            this.motivo_ = motivo_;
-
+            this.Id = id;
+            this.Fecha = fecha;
+            this.Motivo = motivo;
+            this.Nif = nif;
+            this.Cif = cif;
         }
 
         /// <summary>
@@ -82,11 +93,47 @@ namespace Library
             return en.createCita(this);
         }
 
+        public ArrayList listarFechas()
+        {
+            ArrayList a = new ArrayList();
+            CADCita c = new CADCita();
+            a = c.ListarFechas(this);
+
+            return a;
+        }
+
+        public ArrayList listarFechasPorCif()
+        {
+            ArrayList a = new ArrayList();
+            CADCita c = new CADCita();
+            a = c.ListarFechasPorCif(this);
+
+            return a;
+        }
+        public List<ENCita> listarCitas()
+        {
+            List<ENCita> a = new List<ENCita>();
+            CADCita c = new CADCita();
+            a = c.ListarCitas(this);
+
+            return a;
+        }
+
+        public List<ENCita> listarCitasClientes()
+        {
+            List<ENCita> a = new List<ENCita>();
+            CADCita c = new CADCita();
+            a = c.ListarCitasClientes(this);
+
+            return a;
+        }
+
+
         /// <summary>
         /// lee una cita en la bbdd
         /// </summary>
         /// <returns>Devuelve true si la operación se realiza correctamente</returns>
-        public bool readCita()
+        /*public bool readCita()
         {
             CADCita en = new CADCita();
             return en.readCita(this);
@@ -110,6 +157,6 @@ namespace Library
         {
             CADCita en = new CADCita();
             return en.deleteCita(this);
-        }
+        }*/
     }
 }

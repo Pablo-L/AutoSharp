@@ -11,7 +11,7 @@ namespace Library
 {
     public class CADVehiculo
     {
-        ENParticular aux_particular = new ENParticular();
+        List<ENVehiculo> lista = new List<ENVehiculo>();
         /// <summary>
         /// Cadena de conexión de la base de datos
         /// </summary>
@@ -24,6 +24,7 @@ namespace Library
         {
             constring = ConfigurationManager.ConnectionStrings["DataBaseConnection"].ToString();
         }
+
         /// <summary>
         /// Crea el vehículo indicado en la bd
         /// </summary>
@@ -36,8 +37,8 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Insert Into Vehiculo (matricula, marca, modelo, color, anyo, combustible, potencia, km, precio, cif, nif) VALUES ('"
-                    + en.matriculaVehiculo + "','" + en.marcaVehiculo + "','" + en.modeloVehiculo + "','" + en.colorVehiculo + "','" + en.añoVehiculo + "','" + en.combustibleVehiculo + "','" + en.potenciaVehiculo + "','" + en.kilometrosVehiculo + "','" + en.precioVehiculo + "','" + en.vendedorVehiculo + "','" + en.compradorVehiculo + "')", c);
+                SqlCommand com = new SqlCommand("Insert Into Vehiculo (matricula, marca, modelo, color, anyo, combustible, potencia, km, precio, imagen, cif) VALUES ('"
+                    + en.matriculaVehiculo + "','" + en.marcaVehiculo + "','" + en.modeloVehiculo + "','" + en.colorVehiculo + "','" + en.añoVehiculo + "','" + en.combustibleVehiculo + "','" + en.potenciaVehiculo + "','" + en.kilometrosVehiculo + "','" + en.precioVehiculo + "','" + en.imagenVehiculo + "','" + en.vendedorVehiculo + "')", c);
                 com.ExecuteNonQuery();
                 transaction = true;
             }
@@ -103,9 +104,7 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Delete from Vehiculo where matricula = @matricula", c);
-                com.Parameters.Add(new SqlParameter("@matricula", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@matricula"].Value = en.matriculaVehiculo;
+                SqlCommand com = new SqlCommand("Delete from Vehiculo where matricula='" + en.matriculaVehiculo + "' and cif='" + en.vendedorVehiculo + "'", c);
                 com.ExecuteNonQuery();
                 transaction = true;
             }
@@ -131,11 +130,10 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Update Vehiculo Set nif = @nif where matricula = @matricula", c);
-                com.Parameters.Add(new SqlParameter("@matricula", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@matricula"].Value = en.matriculaVehiculo;
-                com.Parameters.Add(new SqlParameter("@nombre", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@nif"].Value = aux_particular.nifUser;
+                SqlCommand com = new SqlCommand("Update Vehiculo Set marca='" + en.marcaVehiculo +
+                    "', modelo='" + en.modeloVehiculo + "', anyo='" + en.añoVehiculo + "', color='" + en.colorVehiculo +
+                    "', km='" + en.kilometrosVehiculo + "', combustible='" + en.combustibleVehiculo + "', potencia='" + en.potenciaVehiculo + "', precio='" + en.precioVehiculo +
+                    "'WHERE cif='" + en.vendedorVehiculo + "' and matricula='" + en.matriculaVehiculo + "'", c);
                 com.ExecuteNonQuery();
                 transaction = true;
             }
@@ -150,5 +148,25 @@ namespace Library
             return transaction;
         }
 
+        public List<ENVehiculo> ListarVehiculos(ENVehiculo en)
+        {
+            ENVehiculo enV;
+
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com2 = new SqlCommand("Select marca,modelo,anyo from Vehiculo", c);
+            SqlDataReader dr2 = com2.ExecuteReader();
+            while (dr2.Read())
+            {
+                enV = new ENVehiculo();
+                enV.marcaVehiculo = dr2["marca"].ToString();
+                enV.modeloVehiculo = dr2["modelo"].ToString();
+                enV.añoVehiculo = Int32.Parse(dr2["anyo"].ToString());
+                lista.Add(enV);
+            }
+            dr2.Close();
+            c.Close();
+            return lista;
+        }
     }
 }

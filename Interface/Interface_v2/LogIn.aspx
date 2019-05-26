@@ -28,11 +28,11 @@
             box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
         }
 
-            .login-form-1 h3 {
-                text-align: center;
-                margin-bottom: 12%;
-                color: #000;
-            }
+        .login-form-1 h3 {
+            text-align: center;
+            margin-bottom: 12%;
+            color: #000;
+        }
 
         .login-form-2 {
             padding: 9%;
@@ -77,6 +77,10 @@
             text-decoration: solid;
             color: black;
         }
+
+        .form-control {
+            text-align: center;
+        }
     </style>
     
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -92,18 +96,18 @@
                 <h3>Inicio Empresas</h3>
 
                 <div class="form-group">
-                    <asp:TextBox ID="IDEmpresa" runat="server" CssClass="form-control" placeholder="CIF"></asp:TextBox>
+                    <asp:TextBox ID="IDEmpresa" Text="" runat="server" CssClass="form-control" placeholder="CIF"></asp:TextBox>
 
                 </div>
 
                 <div class="form-group">
-                    <asp:TextBox ID="PassEmpresa" runat="server" CssClass="form-control" placeholder="Contraseña"></asp:TextBox>
+                    <asp:TextBox ID="PassEmpresa" Text="" runat="server" CssClass="form-control" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
 
                 </div>
 
 
                 <div class="col-sm-12 text-center">
-                    <asp:Button  CssClass="btnSubmit" ID="LogInEmpresa" runat="server" Text="Iniciar Sesión" OnClick ="LoginEmpresa" />
+                    <asp:Button CssClass="btnSubmit" ID="Btnlogine" runat="server" Text="Iniciar Sesión" OnClick="Btnlogine_Click" />
                     <br />
                 </div>
 
@@ -112,7 +116,10 @@
                     <asp:Button PostBackUrl="~/SignUpEmpresa.aspx" CssClass="btnSubmit" ID="SignUpEmpresa" runat="server" Text="Regístrate" />
 
                 </div>
-
+                <div style="text-align: center; color: red">
+                    <br />
+                    <asp:Label ID="texterrlogin1" runat="server" Text=""/>
+                </div>
 
 
             </div>
@@ -122,12 +129,11 @@
 
                 <h3>Inicio Particulares</h3>
                 <div class="form-group">
-                    <asp:TextBox ID="IDParticular" runat="server" CssClass="form-control" placeholder="NIF"></asp:TextBox>
+                    <asp:TextBox ID="IDParticular" Text="" runat="server" CssClass="form-control" placeholder="NIF"></asp:TextBox>
 
                 </div>
                 <div class="form-group">
-                    <asp:TextBox ID="PassParticular" runat="server" CssClass="form-control" placeholder="Contraseña"></asp:TextBox>
-
+                    <asp:TextBox ID="PassParticular" runat="server" Text="" TextMode="Password" CssClass="form-control" placeholder="Contraseña"></asp:TextBox>
                 </div>
 
                 <div class="col-sm-12 text-center">
@@ -138,7 +144,11 @@
                 <div class="col-sm-12 text-center">
                     <br />
                     <asp:Button PostBackUrl="~/SignUpParticular.aspx" CssClass="btnSubmit" ID="SignUpParticular" runat="server" Text="Regístrate" />
+                </div>
 
+                <div style="text-align: center; color: red">
+                    <br />
+                    <asp:Label ID="txterrlogin2" runat="server" Text=""/>
                 </div>
             </div>
         </div>
