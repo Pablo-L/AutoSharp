@@ -40,6 +40,24 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.Menu HeaderMenu;
         
         /// <summary>
+        /// Control txtuser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtuser;
+        
+        /// <summary>
+        /// Control txtrol.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtrol;
+        
+        /// <summary>
         /// Control NavigationMenu.
         /// </summary>
         /// <remarks>
