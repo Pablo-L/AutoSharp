@@ -1,5 +1,7 @@
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Library
 {
@@ -9,55 +11,51 @@ namespace Library
     /// </summary>
     public class ENConsulta
     {
-        /// <summary>
-        /// atributo privado fecha
-        /// </summary>
-        private DateTime fecha;
+        private int id;
+        private string fecha;
+        private string cif;
+        private string nif;
+        private string pregunta;
+        private string respuesta;
 
+        public int Id { get => id; set => id = value; }
         /// <summary>
         /// propiedad publica fecha_
         /// </summary>
-        public DateTime fecha_ { get => fecha; set => fecha = value; }
+        public string Fecha { get => fecha; set => fecha = value; }
 
         /// <summary>
         /// atrivbuto privado id
         /// </summary>
-        private int id;
 
         /// <summary>
         /// propiedad publica id_
         /// </summary>
-        public int id_ { get => id; set => id = value; }
+        public string Cif { get => cif; set => cif = value; }
 
-        /// <summary>
-        /// atributo privado pregunta
-        /// </summary>
-        private string pregunta;
+        public string Nif { get => nif; set => nif = value; }
 
         /// <summary>
         /// propiedad publica pregunta_
         /// </summary>
-        public string pregunta_ { get => pregunta; set => pregunta = value; }
+        public string Pregunta { get => pregunta; set => pregunta = value; }
 
         /// <summary>
         /// atributo privado respuesta
         /// </summary>
-        private string respuesta;
-
-        /// <summary>
-        /// propiedad publica respuesta_
-        /// </summary>
-        public string respuesta_ { get => respuesta; set => respuesta = value; }
+        public string Respuesta { get => respuesta; set => respuesta = value; }
 
         /// <summary>
         /// constructor por defecto
         /// </summary>
         public ENConsulta()
         {
-            this.fecha_ = DateTime.Now;
-            this.id_ = 0;
-            this.pregunta_ = null;
-            this.respuesta_ = null;
+            this.Id = 0;
+            this.Fecha = null;
+            this.Nif = null;
+            this.Cif = null;
+            this.Pregunta = null;
+            this.Respuesta = null;
         }
 
         /// <summary>
@@ -67,12 +65,14 @@ namespace Library
         /// <param name="id_"> parametro int id </param>
         /// <param name="pregunta_"> parametro string pregunta </param>
         /// <param name="respuesta"> parametro string respuesta </param>
-        public ENConsulta(DateTime fecha_, int id_, string pregunta_, string respuesta)
+        public ENConsulta(int id, string fecha, string nif, string cif, string pregunta, string respuesta)
         {
-            this.fecha_ = fecha_;
-            this.id_ = id_;
-            this.pregunta_ = pregunta_;
-            this.respuesta_ = respuesta_;
+            this.Id = id;
+            this.Fecha = fecha;
+            this.Nif = nif;
+            this.Cif = cif;
+            this.Pregunta = pregunta;
+            this.Respuesta = respuesta;
         }
 
         /// <summary>
@@ -85,11 +85,68 @@ namespace Library
             return en.createConsulta(this);
         }
 
+        public bool leerPrimera()
+        {
+            CADConsulta en = new CADConsulta();
+            return en.LeerPrimera(this);
+        }
+
+        public bool leerSiguiente()
+        {
+            CADConsulta en = new CADConsulta();
+            return en.LeerSiguiente(this);
+        }
+        public bool actualizarRespuesta()
+        {
+            CADConsulta en = new CADConsulta();
+            return en.ActualizarRespuesta(this);
+        }
+        public bool leerAnterior()
+        {
+            CADConsulta en = new CADConsulta();
+            return en.LeerAnterior(this);
+        }
+
+        public List<ENConsulta> listarConsultas()
+        {
+            List<ENConsulta> a = new List<ENConsulta>();
+            CADConsulta c = new CADConsulta();
+            a = c.ListarConsultas(this);
+
+            return a;
+        }
+
+        public List<ENConsulta> listarConsultasClientes()
+        {
+            List<ENConsulta> a = new List<ENConsulta>();
+            CADConsulta c = new CADConsulta();
+            a = c.ListarConsultasClientes(this);
+
+            return a;
+        }
+
+        public ArrayList listarFechas()
+        {
+            ArrayList a = new ArrayList();
+            CADConsulta c = new CADConsulta();
+            a = c.ListarFechas(this);
+
+            return a;
+        }
+
+        public ArrayList listarFechasPorCif()
+        {
+            ArrayList a = new ArrayList();
+            CADConsulta c = new CADConsulta();
+            a = c.ListarFechasPorCif(this);
+
+            return a;
+        }
         /// <summary>
         /// lee una consulta en la bbdd
         /// </summary>
         /// <returns>Devuelve true si la operación se realiza correctamente</returns>
-        public bool readConsulta()
+        /*public bool readConsulta()
         {
             CADConsulta en = new CADConsulta();
             return en.readConsulta(this);
@@ -113,6 +170,6 @@ namespace Library
         {
             CADConsulta en = new CADConsulta();
             return en.deleteConsulta(this);
-        }
+        }*/
     }
 }

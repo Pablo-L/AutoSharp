@@ -8,6 +8,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Configuration;
+using System.Collections;
 
 namespace Library
 {
@@ -15,6 +16,7 @@ namespace Library
     public class CADEmpresa
     {
         private string constring;
+        ArrayList lista = new ArrayList();
 
         public CADEmpresa()
         {
@@ -83,19 +85,8 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Update Empresa Set nombre=@nombre, email = @email, telefono = @telefono, direccion = @direccion, tamaño = @tamaño, contraseña = @contraseña where cif = @cif", c);
-                com.Parameters.Add(new SqlParameter("@cif", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@cif"].Value = en.Cif;
-                com.Parameters.Add(new SqlParameter("@email", System.Data.SqlDbType.NVarChar));
-                com.Parameters["email"].Value = en.Mail;
-                com.Parameters.Add(new SqlParameter("@telefono", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@telefono"].Value = en.Telefono;
-                com.Parameters.Add(new SqlParameter("@direccion", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@direccion"].Value = en.Direccion;
-                com.Parameters.Add(new SqlParameter("@tamanyo", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@tamanyo"].Value = en.Tamanyo;
-                com.Parameters.Add(new SqlParameter("@contrasenya", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@contrasenya"].Value = en.Contrasenya;
+                SqlCommand com = new SqlCommand("Update Empresa Set nombre='" + en.Nombre + "', email='" + en.Mail + "', telefono='" + en.Telefono
+                    + "', direccion='" + en.Direccion + "', tamanyo='" + en.Tamanyo + "', contrasenya='" + en.Contrasenya + "' where cif='" + en.Cif + "'", c);
                 com.ExecuteNonQuery();
                 transaction = true;
             }
@@ -132,6 +123,21 @@ namespace Library
                 if (c != null) c.Close();
             }
             return transaction;
+        }
+
+        public ArrayList ListarEmpresas(ENEmpresa en)
+        {
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com = new SqlCommand("Select * from Empresa", c);
+            SqlDataReader dr = com.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(dr["nombre"].ToString());
+            }
+            dr.Close();
+            c.Close();
+            return lista;
         }
 
     }

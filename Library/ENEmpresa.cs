@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -125,6 +126,15 @@ namespace Library
         {
             CADEmpresa cadc = new CADEmpresa();
             return cadc.delete(this);
+        }
+
+        public ArrayList listarEmpresas()
+        {
+            ArrayList a = new ArrayList();
+            CADEmpresa c = new CADEmpresa();
+            a = c.ListarEmpresas(this);
+
+            return a;
         }
 
     }
