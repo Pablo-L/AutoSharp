@@ -130,7 +130,11 @@
             </div>
         </ItemTemplate>
     </asp:DataList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DataBaseConnection %>" SelectCommand="SELECT [modelo], [marca], [color], [anyo], [combustible], [potencia], [km], [precio], [imagen], [cif], [nif], [categoria], [descripcion] FROM [Vehiculo]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DataBaseConnection %>" SelectCommand="SELECT [modelo], [marca], [color], [anyo], [combustible], [potencia], [km], [precio], [imagen], [cif], [nif], [categoria], [descripcion], [matricula] FROM [Vehiculo] WHERE ([matricula] = @matricula)">
+        <SelectParameters>
+            <asp:QueryStringParameter Name="matricula" QueryStringField="matricula" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
 
 
 </asp:Content>
