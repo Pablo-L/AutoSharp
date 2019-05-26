@@ -13,6 +13,15 @@ namespace Interface_v2 {
     public partial class ViewEmpresa {
         
         /// <summary>
+        /// Control txtmessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtmessage;
+        
+        /// <summary>
         /// Control CIF.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.TextBox telefono;
         
         /// <summary>
+        /// Control email.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox email;
+        
+        /// <summary>
         /// Control pswd.
         /// </summary>
         /// <remarks>
@@ -67,21 +85,12 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.TextBox pswd;
         
         /// <summary>
-        /// Control submit.
+        /// Control Btnupdateprofile.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submit;
-        
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Btnupdateprofile;
     }
 }

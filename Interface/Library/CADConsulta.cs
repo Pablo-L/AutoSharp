@@ -101,21 +101,22 @@ namespace Library
         public List<ENConsulta> ListarConsultasClientes(ENConsulta en)
         {
             ENParticular enP;
-
+            ENConsulta enC;
             SqlConnection c = new SqlConnection(constring);
             c.Open();
             SqlCommand com2 = new SqlCommand("Select * from ConsultaOnline where fecha like '" + en.Fecha + "' and cif like '" + en.Cif + "'", c);
             SqlDataReader dr2 = com2.ExecuteReader();
             while (dr2.Read())
             {
+                enC = new ENConsulta();
                 enP = new ENParticular();
                 enP.nifUser = dr2["nif"].ToString();
                 enP.readParticular();
-                en.Nif = enP.nameUser;
-                en.Pregunta = dr2["pregunta"].ToString();
-                en.Respuesta = dr2["respuesta"].ToString();
-                en.Fecha = dr2["fecha"].ToString();
-                lista.Add(en);
+                enC.Nif = enP.nameUser;
+                enC.Pregunta = dr2["pregunta"].ToString();
+                enC.Respuesta = dr2["respuesta"].ToString();
+                enC.Fecha = dr2["fecha"].ToString();
+                lista.Add(enC);
             }
             dr2.Close();
             c.Close();

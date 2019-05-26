@@ -11,7 +11,7 @@ namespace Library
 {
     public class CADVehiculo
     {
-        ENParticular aux_particular = new ENParticular();
+        List<ENVehiculo> lista = new List<ENVehiculo>();
         /// <summary>
         /// Cadena de conexión de la base de datos
         /// </summary>
@@ -24,6 +24,7 @@ namespace Library
         {
             constring = ConfigurationManager.ConnectionStrings["DataBaseConnection"].ToString();
         }
+
         /// <summary>
         /// Crea el vehículo indicado en la bd
         /// </summary>
@@ -135,7 +136,6 @@ namespace Library
                 com.Parameters.Add(new SqlParameter("@matricula", System.Data.SqlDbType.NVarChar));
                 com.Parameters["@matricula"].Value = en.matriculaVehiculo;
                 com.Parameters.Add(new SqlParameter("@nombre", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@nif"].Value = aux_particular.nifUser;
                 com.ExecuteNonQuery();
                 transaction = true;
             }
@@ -150,5 +150,25 @@ namespace Library
             return transaction;
         }
 
+        public List<ENVehiculo> ListarVehiculos(ENVehiculo en)
+        {
+            ENVehiculo enV;
+
+            SqlConnection c = new SqlConnection(constring);
+            c.Open();
+            SqlCommand com2 = new SqlCommand("Select marca,modelo,anyo from Vehiculo", c);
+            SqlDataReader dr2 = com2.ExecuteReader();
+            while (dr2.Read())
+            {
+                enV = new ENVehiculo();
+                enV.marcaVehiculo = dr2["marca"].ToString();
+                enV.modeloVehiculo = dr2["modelo"].ToString();
+                enV.añoVehiculo = Int32.Parse(dr2["anyo"].ToString());
+                lista.Add(enV);
+            }
+            dr2.Close();
+            c.Close();
+            return lista;
+        }
     }
 }

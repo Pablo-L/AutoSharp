@@ -16,10 +16,12 @@ namespace Interface_v2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Session["nif"] != null || Session["cif"] != null)
             {
                 Response.Redirect("~/Inicio.aspx");
             }
+
         }
 
         protected void Btnloginp_Click1(object sender, EventArgs e)

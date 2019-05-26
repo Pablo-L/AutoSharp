@@ -31,13 +31,13 @@ namespace Library
             {
                 c.Open();
                 SqlCommand com = new SqlCommand("Insert Into Empresa (cif,nombre,email,telefono,direccion,tamanyo,contrasenya) VALUES ('"
-                    + en.Cif + "','" + en.Nombre + "','" + en.Mail + "','" + en.Telefono + "','" + en.Direccion + "','" + en.Tamanyo + "')", c);
+                    + en.Cif + "','" + en.Nombre + "','" + en.Mail + "','" + en.Telefono + "','" + en.Direccion + "','" + en.Tamanyo + "','" + en.Contrasenya + "')", c);
                 com.ExecuteNonQuery();
                 transaction = true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Empresa operation has failed. Error: {0}", ex.Message);
+                throw ex;
             }
             finally
             {
@@ -53,9 +53,7 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Select * from Empresa where cif = @cif", c);
-                com.Parameters.Add(new SqlParameter("@cif", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@cif"].Value = en.Cif;
+                SqlCommand com = new SqlCommand("Select * from Empresa where cif='" + en.Cif + "'", c);
                 SqlDataReader dr = com.ExecuteReader();
                 dr.Read();
                 en.Cif = dr["cif"].ToString();
@@ -85,19 +83,8 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Update Empresa Set nombre=@nombre, email = @email, telefono = @telefono, direccion = @direccion, tamaño = @tamaño, contraseña = @contraseña where cif = @cif", c);
-                com.Parameters.Add(new SqlParameter("@cif", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@cif"].Value = en.Cif;
-                com.Parameters.Add(new SqlParameter("@email", System.Data.SqlDbType.NVarChar));
-                com.Parameters["email"].Value = en.Mail;
-                com.Parameters.Add(new SqlParameter("@telefono", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@telefono"].Value = en.Telefono;
-                com.Parameters.Add(new SqlParameter("@direccion", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@direccion"].Value = en.Direccion;
-                com.Parameters.Add(new SqlParameter("@tamanyo", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@tamanyo"].Value = en.Tamanyo;
-                com.Parameters.Add(new SqlParameter("@contrasenya", System.Data.SqlDbType.NVarChar));
-                com.Parameters["@contrasenya"].Value = en.Contrasenya;
+                SqlCommand com = new SqlCommand("Update Empresa Set nombre='" + en.Nombre + "', email='" + en.Mail + "', telefono='" + en.Telefono
+                    + "', direccion='" + en.Direccion + "', tamanyo='" + en.Tamanyo + "', contrasenya='" + en.Contrasenya + "' where cif='" + en.Cif + "'", c);
                 com.ExecuteNonQuery();
                 transaction = true;
             }

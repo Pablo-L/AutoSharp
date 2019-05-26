@@ -31,35 +31,25 @@ namespace Library
         /// <returns>devuelve un bool en funcion de si se crea el particular o no</returns>
         public bool createParticular(ENParticular en)
         {
-            bool cambiado = false;
-            DataSet bdVirutal = new DataSet();
+            bool transaction = false;
             SqlConnection c = new SqlConnection(constring);
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter("select * from Particular", c);
-                da.Fill(bdVirutal, "Partircular");
-                DataTable t = new DataTable();
-                t = bdVirutal.Tables["Particular"];
-                DataRow nuevaFila = t.NewRow();
-                nuevaFila["nif"] = en.nifUser;
-                nuevaFila["nombre"] = en.nameUser;
-                nuevaFila["apellidos"] = en.surNamesUser;
-                nuevaFila["email"] = en.emailUser;
-                nuevaFila["telefono"] = en.telfUser;
-                nuevaFila["direccion"] = en.dirUser;
-                nuevaFila["iban"] = en.ibanUser;
-                nuevaFila["contraseña"] = en.passwordUser;
-                t.Rows.Add(nuevaFila);
-                SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
-                da.Update(bdVirutal, "Particular");
-                cambiado = true;
+                c.Open();
+                SqlCommand com = new SqlCommand("Insert Into Particular (nif,nombre,apellidos,email,telefono,direccion,iban,clave) VALUES ('"
+                    + en.nifUser + "','" + en.nameUser + "','" + en.surNamesUser + "','" + en.emailUser + "','" + en.telfUser + "','" + en.dirUser + "','" + en.ibanUser + "','" + en.passwordUser + "')", c);
+                com.ExecuteNonQuery();
+                transaction = true;
             }
             catch (Exception ex)
             {
-                /*tratamiento de un label?*/
+                throw ex;
             }
-            finally { c.Close(); }
-            return cambiado;
+            finally
+            {
+                if (c != null) c.Close();
+            }
+            return transaction;
         }
 
         /// <summary>

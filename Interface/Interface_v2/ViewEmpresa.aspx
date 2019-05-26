@@ -13,6 +13,9 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
+                            <div style="width: 80%; margin: 0 auto; color: red; text-align: center">
+                                <asp:Label ID="txtmessage" runat="server" Text="" />
+                            </div>
                             <div class="col-md-12">
                                 <h3>Información actual de tu perfil</h3>
                                 <hr>
@@ -26,7 +29,7 @@
                                 <div class="form-group row">
                                     <label for="CIF" class="col-4 col-form-label">CIF</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="CIF" name="CIF" placeholder="CIF" CssClass="form-control here"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="CIF" readonly="true" name="CIF" placeholder="CIF" CssClass="form-control here"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -69,26 +72,32 @@
 
                                     </div>
                                 </div>
+
+                                <!--
+                                  Email
+                                -->
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Email</label>
+                                    <div class="col-8">
+                                        <asp:TextBox runat="server" ID="email" name="email" placeholder="EMAIl" CssClass="form-control here" required="required"></asp:TextBox>
+                                    </div>
+                                </div>
+
                                 <!--
                                   Contraseña
                                 -->
                                 <div class="form-group row">
                                     <label for="publicinfo" class="col-4 col-form-label">Contraseña</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="pswd" name="pswd" placeholder="Contraseña" CssClass="form-control here"></asp:TextBox>
-
+                                        <asp:TextBox runat="server" ID="pswd" name="pswd" placeholder="Contraseña" CssClass="form-control here" required="required"></asp:TextBox>
                                     </div>
                                 </div>
 
 
                                 <div class="form-group row">
-                                    <div class="offset-3 col-8">
-                                        <asp:Button runat="server" name="submit" class="btn btn-primary" ID="submit" Text="Ver mis Vehiculos" />
-
-                                        &nbsp
-                                        <asp:Button PostBackUrl="~/SignUpCar.aspx" runat="server" name="submit" class="btn btn-primary" ID="Button1" Text="Añadir Vehiculo" />
+                                    <div class="offset-3 col-8" style="margin-left: 5px">
+                                        <asp:Button runat="server" name="submit" class="btn btn-primary" ID="Btnupdateprofile" Text="Actualizar perfil" OnClick="Btnupdateprofile_Click" />
                                     </div>
-
                                 </div>
                                 <!--
                                   -->

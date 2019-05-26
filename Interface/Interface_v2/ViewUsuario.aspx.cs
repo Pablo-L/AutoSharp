@@ -13,7 +13,6 @@ namespace Interface_v2
 {
     public partial class ViewUsuario : System.Web.UI.Page
     {
-        bool updateError = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["nif"] == null)

@@ -84,6 +84,10 @@
     <Content Include="AnswerQuery.aspx" />
     <Content Include="CitaCliente.aspx" />
     <Content Include="CitaEmpresa.aspx" />
+    <Content Include="imagenes\coches_bd\a1.jpg" />
+    <Content Include="imagenes\coches_bd\a2.jpg" />
+    <Content Include="imagenes\coches_bd\a3.jpg" />
+    <Content Include="imagenes\coches_bd\ar4c.jpg" />
     <Content Include="VerCitaEmpresa.aspx" />
     <Content Include="VerCitaCliente.aspx" />
     <Content Include="NuevaCita.aspx" />

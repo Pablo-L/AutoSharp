@@ -213,5 +213,13 @@ namespace Library
             CADVehiculo cadv = new CADVehiculo();
             return cadv.updateVehiculo(this);
         }
-	}
+        public List<ENVehiculo> listarVehiculos()
+        {
+            List<ENVehiculo> a = new List<ENVehiculo>();
+            CADVehiculo c = new CADVehiculo();
+            a = c.ListarVehiculos(this);
+
+            return a;
+        }
+    }
 }
