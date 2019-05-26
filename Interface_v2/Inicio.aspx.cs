@@ -13,5 +13,11 @@ namespace Interface_v2
         {
 
         }
+        protected void CarDetails_Command(object source, CommandEventArgs e)
+        {
+
+            Response.Redirect("~/DetallesCoches.aspx?matricula=" + e.CommandArgument.ToString());
+
+        }
     }
 }
