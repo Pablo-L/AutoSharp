@@ -31,13 +31,13 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.TextBox PassEmpresa;
         
         /// <summary>
-        /// Control LogInEmpresa.
+        /// Control Btnlogine.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LogInEmpresa;
+        protected global::System.Web.UI.WebControls.Button Btnlogine;
         
         /// <summary>
         /// Control SignUpEmpresa.
@@ -47,6 +47,15 @@ namespace Interface_v2 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SignUpEmpresa;
+        
+        /// <summary>
+        /// Control texterrlogin1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label texterrlogin1;
         
         /// <summary>
         /// Control IDParticular.
@@ -67,13 +76,13 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.TextBox PassParticular;
         
         /// <summary>
-        /// Control LogInParticular.
+        /// Control Btnloginp.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LogInParticular;
+        protected global::System.Web.UI.WebControls.Button Btnloginp;
         
         /// <summary>
         /// Control SignUpParticular.
@@ -83,5 +92,14 @@ namespace Interface_v2 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SignUpParticular;
+        
+        /// <summary>
+        /// Control txterrlogin2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txterrlogin2;
     }
 }
