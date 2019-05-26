@@ -20,25 +20,25 @@
     max-width: 400px;
 }
 
-.column1 h1 {
-    font-size: 22px;
-    color: white;
-}
+    .column1 h1 {
+        font-size: 22px;
+        color: white;
+    }
 
-.column1 p {
-    font-size: 14px;
-    color: #C7C7C7;
-    margin-top: 20px;
-}
+    .column1 p {
+        font-size: 14px;
+        color: #C7C7C7;
+        margin-top: 20px;
+    }
 
 .column2 {
     max-width: 400px;
 }
 
-.column2 h1 {
-    font-size: 22px;
-    color: white;
-}
+    .column2 h1 {
+        font-size: 22px;
+        color: white;
+    }
 
 .row {
     margin 20px;
@@ -46,11 +46,11 @@
 }
 
 
-.row label {
-    margin-top: 10px;
-    margin-left: 20px;
-    color: #C7C7C7;
-}
+    .row label {
+        margin-top: 10px;
+        margin-left: 20px;
+        color: #C7C7C7;
+    }
 
 .row2 label {
     margin-top: 10px;
@@ -72,11 +72,11 @@
     display: flex;
 }
 
-.row2 label {
-    margin-top: 10px;
-    margin-left: 20px;
-    max-width: 140px;
-}
+    .row2 label {
+        margin-top: 10px;
+        margin-left: 20px;
+        max-width: 140px;
+    }
 
 .container-footer {
     width: 100%;
@@ -95,11 +95,11 @@
     color: #C7C7C7;
 }
 
-.copyright a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
+    .copyright a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
 
 .information a {
     text-decoration: none;

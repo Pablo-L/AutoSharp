@@ -4,80 +4,64 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>AutoSharp</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link rel="stylesheet" href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+    <link rel="stylesheet" href='https://use.fontawesome.com/releases/v5.7.0/>' />
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/Footer.css" rel="stylesheet" />
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-            background-image: url(imagenes/background/bg.jpg)
-        }
-
-        .auto-style2 {
-            width: 100%;
-        }
-
-        .auto-style3 {
-            height: 180px;
-            text-align: center;
-     
-        }
-
-        .auto-style4 {
-            height: 90px;
-
-        }
-
-        .auto-style5 {
-            color: black;
- 
-        }
-
-        .navigation {
-            font-size: 35px;
-            font-family: Magneto;
-            position: relative;
-            left: 210px;
-
-        }
-        .auto-style6 {
-            height: 800px;
-            
-        }
-    </style>
+    <link rel="Stylesheet" type="text/css" href="css/Footer.css" />
+    <link rel="Stylesheet" type="text/css" href="~/css/hoja.css" />
+    <link rel="Stylesheet" type="text/css" href="css/Ofertas.css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style3">
-                        <asp:Label ID="Label1" runat="server" CssClass="auto-style5" Font-Bold="True" Font-Names="Magneto" Font-Size="170px" Text="AutoSharp"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">
-                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="navigation" ForeColor="Black" OnMenuItemClick="Menu1_MenuItemClick">
-                            <Items>
-                                <asp:MenuItem Text="Inicio" Value="Inicio" NavigateUrl="~/view/Inicio.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Vehículos" Value="Vehiculos" NavigateUrl="~/view/Vehiculos.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Contáctanos" Value="Contactanos" NavigateUrl="~/view/Contacto.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Iniciar Sesión" Value="Iniciar Sesion" NavigateUrl="~/view/Sesion.aspx"></asp:MenuItem>
-                                <asp:MenuItem></asp:MenuItem>
-                            </Items>
-                        </asp:Menu>
-                    </td>
-                </tr>
-            </table>
+            <header>
+                <div id="logo">
+                    <img src="imagenes/logo/logo.png" style="height: 75px; width: 360px; margin-left: 0px" />
+                </div>
+                <div id="login">
+                    <asp:Menu CssClass="HeaderMenu" ID="HeaderMenu" Orientation="Horizontal" runat="server" OnMenuItemClick="HeaderMenu_MenuItemClick">
+                        <DynamicMenuItemStyle BackColor="#e5e5e5"
+                            ForeColor="#003322"
+                            Width="70px"
+                            BorderStyle="solid"
+                            BorderWidth="1px"
+                            BorderColor="#003322" />
+                        <Items>
+                            <asp:MenuItem ImageUrl="~/imagenes/logo/user.png" NavigateUrl="~/LogIn.aspx" ToolTip="Sesion">
+                                <asp:MenuItem Text="Perfil" ToolTip="Perfil" Value="Perfil" />
+                                <asp:MenuItem Text="Consultas" ToolTip="Consultas" Value="Consultas" />
+                                <asp:MenuItem Text="Salir" ToolTip="Salir" Value="Salir" />
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </div>
+                <div style="width: 20%; margin-top: 15px; float: right; text-align: center;">
+                    <asp:Label ID="txtuser" runat="server" Text="" />
+                    <br />
+                    <asp:Label ID="txtrol" runat="server" Text="" />
+                </div>
+            </header>
+            <nav>
+                <div id="menu">
+                    <asp:Menu CssClass="NavigationMenu" ID="NavigationMenu" Orientation="Horizontal" runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick">
+                        <StaticHoverStyle BackColor="#ccffef" />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Inicio.aspx" Text="Inicio" ToolTip="Inicio" />
+                            <asp:MenuItem NavigateUrl="~/Vehiculos.aspx" Text="Buscar" ToolTip="Buscar" />
+                            <asp:MenuItem NavigateUrl="~/Contacto.aspx" Text="Contáctanos" ToolTip="Contacto" />
+                            <asp:MenuItem NavigateUrl="~/Empresa.aspx" Text="Empresas" ToolTip="Empresas" />
+                        </Items>
+                    </asp:Menu>
+                </div>
+            </nav>
             <table class="auto-style2">
                 <tr>
                     <td class="auto-style6">
@@ -87,12 +71,69 @@
                 </tr>
                 <tr>
                     <td>
+                        <asp:DataList ID="InitialDataList" runat="server" CssClass="row" DataSourceID="SqlDataSource3" HorizontalAlign="Center">
+                            <ItemTemplate>
+                                <br>
+                                <h4>&nbsp;&nbsp;&nbsp;Vehículos En Oferta</h4>
+                                <br>
+                                <div class="row" id="ads">
+                                    <div class="col-md-4">
+                                        <div class="card rounded">
+                                            <div class="card-image">
+                                                <span class="card-notify-badge"><%#Eval("marca")%> <%#Eval("modelo")%></span>
+                                                <span class="card-notify-year"><%#Eval("anyo")%></span>
+                                                <asp:LinkButton runat="server" OnCommand="CarDetails_Command" CommandArgument='<%#Eval("matricula")%>' CommandName="viewdetails">
+                                                <img class="img-fluid" width="440" height="262" src='<%#Eval("imagen")%>'/>
+                                                </asp:LinkButton>
+                                            </div>
+                                            <div class="card-image-overlay m-auto">
+                                                <span class="card-detail-badge"><%#Eval("precio")%> €</span>
+                                                <span class="card-detail-badge"><%#Eval("km")%> Km</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="card rounded">
+                                            <div class="card-image">
+                                                <span class="card-notify-badge"><%#Eval("marca")%> <%#Eval("modelo")%></span>
+                                                <span class="card-notify-year"><%#Eval("anyo")%></span>
+                                                <asp:HyperLink runat="server" NavigateUrl="~/DetallesCoches.aspx">
+                                                <img class="img-fluid" width="440" height="260" src='<%#Eval("imagen")%>' alt="Alternate Text" />
+                                                </asp:HyperLink>
+                                            </div>
+                                            <div class="card-image-overlay m-auto">
+                                                <span class="card-detail-badge"><%#Eval("precio")%> €</span>
+                                                <span class="card-detail-badge"><%#Eval("km")%> Km</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card rounded">
+                                            <div class="card-image">
+                                                <span class="card-notify-badge"><%#Eval("marca")%> <%#Eval("modelo")%></span>
+                                                <span class="card-notify-year"><%#Eval("anyo")%></span>
+                                                <asp:HyperLink runat="server" NavigateUrl="~/DetallesCoches.aspx">
+                                                <img class="img-fluid" width="440" height="262" src='<%#Eval("imagen")%>' alt="Alternate Text" />
+                                                </asp:HyperLink>
+                                            </div>
+                                            <div class="card-image-overlay m-auto">
+
+                                                <span class="card-detail-badge"><%#Eval("precio")%> €</span>
+                                                <span class="card-detail-badge"><%#Eval("km")%> Km</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:DataList>
+                        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DataBaseConnection %>" SelectCommand="SELECT Oferta.descuento, Vehiculo.precio, Vehiculo.km, Vehiculo.marca, Vehiculo.modelo, Vehiculo.imagen, Vehiculo.matricula, Vehiculo.anyo FROM Vehiculo INNER JOIN Oferta ON Vehiculo.matricula = Oferta.matricula"></asp:SqlDataSource>
                         <footer>
                             <div class="container-footer-all">
                                 <div class="container-body">
                                     <div class="column1">
                                         <h1>Más información de la compañía </h1>
-                                        <p>Nos dedicamos a la compraventa de coches a través de terceros. (añadir cualquier cosa mas y corregir faltas)</p>
+                                        <p>Nos dedicamos a la compraventa de coches a través de terceros.</p>
                                     </div>
                                     <div class="column2">
                                         <h1>Redes sociales</h1>
@@ -137,9 +178,19 @@
                                         © Copyright AutoSharp 2019.
                                     </div>
                                     <div class="information">
-                                        <a href="Informacion Compañia">Informacion Compañia</a> |
-                                        <a href="Privacidad y Politica">Privacidad y Politica</a> |
-                                        <a href="Terminos y Condiciones">Terminos y Condiciones</a>
+                                        
+                                        <a>
+                                            <asp:HyperLink runat="server" Text="Inicio" NavigateUrl="~/Inicio.aspx"></asp:HyperLink>
+                                        </a> |
+                                         <a>
+                                            <asp:HyperLink runat="server" Text="Buscar" NavigateUrl="~/Vehiculos.aspx"></asp:HyperLink>
+                                        </a> |
+                                         <a>
+                                            <asp:HyperLink runat="server" Text="Empresas" NavigateUrl="~/Empresa.aspx"></asp:HyperLink>
+                                        </a> |
+                                        <a>
+                                            <asp:HyperLink runat="server" Text="Iniciar Sesion" NavigateUrl="~/LogIn.aspx"></asp:HyperLink>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

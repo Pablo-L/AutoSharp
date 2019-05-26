@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1300F245-C57D-4D66-8058-08C3E7AC2661}</ProjectGuid>
+    <ProjectGuid>{705296C7-D53C-46BF-9A1E-F3A89EB35BD3}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.1\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,17 +70,128 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\Buttons.css" />
-    <Content Include="imagenes\background\bg.jpg" />
+    <Content Include="AnswerQuery.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf" />
+    <Content Include="CitaCiliente.aspx" />
+    <Content Include="CitaEmpresa.aspx" />
+    <Content Include="Contacto.aspx" />
+    <Content Include="css\DataList.css" />
     <Content Include="css\Footer.css" />
-    <Content Include="css\Navi.css" />
-    <Content Include="view\Contacto.aspx" />
-    <Content Include="view\Inicio.aspx" />
-    <Content Include="view\Sesion.aspx" />
-    <Content Include="view\Vehiculos.aspx" />
+    <Content Include="css\hoja.css" />
+    <Content Include="css\Ofertas.css" />
+    <Content Include="DetallesCoches.aspx" />
+    <Content Include="Empresa.aspx" />
+    <Content Include="AgregarOferta.aspx" />
+    <Content Include="imagenes\carrousel\Car Sales - Credit Unions.png" />
+    <Content Include="imagenes\carrousel\login_page_background.jpg" />
+    <Content Include="imagenes\carrousel\slider1.jpg" />
+    <Content Include="imagenes\carrousel\thumb_dealer.jpg" />
+    <Content Include="imagenes\carrousel\thumb_turntable.jpg" />
+    <Content Include="imagenes\carrousel\used-car-sales.jpg" />
+    <Content Include="imagenes\cita\nuevaCita.png" />
+    <Content Include="imagenes\cita\verCita.png" />
+    <Content Include="imagenes\coches_bd\a1.jpg" />
+    <Content Include="imagenes\coches_bd\a2.jpg" />
+    <Content Include="imagenes\coches_bd\a3.jpg" />
+    <Content Include="imagenes\coches_bd\ar4c.jpg" />
+    <Content Include="imagenes\coches_bd\daewoolanos.jpg" />
+    <Content Include="imagenes\coches_bd\bmw320D.jpg" />
+    <Content Include="imagenes\empresa_bd\audi.png" />
+    <Content Include="imagenes\empresa_bd\bmw.png" />
+    <Content Include="imagenes\empresa_bd\hyundai.png" />
+    <Content Include="imagenes\empresa_bd\peugeot.png" />
+    <Content Include="imagenes\empresa_bd\renault.png" />
+    <Content Include="imagenes\empresa_bd\seat.png" />
+    <Content Include="imagenes\logo\house.png" />
+    <Content Include="imagenes\logo\logo_f.png" />
+    <Content Include="imagenes\logo\logo.png" />
+    <Content Include="imagenes\logo\oldtimer.jpg" />
+    <Content Include="imagenes\logo\rhino.jpg" />
+    <Content Include="imagenes\logo\search.png" />
+    <Content Include="imagenes\logo\tools.png" />
+    <Content Include="imagenes\logo\user.png" />
+    <Content Include="imagenes\logo\user32.png" />
+    <Content Include="imagenes\query\left.png" />
+    <Content Include="imagenes\query\query1.png" />
+    <Content Include="imagenes\query\query2.png" />
+    <Content Include="imagenes\query\right.png" />
+    <Content Include="Inicio.aspx" />
+    <Content Include="ListaOferta.aspx" />
+    <Content Include="LogIn.aspx" />
+    <Content Include="NewQuery.aspx" />
+    <Content Include="NuevaCita.aspx" />
+    <Content Include="OnlineQueryE.aspx" />
+    <Content Include="OnlineQueryP.aspx" />
+    <Content Include="SeeCompanyQuery.aspx" />
+    <Content Include="SeeQuery.aspx" />
+    <Content Include="SignUpCar.aspx" />
+    <Content Include="SignUpEmpresa.aspx" />
+    <Content Include="SignUpParticular.aspx" />
+    <Content Include="Vehiculos.aspx" />
+    <Content Include="VerCitaCliente.aspx" />
+    <Content Include="VerCitaEmpresa.aspx" />
+    <Content Include="ViewEmpresa.aspx" />
+    <Content Include="ViewUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerQuery.aspx.cs">
+      <DependentUpon>AnswerQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnswerQuery.aspx.designer.cs">
+      <DependentUpon>AnswerQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CitaCiliente.aspx.cs">
+      <DependentUpon>CitaCiliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CitaCiliente.aspx.designer.cs">
+      <DependentUpon>CitaCiliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CitaEmpresa.aspx.cs">
+      <DependentUpon>CitaEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CitaEmpresa.aspx.designer.cs">
+      <DependentUpon>CitaEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetallesCoches.aspx.cs">
+      <DependentUpon>DetallesCoches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetallesCoches.aspx.designer.cs">
+      <DependentUpon>DetallesCoches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa.aspx.cs">
+      <DependentUpon>Empresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresa.aspx.designer.cs">
+      <DependentUpon>Empresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarOferta.aspx.cs">
+      <DependentUpon>AgregarOferta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarOferta.aspx.designer.cs">
+      <DependentUpon>AgregarOferta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Layout.Master.cs">
       <DependentUpon>Layout.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -85,34 +199,118 @@
     <Compile Include="Layout.Master.designer.cs">
       <DependentUpon>Layout.Master</DependentUpon>
     </Compile>
+    <Compile Include="ListaOferta.aspx.cs">
+      <DependentUpon>ListaOferta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaOferta.aspx.designer.cs">
+      <DependentUpon>ListaOferta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewQuery.aspx.cs">
+      <DependentUpon>NewQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewQuery.aspx.designer.cs">
+      <DependentUpon>NewQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaCita.aspx.cs">
+      <DependentUpon>NuevaCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevaCita.aspx.designer.cs">
+      <DependentUpon>NuevaCita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineQueryE.aspx.cs">
+      <DependentUpon>OnlineQueryE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineQueryE.aspx.designer.cs">
+      <DependentUpon>OnlineQueryE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineQueryP.aspx.cs">
+      <DependentUpon>OnlineQueryP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlineQueryP.aspx.designer.cs">
+      <DependentUpon>OnlineQueryP.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="view\Contacto.aspx.cs">
-      <DependentUpon>Contacto.aspx</DependentUpon>
+    <Compile Include="SeeCompanyQuery.aspx.cs">
+      <DependentUpon>SeeCompanyQuery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="view\Contacto.aspx.designer.cs">
-      <DependentUpon>Contacto.aspx</DependentUpon>
+    <Compile Include="SeeCompanyQuery.aspx.designer.cs">
+      <DependentUpon>SeeCompanyQuery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="view\Inicio.aspx.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
+    <Compile Include="SeeQuery.aspx.cs">
+      <DependentUpon>SeeQuery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="view\Inicio.aspx.designer.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
+    <Compile Include="SeeQuery.aspx.designer.cs">
+      <DependentUpon>SeeQuery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="view\Sesion.aspx.cs">
-      <DependentUpon>Sesion.aspx</DependentUpon>
+    <Compile Include="SignUpCar.aspx.cs">
+      <DependentUpon>SignUpCar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="view\Sesion.aspx.designer.cs">
-      <DependentUpon>Sesion.aspx</DependentUpon>
+    <Compile Include="SignUpCar.aspx.designer.cs">
+      <DependentUpon>SignUpCar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="view\Vehiculos.aspx.cs">
+    <Compile Include="SignUpEmpresa.aspx.cs">
+      <DependentUpon>SignUpEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUpEmpresa.aspx.designer.cs">
+      <DependentUpon>SignUpEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpParticular.aspx.cs">
+      <DependentUpon>SignUpParticular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUpParticular.aspx.designer.cs">
+      <DependentUpon>SignUpParticular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos.aspx.cs">
       <DependentUpon>Vehiculos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="view\Vehiculos.aspx.designer.cs">
+    <Compile Include="Vehiculos.aspx.designer.cs">
       <DependentUpon>Vehiculos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCitaCliente.aspx.cs">
+      <DependentUpon>VerCitaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCitaCliente.aspx.designer.cs">
+      <DependentUpon>VerCitaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerCitaEmpresa.aspx.cs">
+      <DependentUpon>VerCitaEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerCitaEmpresa.aspx.designer.cs">
+      <DependentUpon>VerCitaEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewEmpresa.aspx.cs">
+      <DependentUpon>ViewEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewEmpresa.aspx.designer.cs">
+      <DependentUpon>ViewEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUsuario.aspx.cs">
+      <DependentUpon>ViewUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewUsuario.aspx.designer.cs">
+      <DependentUpon>ViewUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -126,7 +324,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="imagenes\logo\" />
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{30a7e7f5-508e-46ec-8ec0-7839c9a2a7d1}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -141,9 +342,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52435</DevelopmentServerPort>
+          <DevelopmentServerPort>50021</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52435/</IISUrl>
+          <IISUrl>http://localhost:50021/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
