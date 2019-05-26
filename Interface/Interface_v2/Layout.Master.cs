@@ -40,6 +40,10 @@ namespace Interface_v2
                 {
                     HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Consultas"));
                 }
+                if (HeaderMenu.FindItem("/Vehiculos") != null)
+                {
+                    HeaderMenu.Items[0].ChildItems.Remove(HeaderMenu.FindItem("/Vehiculos"));
+                }
             }
         }
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
@@ -86,6 +90,17 @@ namespace Interface_v2
                 if (Session["cif"] != null)
                 {
                     Response.Redirect("~/CitaEmpresa.aspx");
+                }
+            }
+            if (selectedItem.Text.ToString() == "Vehiculos")
+            {
+                if (Session["nif"] != null)
+                {
+                    Response.Redirect("~/VehiculosParticular.aspx");
+                }
+                if (Session["cif"] != null)
+                {
+                    Response.Redirect("~/VehiculosEmpresa.aspx");
                 }
             }
         }

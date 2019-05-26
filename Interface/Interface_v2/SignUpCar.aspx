@@ -26,11 +26,14 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>Información actual de tu perfil</h3>
+                                <h3>Añadir nuevo vehículo</h3>
                                 <hr>
                             </div>
                         </div>
                         <div class="row">
+                        <div style="width: 80%; margin: 0 auto; color: red; text-align: center">
+                             <asp:Label ID="txtmessage" runat="server" Text="" />
+                         </div>
                             <div class="col-md-12">
 
                                 <!--
@@ -55,7 +58,6 @@
 
                                 <!--
                                   Imagen
-                                -->
                                 <div class="form-group row">
                                     <label for="imagen" class="col-4 col-form-label">Imagen</label>
                                     <div class="col-8">
@@ -78,7 +80,8 @@
                                         </script>
                                     </div>
                                 </div>
-
+                                -->
+                                
                                 <!--
                                   Modelo
                                 -->
@@ -86,7 +89,7 @@
                                 <div class="form-group row">
                                     <label for="lastname" class="col-4 col-form-label">Modelo</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="modelo" name="size" placeholder="Modelo" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox runat="server" style="text-align: center;" ID="modelo" name="size" placeholder="Modelo" CssClass="form-control here" required="required"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -98,7 +101,7 @@
                                 <div class="form-group row">
                                     <label for="text" class="col-4 col-form-label">Color</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="color" name="color" placeholder="Color" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="color" style="text-align: center;" name="color" placeholder="Color" CssClass="form-control here" required="required"></asp:TextBox>
 
                                     </div>
                                 </div>
@@ -108,7 +111,7 @@
                                 <div class="form-group row">
                                     <label for="text" class="col-4 col-form-label">Precio</label>
                                     <div class="col-8">
-                                        <asp:TextBox TextMode="Number" runat="server" ID="precio" name="precio" placeholder="Precio" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox TextMode="Number" runat="server" style="text-align: center;" ID="precio" name="precio" placeholder="Precio" CssClass="form-control here" required="required"></asp:TextBox>
 
                                     </div>
                                 </div>
@@ -119,7 +122,7 @@
                                 <div class="form-group row">
                                     <label for="email" class="col-4 col-form-label">Año</label>
                                     <div class="col-8">
-                                        <asp:TextBox TextMode="Number" runat="server" ID="anyo" name="anyo" placeholder="Año" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox TextMode="Number"  style="text-align: center;" runat="server" ID="anyo" name="anyo" placeholder="Año" CssClass="form-control here" required="required"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -129,7 +132,7 @@
                                 <div class="form-group row">
                                     <label for="website" class="col-4 col-form-label">Kilometros</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="km" name="km" placeholder="Km" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="km" style="text-align: center;" name="km" placeholder="Km" CssClass="form-control here" required="required"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -139,7 +142,7 @@
                                 <div class="form-group row">
                                     <label for="publicinfo" class="col-4 col-form-label">Tipo Combustible</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="combustible" name="combustible" placeholder="Combustible" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox runat="server" style="text-align: center;" ID="combustible" name="combustible" placeholder="Combustible" CssClass="form-control here" required="required"></asp:TextBox>
 
                                     </div>
                                 </div>
@@ -150,7 +153,7 @@
                                 <div class="form-group row">
                                     <label for="publicinfo" class="col-4 col-form-label">Potencia</label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="power" name="power" placeholder="Potencia" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="power" style="text-align: center;" name="power" placeholder="Potencia" CssClass="form-control here" required="required"></asp:TextBox>
 
                                     </div>
                                 </div>
@@ -172,14 +175,14 @@
                                 <div class="form-group row">
                                     <label for="publicinfo" class="col-4 col-form-label">URL Imagen </label>
                                     <div class="col-8">
-                                        <asp:TextBox runat="server" ID="image" name="image" placeholder="Enlace Imagens" CssClass="form-control here" required="required"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="image" Text="imagenes/coches_bd/default.png" readonly="true" name="image" placeholder="Enlace Imagens" CssClass="form-control here" required="required"></asp:TextBox>
 
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <div class="offset-3 col-8">
-                                        <asp:Button runat="server" name="submit" class="btn btn-primary" ID="submit" Text="Añadir coche" />
+                                        <asp:Button runat="server" name="submit" class="btn btn-primary" ID="submit_Click" Text="Añadir coche" OnClick="submit_Click_Click" />
 
                                     </div>
 

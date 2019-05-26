@@ -13,6 +13,15 @@ namespace Interface_v2 {
     public partial class SignUpCar {
         
         /// <summary>
+        /// Control txtmessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtmessage;
+        
+        /// <summary>
         /// Control matricula.
         /// </summary>
         /// <remarks>
@@ -139,12 +148,12 @@ namespace Interface_v2 {
         protected global::System.Web.UI.WebControls.TextBox image;
         
         /// <summary>
-        /// Control submit.
+        /// Control submit_Click.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submit;
+        protected global::System.Web.UI.WebControls.Button submit_Click;
     }
 }

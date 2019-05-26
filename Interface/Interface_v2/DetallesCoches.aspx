@@ -13,16 +13,6 @@
             width: 25%;
         }
 
-        .btnSubmit {
-            font-weight: 600;
-            width: 50%;
-            color: #282726;
-            background-color:  #00cc88;;
-            border: none;
-            border-radius: 1.5rem;
-            padding: 2%;
-        }
-
         .specs_block {
             background: #fff;
             border-radius: 10px;
@@ -111,10 +101,6 @@
                                     <asp:Label ID="precioLabel" runat="server" Text='<%# Eval("precio") + " €"%> ' ForeColor="Red" />
                                 </h1>
                                 <h4 class="pb-3">Especificaciones técnicas</h4>
-
-                                
-
-
                                 <ul class="info_list ">
                                     <li>
                                        Año: <asp:Label ID="anyoLabel" runat="server" Text='<%# Eval("anyo") %>' />
@@ -138,26 +124,17 @@
                                 <h4 class="pb-3">Comentarios del anunciante</h4>
                                 <asp:Label ID="descripcionLabel" runat="server" Text='<%# Eval("descripcion") %>' />
                             </div>
-                            <div style="">
-                                    <div class="col-sm-12 text-center" >
-                              
-                                        <asp:Button PostBackUrl="~/SignUpEmpresa.aspx" CssClass="btnSubmit" ID="Button1" runat="server" Text="Reservar" />
-
-                                    </div>
-                                    <div class="col-sm-12 text-center" >
-                                        </br>
-                                        <asp:Button PostBackUrl="~/SignUpEmpresa.aspx" CssClass="btnSubmit" ID="SignUpEmpresa" runat="server" Text="Comprar" />
-                                        </br>
-                                        <p></p>
-                                    </div>
-                                </div>
                         </div>
                     </div>
                 </div>
             </div>
         </ItemTemplate>
     </asp:DataList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DataBaseConnection %>" SelectCommand="SELECT [modelo], [marca], [color], [anyo], [combustible], [potencia], [km], [precio], [imagen], [cif], [nif], [categoria], [descripcion] FROM [Vehiculo]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DataBaseConnection %>" SelectCommand="SELECT [modelo], [marca], [color], [anyo], [combustible], [potencia], [km], [precio], [imagen], [cif], [nif], [categoria], [descripcion], [matricula] FROM [Vehiculo] WHERE ([matricula] = @matricula)">
+        <SelectParameters>
+            <asp:QueryStringParameter Name="matricula" QueryStringField="matricula" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
 
 
 </asp:Content>

@@ -71,6 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarOferta.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -84,6 +85,14 @@
     <Content Include="AnswerQuery.aspx" />
     <Content Include="CitaCliente.aspx" />
     <Content Include="CitaEmpresa.aspx" />
+    <Content Include="EnVenta.aspx" />
+    <Content Include="imagenes\coches_bd\default.png" />
+    <Content Include="imagenes\vender\enoferta.png" />
+    <Content Include="imagenes\vender\enventa.png" />
+    <Content Include="imagenes\vender\ofertar.png" />
+    <Content Include="imagenes\vender\vender.png" />
+    <Content Include="ListaOferta.aspx" />
+    <Content Include="VehiculosEmpresa.aspx" />
     <Content Include="imagenes\coches_bd\a1.jpg" />
     <Content Include="imagenes\coches_bd\a2.jpg" />
     <Content Include="imagenes\coches_bd\a3.jpg" />
@@ -189,6 +198,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarOferta.aspx.cs">
+      <DependentUpon>AgregarOferta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarOferta.aspx.designer.cs">
+      <DependentUpon>AgregarOferta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,6 +246,27 @@
     </Compile>
     <Compile Include="CitaEmpresa.aspx.designer.cs">
       <DependentUpon>CitaEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnVenta.aspx.cs">
+      <DependentUpon>EnVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnVenta.aspx.designer.cs">
+      <DependentUpon>EnVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaOferta.aspx.cs">
+      <DependentUpon>ListaOferta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaOferta.aspx.designer.cs">
+      <DependentUpon>ListaOferta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VehiculosEmpresa.aspx.cs">
+      <DependentUpon>VehiculosEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VehiculosEmpresa.aspx.designer.cs">
+      <DependentUpon>VehiculosEmpresa.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerCitaEmpresa.aspx.cs">
       <DependentUpon>VerCitaEmpresa.aspx</DependentUpon>
