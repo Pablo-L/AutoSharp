@@ -8,6 +8,23 @@ Tudor Emanuel Sabau -> X8317572J
 Almilkar Cruz Orias -> Y2605935A
 Alejandro Vicente Rodriguez Segado-> 74011910A
 
+Problemas de planificación:
+Falta de compromiso de algunos compañeros además
+incumplimiento de los plazos propuestos.
+Imprevistos:
+Un conflicto de github al hacer merge que ha pesar de muchas horas no se solucionó
+Problemas de compatibilidad con las diferentes versiones de .net Framework
+Actulizaciones de visual Studio
+
+Descomprimir el fichero .rar y esa es la solución completa y funcional.
+La presentación del proyecto es el fichero de nombre HADA.pptx
+El fichero UsAndPass.txt Contiene algunos Particulares y Empresas con su Nif y Cif y contraseña
+El archivo Tareas.pdf contiene una tabla con las diferentes tareas realizadas por cada componente
+del equipo.
+
+
+
+
 Descripción: 
 
 Es una web corporativa orientada a un concesionario de vehiculos online, 
@@ -22,7 +39,7 @@ Parte pública:
 -Mostrar los productos una vez filtrados -> una vez que se han filtrado los vehículos se podrían ver todos ellos. 
 -Ver los productos detalladamente -> se puede entrar a ver detalladamente un vehículo. 
 -Ver las ofertas -> aparecerá un apartado con ofertas. 
-
+-Ver un listado de las empresas
 Listado EN Pública:
   
 -ENVehículo -> un vehículo en si con los atributos que lo definan. 
@@ -30,16 +47,14 @@ Listado EN Pública:
 -ENCategoria -> las diferentes categorías en las que se pueden clasificar los vehículos. 
 
 Parte privada: 
-
--Añadir un vehículo a favoritos -> si te has registrado con un perfil de particular puedes añadir vehículos a tu lista de favoritos. 
--Consultar tu lista de favoritos -> se pueden consultar los vehículos que se han añadido a la lista de favoritos. 
 -Comprar un vehículo -> Si te has registrado como particular podrás comprar un vehículo 
--Contactar con el dueño -> con el perfil de particular puedes enviar un email a una determinada empresa 
+-Consultar con una empresa
 -Cita con empresa –> un particular puede solicitar una cita con una empresa determinada. No tiene que ser para ver un determinado vehículo sin no con la empresa en sí. 
 -Reservar vehículo -> como particular puedes reservar un vehículo de una empresa para verlo presencialmente en un periodo de tiempo determinado. 
--Publicar un vehículo -> si te has registrado como empresa podrás publicar un vehículo en la página web. 
--Destacar un vehículo -> como empresa puedes posicionar tu vehículo frente a otro. 
+-Añadir un vehículo -> si te has registrado como empresa podrás publicar un vehículo en la página web. 
 -Publicar oferta -> como empresa puedes publicar una oferta.
+-Modificar tu perfil de usuario
+-Realizar, responder, o consultar preguntas
 
 Listado EN Privada: 
 
