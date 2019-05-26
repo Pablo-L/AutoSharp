@@ -4,7 +4,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <style>
-        .productList {
+        .empresasList {
             border: 1px solid #6c757d;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -18,7 +18,7 @@
   <div class="container py-4">
         <asp:DataList ID="InitialDataList" runat="server" CssClass="row" DataSourceID="SqlDataSource1" RepeatLayout="Table" RepeatColumns="2">
             <ItemTemplate>
-                <div class="row productList">
+                <div class="row empresasList">
                     <div class="col-4">
                         <img alt="" width="200" height="200"  src='<%#Eval("imagen")%>' />
                     </div>
