@@ -1,0 +1,61 @@
+INSERT INTO Vehiculo (matricula, modelo, marca, color, anyo, combustible, potencia, km, precio, cif, nif) VALUES ('1234GHJ','NOSE','DECOCHES','Rojo','1699','','','100000','5700','','');
+INSERT INTO Vehiculo (matricula, modelo, marca, color, anyo, combustible, potencia, km, precio, cif, nif) VALUES ('6845TYU','CELICA','Toyota','Negro','1978','','','','7500','','');
+INSERT INTO Vehiculo (matricula, modelo, marca, color, anyo, combustible, potencia, km, precio, cif, nif) VALUES ('1218YUI','BRRRUM','FIAUMMM','Rojo','2019','','','','11000','','');
+INSERT INTO Vehiculo (matricula, modelo, marca, color, anyo, combustible, potencia, km, precio, cif, nif) VALUES ('9687POL','Murciegalo','Lanvorllini','Azul','2000','','','','8500','','');
+INSERT INTO Vehiculo (matricula, modelo, marca, color, anyo, combustible, potencia, km, precio, cif, nif) VALUES ('7488YRE','Amstel','Radler','Amarillo','1976','','','','4600','','');
+INSERT INTO Vehiculo (matricula, modelo, marca, color, anyo, combustible, potencia, km, precio, cif, nif) VALUES ('1489TRT','Campbbell','Solis','Negro','1989','','','','9100','','');
+INSERT INTO Vehiculo (matricula, modelo, marca, color, anyo, combustible, potencia, km, precio, cif, nif) VALUES ('4788YTR','4X4','16','Blanco','2003','','','','2800','','');
+INSERT INTO Vehiculo (matricula, modelo, marca, color, anyo, combustible, potencia, km, precio, cif, nif) VALUES ('1661DYS','Cañonero','Cañonerou','Rojo','2015','','','','3300','','');
+
+
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('11111111A','Cistus','Clusii','cistus.clusii@hotmail.com','641517758','Calle Venecia nº 8','987654321654987654321654','1234');
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('22222222B','Olea','Europea','olea.europea@hotmail.com','685478123','Calle Angola nº 4','754524524527573283424752','1234');
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('33333333C','Asteriscus','Maritimus','asteriscus.maritimus@hotmail.com','654912378','Calle Suecia nº 2','564984546549898754654989','1234');
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('44444444D','Rhamnus','Lycioides','rhamnus.lycioides@hotmail.com','654879137','Calle Madrid nº 7','231985451651987498465465','1234');
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('55555555E','Prunus','Mahaleb','prunus.mahaleb@hotmail.com','641518735','Calle Francia nº 25','654498745165498465465749','1234');
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('66666666F','Quercus','Coccifera','quercus.coccifera@hotmail.com','649781328','Calle Dinamarca nº 7','257287524726875852782727','1234');
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('77777777G','Citus','Sinensis','citrus.sinensis@hotmail.com','697388124','Calle Grande nº 6','725221752757222752852825','1234');
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('88888888H','Ficus','Carica','ficus.carica@hotmail.com','631275497','Calle Menor nº 1','791346526759763567912634','1234');
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('99999999I','Pinus','Nigra','pinus.nigra@hotmail.com','645187359','Calle Roma nº 36','369852147852369852147852','1234');
+INSERT INTO Particular (nif, nombre, apellidos, email, telefono, direccion, iban, contraseña) VALUES ('10000000J','Arbutus','Unedo','arbutus.unedo@hotmail.com','651793576','Calle Paris nº 8','154789654789528528288966','1234');
+
+
+INSERT INTO Empresa (cif, nombre, email, telefono, direccion, tamanyo, contraseña) VALUES ('46579846P','Audi','audi@empresas.com','789465132','Calle de las empresas de los coches, nº1','Grande','1234');
+INSERT INTO Empresa (cif, nombre, email, telefono, direccion, tamanyo, contraseña) VALUES ('46512784T','Toyota','toyota@empresas.com','654987321','Calle de las empresas de los coches, nº2','Grande','1234');
+INSERT INTO Empresa (cif, nombre, email, telefono, direccion, tamanyo, contraseña) VALUES ('97886541E','Mercedes','merche@empresas.com','682549317','Calle de las empresas de los coches, nº3','Pequeña','1234');
+INSERT INTO Empresa (cif, nombre, email, telefono, direccion, tamanyo, contraseña) VALUES ('35484800Q','BMW','bubumumuwuwu@empresas.com','65894712','Calle de las empresas de los coches, nº4','Mediana','1234');
+
+
+INSERT INTO Cita (id, cif, motivo, nif) VALUES ('01','98765432P','Motivo importante','78946512P');
+INSERT INTO Cita (id, cif, motivo, nif) VALUES ('02','78945612I','Motivo desconocido','65498474P');
+INSERT INTO Cita (id, cif, motivo, nif) VALUES ('03','45678912R','Infidelidad con la esposa del director','45678921F');
+
+
+INSERT INTO Comentario (id, cif, descripcion, valoracion, nif) VALUES ('01','46579846P','Buena venta','5','11111111A');
+INSERT INTO Comentario (id, cif, descripcion, valoracion, nif) VALUES ('02','46579846P','Mala venta','1','55555555E');
+INSERT INTO Comentario (id, cif, descripcion, valoracion, nif) VALUES ('03','46579846P','Vendo Opel Corsa mas barato que aqui','1','10000000J');
+INSERT INTO Comentario (id, cif, descripcion, valoracion, nif) VALUES ('04','97886541E','Mercedes, hazme un hijo','5','22222222B');
+
+
+INSERT INTO Oferta (id, fecha_inicio, fecha_fin, descuento) VALUES ('0','1990-01-01','2019-06-31','5');
+INSERT INTO Oferta (id, fecha_inicio, fecha_fin, descuento) VALUES ('0','1990-01-01','2019-06-31','10');
+INSERT INTO Oferta (id, fecha_inicio, fecha_fin, descuento) VALUES ('0','1990-01-01','2019-06-31','20');
+
+
+INSERT INTO ConsultaOline(id, cif, pregunta, respuesta, nif) VALUES ('01','46579846P','Lo tienes en rojok, jaja gracias','...','88888888H');
+INSERT INTO ConsultaOline(id, cif, pregunta, respuesta, nif) VALUES ('02','97886541E','Me gustaría adquirir un buen coche de segunda mano, ¿cúal recomendais?','Eso no existe, jaja','66666666F');
+INSERT INTO ConsultaOline(id, cif, pregunta, respuesta, nif) VALUES ('03','35484800Q','Si 2+2=4, ¿en que punto se encuentra el vértice de la parábola definida por f(x)=4x^2-10x?','Vx=10/8 y Vy=f(10/8)','55555555E');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
