@@ -8,13 +8,7 @@ Tudor Emanuel Sabau -> X8317572J
 Almilkar Cruz Orias -> Y2605935A
 Alejandro Vicente Rodriguez Segado-> 74011910A
 
-Problemas de planificación:
-Falta de compromiso de algunos compañeros además
-incumplimiento de los plazos propuestos.
-Imprevistos:
-Un conflicto de github al hacer merge que ha pesar de muchas horas no se solucionó
-Problemas de compatibilidad con las diferentes versiones de .net Framework
-Actulizaciones de visual Studio
+
 
 Descomprimir el fichero .rar y esa es la solución completa y funcional.
 La presentación del proyecto es el fichero de nombre HADA.pptx
